@@ -1,0 +1,44 @@
+body{
+    margin:0px;
+}
+header{
+    display:flex;
+    justify-content: space-between;
+    background-color: blue;
+    height: 70px;
+    margin: 0;
+}
+
+#left-column{
+    display: flex;
+    width: 20%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+
+}
+
+#right-column{
+    width: 45%;
+    margin-left: 50%;
+    margin-right: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.container{
+    background-color: aqua;
+    border: black;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.navigation{
+    margin:auto;
+}
+
+button:active{
+    background-color: red;
+}
