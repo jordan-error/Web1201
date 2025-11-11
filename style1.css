@@ -1,6 +1,13 @@
 body {
   margin: 0;
   padding: 0;
+  background-color: white;
+  color: black;
+}
+
+.main {
+  display: flex;
+  flex-wrap: wrap;
 }
 
 html { 
@@ -22,7 +29,6 @@ h2, p {
   margin: 0;
   padding: 0;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-  background-color: white;
   position: fixed;
   width: 100%;
   height: 64px;
@@ -100,11 +106,12 @@ button {
 }
 
 .text {
-  padding-top: 64px;
-  color: black;
+  margin: 100px 30px 30px 30px;
+  flex: 70%;
+  border: solid 1px;  
   width: 100%;
   z-index: 10;
-}
+} 
 
 .article {
   font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
@@ -248,8 +255,8 @@ li {
 }
 
 .right img {
-  width: 20px;
-  height: 20px;
+  width: 26px;
+  height: 26px;
 
 }
 
@@ -579,4 +586,108 @@ a {
 
 .positions ul {
   list-style-type: square;
+}
+
+/*Dark Mode*
+/* ===================== DARK MODE OVERRIDES ===================== */
+body.dark-mode {
+  background-color: #121212;
+  color: #f5f5f5;
+}
+
+body.dark-mode .test {
+  background-color: #1f1f1f;
+  color: white;
+}
+
+body.dark-mode .test a {
+  color: white;
+}
+
+body.dark-mode .dropdown-content {
+  background-color: #2a2a2a;
+}
+
+body.dark-mode .dropdown-content a {
+  color: #f5f5f5;
+}
+
+body.dark-mode .dropdown-content a:hover {
+  background-color: #3a3a3a;
+}
+
+body.dark-mode .box1, 
+body.dark-mode .box2, 
+body.dark-mode .box3, 
+body.dark-mode .box4, 
+body.dark-mode .box5, 
+body.dark-mode .box6, 
+body.dark-mode .box7, 
+body.dark-mode .box8, 
+body.dark-mode .box9, 
+body.dark-mode .box10, 
+body.dark-mode .box11, 
+body.dark-mode .box12, 
+body.dark-mode .box13, 
+body.dark-mode .box14, 
+body.dark-mode .box15, 
+body.dark-mode .box16, 
+body.dark-mode .box17, 
+body.dark-mode .box18, 
+body.dark-mode .box19, 
+body.dark-mode .box20, 
+body.dark-mode .box21, 
+body.dark-mode .box22 {
+  background-color: #1e1e1e;
+  box-shadow: 0 8px 20px rgba(255, 255, 255, 0.05);
+}
+
+body.dark-mode .footer {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+}
+
+body.dark-mode a {
+  color: #9fd8ff;
+}
+
+body.dark-mode button,
+body.dark-mode .dynamic-button {
+  background-color: #04AA6D;
+  color: white;
+  border-color: #04AA6D;
+}
+
+body.dark-mode .dynamic-button {
+  background-color: transparent;
+  color: #04AA6D;
+}
+
+body.dark-mode .dynamic-button:hover {
+  background-color: #04AA6D;
+  color: white;
+}
+
+body.dark-mode #myBtn {
+  background-color: #333;
+  color: #f5f5f5;
+}
+
+/* Dark mode toggle button */
+.theme-toggle {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  font-size: 22px;
+  padding: 18px 20px;
+  color: black;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+body.dark-mode .theme-toggle {
+  color: white;
+}
+
+.theme-toggle:hover {
+  transform: rotate(20deg);
 }

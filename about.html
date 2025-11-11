@@ -4,7 +4,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- Light mode favicon -->
         <link rel="icon" href="images/home_light.png" type="image/x-icon" media="(prefers-color-scheme: light)">
-  
         <!-- Dark mode favicon -->
         <link rel="icon" href="images/home_dark.png" type="image/x-icon" media="(prefers-color-scheme: dark)">
         <link rel="icon" type="image/png" href="images/home.png">
@@ -24,9 +23,13 @@
     <a href="#">Timetable</a>
     <a href="#">About Us</a>
     <a href="#">Logout</a>
+    <a onclick="myFunction()" href="#"><img id="themeIcon" src="images/bright.png"></a>
   </div>
 </div>
 
+
+<div class="w3-container">
+<div class="main">
 <div id="text" class="text">
 <div id="article" class="article">
     <p class="header">About</p>
@@ -147,9 +150,7 @@
     </div>
 </article>
     </div>
-    <div class="footer">
-  <p>© 2025 Oh Kuan Qi.&nbsp;All rights reserved.</p>
-</div>
+
     </div>
 <div id="content1" class="modal1">
   <div class="modal-content">
@@ -411,7 +412,24 @@
     <p>Competition Venue:&nbsp;SMJK Krian,&nbsp;Malaysia</p>
   </div>
 </div>
-
+</div>
+</div>
+    <div class="footer">
+  <p>© 2025 Oh Kuan Qi.&nbsp;All rights reserved.</p>
+</div>
         <script src="script_about.js"></script>
+        <script>
+            function myFunction() {
+                var element = document.body;
+                var icon = document.getElementById("themeIcon");
+                
+                element.classList.toggle("dark-mode");
+                if (element.classList.contains("dark-mode")) {
+                    icon.src = "images/dark.png"; 
+                } else {
+                    icon.src = "images/bright.png"; 
+                }
+            }
+        </script>
     </body>
 </html>
