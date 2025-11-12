@@ -816,6 +816,17 @@ body.dark-mode #mem_button1, body.dark-mode #mem_button2, body.dark-mode #mem_bu
   border: solid black;
 }
 
+/* Add this to your dark mode section */
+body.dark-mode .text,
+body.dark-mode .about, 
+body.dark-mode .members,
+body.dark-mode #personal_about1, 
+body.dark-mode #personal_about2, 
+body.dark-mode #personal_about3, 
+body.dark-mode #personal_about4 {
+  border: solid 1px;
+}
+
 .theme-toggle:hover {
   transform: rotate(20deg);
 }
