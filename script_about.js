@@ -12,9 +12,11 @@ function image() {
                 element.classList.toggle("dark-mode");
                 if (element.classList.contains("dark-mode")) {
                     icon.src = "images/dark.png"; 
+                    element.style.transition = "all 0.3s";
 
                 } else {
                     icon.src = "images/bright.png"; 
+                    element.style.transition = "all 0.3s";
                 }
             }
 
