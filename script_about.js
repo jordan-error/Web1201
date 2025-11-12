@@ -5,6 +5,19 @@ window.onscroll = function() {
   scrollFunction();
 };
 
+function image() {
+                var element = document.body;
+                var icon = document.getElementById("themeIcon");
+
+                element.classList.toggle("dark-mode");
+                if (element.classList.contains("dark-mode")) {
+                    icon.src = "images/dark.png"; 
+
+                } else {
+                    icon.src = "images/bright.png"; 
+                }
+            }
+
 function scrollFunction() {
   if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
     mybutton.style.visibility = "visible";
@@ -73,19 +86,35 @@ document.addEventListener('click', function(event) {
         }
     });
 
-function toggleContent() {
+function toggleContent3() {
+    var element = document.body;
     const contentDiv = document.getElementById('article');
     const contentDiv2 = document.getElementById('start');
+    const contentDiv3 = document.getElementById('about');
+    const contentDiv4 = document.getElementById('personal_about3');
+    const button3 = document.getElementById('mem_button3');
 
     // 2. Check the current display style
     if (contentDiv.style.display === 'none' || contentDiv.style.display === '') {
         // If it's hidden (or no style set), show it as a block element
         contentDiv.style.display = 'block';
         contentDiv2.style.display = 'none';
+        contentDiv3.style.display = 'none';
+        contentDiv4.style.display = 'block';
+        button3.style.backgroundColor = 'lightgray';
+        button3.style.borderColor = 'lightgray';
+        if (element.classList.contains('dark-mode')) {
+          button3.style.color = 'black';
+        }
     } else {
         // Otherwise, hide it
         contentDiv.style.display = 'none';
         contentDiv2.style.display = 'block';
+        contentDiv3.style.display = 'block';
+        contentDiv4.style.display = 'none';
+        button3.style.backgroundColor = '';
+        button3.style.borderColor = '';
+        button3.style.color = 'white';
     }
 }
 

@@ -23,7 +23,7 @@
     <a href="#">Timetable</a>
     <a href="#">About Us</a>
     <a href="#">Logout</a>
-    <a onclick="myFunction()" href="#"><img id="themeIcon" src="images/bright.png"></a>
+    <a onclick="image()" href="#"><img id="themeIcon" src="images/bright.png"></a>
   </div>
 </div>
 
@@ -31,16 +31,30 @@
 <div class="w3-container">
 <div class="main">
     <div class="side">
+        <div id="personal_about1">
+                <img class="intro_img" src="images/john_doe.jpg" alt="Image">
+        </div>
+        <div id="personal_about2">
+                <img class="intro_img" src="images/john_doe.jpg" alt="Image">
+        </div>
+        <div id="personal_about3">
+                <img class="intro_img" src="images/john_doe.jpg" alt="Image">
+                <p class="start_desc">Name:&nbsp;Oh Kuan Qi<br><br>
+                Course: Bachelor of Science (Honours) in Computer Science</p>
+        </div>
+        <div id="personal_about4">
+                <img class="intro_img" src="images/john_doe.jpg" alt="Image">
+        </div>
         <div id="about" class="about">
             <p class="header">About Us</p>
             <p class="description">We are a team of 4 students pursuing a degree in computer science at Sunway University.</p>
             <p class="description">This website is dedicated to students wanting to manage their workflow more efficiently, allowing for a reduction in time needed to complete tasks.</p>
         </div>
         <div class="members">
-            <button id="mem_button" class="mem_button1">Daniel Lau Zhe Kai</button>
-            <button id="mem_button" class="mem_button2">Jordan Ooi Zixian</button>
-            <button id="mem_button" class="mem_button3" onclick="toggleContent()">Oh Kuan Qi</button>
-            <button id="mem_button" class="mem_button4">Poon Chun Lok</button>
+            <button id="mem_button1" class="mem_button1">Daniel Lau Zhe Kai</button>
+            <button id="mem_button2" class="mem_button2">Jordan Ooi Zixian</button>
+            <button id="mem_button3" class="mem_button3" onclick="toggleContent3()">Oh Kuan Qi</button>
+            <button id="mem_button4" class="mem_button4">Poon Chun Lok</button>
         </div>
     </div>
 <div id="text" class="text">
@@ -55,8 +69,8 @@
         This project was a hands-on introduction to PHP,&nbsp;MySQL,&nbsp;and JavaScript,&nbsp;where I dove into problem-solving and troubleshooting. The success of digitally recording attendance cemented my interest and proficiency in back-end programming.
         <br><br>Ultimately,&nbsp;these experiences have solidified my passion for innovation and my aspiration to leverage technology to build a more sustainable world. I aim to create solutions that bridge societal gaps. 
         By combining my technical expertise with my leadership skills,&nbsp;I am confident in my ability to make a meaningful difference in everyday lives.</p>
-    <img class="intro_img" src="images/john_doe.jpg" alt="Image">
     </div>
+    <br>
     <div id="education" class="education">
     <p class="header">Education</p>
         <div id="grid-container1" class="grid-container1">
@@ -66,14 +80,14 @@
                 <p id="desc1" class="desc1">2022&nbsp;-&nbsp;2023</p>
             </div>
             <div id="box2" class="box2">
-                <p id="desc1" class="desc1">IELTS</p>
-                <p id="desc1" class="desc1">British Council,&nbsp;Malaysia</p>
-                <p id="desc1" class="desc1">2023</p>
-            </div>
-            <div id="box3" class="box3">
                 <p id="desc1" class="desc1">Bachelor of Science (Honours) in Computer Science</p>
                 <p id="desc1" class="desc1">Sunway University,&nbsp;Malaysia</p>
                 <p id="desc1" class="desc1">2025&nbsp;-&nbsp;present</p>
+            </div>
+            <div id="box3" class="box3">
+                <p id="desc1" class="desc1">IELTS</p>
+                <p id="desc1" class="desc1">British Council,&nbsp;Malaysia</p>
+                <p id="desc1" class="desc1">2023</p>
             </div>
     </div>
     </div>
@@ -432,17 +446,7 @@
 </div>
         <script src="script_about.js"></script>
         <script>
-            function myFunction() {
-                var element = document.body;
-                var icon = document.getElementById("themeIcon");
-                
-                element.classList.toggle("dark-mode");
-                if (element.classList.contains("dark-mode")) {
-                    icon.src = "images/dark.png"; 
-                } else {
-                    icon.src = "images/bright.png"; 
-                }
-            }
+
         </script>
     </body>
 </html>
