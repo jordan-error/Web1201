@@ -1,0 +1,454 @@
+<html>
+    <head>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Light mode favicon -->
+        <link rel="icon" href="images/home_light.png" type="image/x-icon" media="(prefers-color-scheme: light)">
+        <!-- Dark mode favicon -->
+        <link rel="icon" href="images/home_dark.png" type="image/x-icon" media="(prefers-color-scheme: dark)">
+        <link rel="icon" type="image/png" href="images/home.png">
+        <title>About</title>
+        <link rel="stylesheet" href="style1.css">
+    </head>
+
+    <body>
+<button onclick="topFunction()" id="myBtn" title="Go to top"><i class="arrow up"></i></button>
+<div class="test">
+    <div class="nav" id="myNav">
+        <a href="#" style="padding: 10px 20px;"><img src="images/john_doe.jpg"></a>
+        <a href="#" class="name" style="padding: 20px 0">John Doe</a>
+    </div>
+  <div class="right" id="myNav1">
+    <a href="#">Calendar</a>
+    <a href="#">Timetable</a>
+    <a href="about.html">About Us</a>
+    <a href="#">Logout</a>
+    <a onclick="image()" href="#"><img id="themeIcon" src="images/bright.png"></a>
+  </div>
+</div>
+
+
+<div class="w3-container">
+<div class="main">
+    <div class="side">
+        <div id="personal_about1">
+                <img class="intro_img" src="images/john_doe.jpg" alt="Image">
+        </div>
+        <div id="personal_about2">
+                <img class="intro_img" src="images/john_doe.jpg" alt="Image">
+        </div>
+        <div id="personal_about3">
+                <img class="intro_img" src="images/john_doe.jpg" alt="Image">
+                <p class="start_desc">Name:&nbsp;Oh Kuan Qi<br><br>
+                Course:&nbsp;Bachelor of Science (Honours) in Computer Science<br><br>
+                School: &nbsp;Sunway University
+            </p>
+        </div>
+        <div id="personal_about4">
+                <img class="intro_img" src="images/john_doe.jpg" alt="Image">
+        </div>
+        <div id="about" class="about">
+            <p class="header">About Us</p>
+            <p class="description">We are a team of 4 students pursuing a degree in computer science at Sunway University.</p>
+            <p class="description">This website is dedicated to students wanting to manage their workflow more efficiently, allowing for a reduction in time needed to complete tasks.</p>
+        </div>
+        <div class="members">
+            <button id="mem_button1" class="mem_button1">Daniel Lau Zhe Kai</button>
+            <button id="mem_button2" class="mem_button2">Jordan Ooi Zixian</button>
+            <button id="mem_button3" class="mem_button3" onclick="toggleContent3()">Oh Kuan Qi</button>
+            <button id="mem_button4" class="mem_button4">Poon Chun Lok</button>
+        </div>
+    </div>
+<div id="text" class="text">
+<div id="start" class="start">
+    <p>Click on one of the names on the bottom left menu for individual portfolios!</p>
+</div>
+<div id="article" class="article">
+    <p class="header">About</p>
+    <div id="grid-container" class="grid-container">
+    <p class="description">Born and raised in Malaysia,&nbsp;I have been actively involved in computing and robotics since childhood. My journey began in 2014&nbsp;with the creation of my first website,&nbsp;which ignited a lasting passion for the Web.
+        <br><br>Since then,&nbsp;I have driven technological advancements within my secondary school through numerous computing projects. For example,&nbsp;in my third year,&nbsp;my friends and I developed a co-curricular activities database system. 
+        This project was a hands-on introduction to PHP,&nbsp;MySQL,&nbsp;and JavaScript,&nbsp;where I dove into problem-solving and troubleshooting. The success of digitally recording attendance cemented my interest and proficiency in back-end programming.
+        <br><br>Ultimately,&nbsp;these experiences have solidified my passion for innovation and my aspiration to leverage technology to build a more sustainable world. I aim to create solutions that bridge societal gaps. 
+        By combining my technical expertise with my leadership skills,&nbsp;I am confident in my ability to make a meaningful difference in everyday lives.</p>
+    </div>
+    <br>
+    <div id="education" class="education">
+    <p class="header">Education</p>
+        <div id="grid-container1" class="grid-container1">
+            <div id="box1" class="box1">
+                <p id="desc1" class="desc1">Cambridge A-Level</p>
+                <p id="desc1" class="desc1">Taylor's College,&nbsp;Malaysia&nbsp;
+                <p id="desc1" class="desc1">2022&nbsp;-&nbsp;2023</p>
+            </div>
+            <div id="box2" class="box2">
+                <p id="desc1" class="desc1">Bachelor of Science (Honours) in Computer Science</p>
+                <p id="desc1" class="desc1">Sunway University,&nbsp;Malaysia</p>
+                <p id="desc1" class="desc1">2025&nbsp;-&nbsp;present</p>
+            </div>
+            <div id="box3" class="box3">
+                <p id="desc1" class="desc1">IELTS</p>
+                <p id="desc1" class="desc1">British Council,&nbsp;Malaysia</p>
+                <p id="desc1" class="desc1">2023</p>
+            </div>
+    </div>
+    </div>
+    <div id="experience" class="experience">
+        <p class="header">Experience</p>
+            <div id="grid-container3" class="grid-container3">
+                <div id="box4" class="box4">
+                    <p id="desc1" class="desc1">Retail Teaching Assistant</p>
+                    <p id="desc1" class="desc1">Robot Space Sdn. Bhd.</p>
+                    <p id="desc1" class="desc1">2024&nbsp;-&nbsp;2025</p>
+                </div>
+    </div>
+    </div>
+    <div id="expertise" class="expertise">
+    <p class="header">Expertise</p>
+        <div id="grid-container4" class="grid-container4">
+                <div id="box5" class="box5">
+                    <p id="desc1" class="desc1">Website Building</p>
+                </div>
+                <div id="box6" class="box6">
+                    <p id="desc1" class="desc1">Programming</p>
+                </div>
+                <div id="box7" class="box7">
+                    <p id="desc1" class="desc1">Robotics</p>
+                </div>
+                <div id="box8" class="box8">
+                    <p id="desc1" class="desc1">Leadership</p>
+                </div>
+                <div id="box9" class="box9">
+                    <p id="desc1" class="desc1">Teaching</p>
+                </div>
+                <div id="box10" class="box10">
+                    <p id="desc1" class="desc1">Administration</p>
+                </div>
+    </div>
+    </div>
+    <div id="awards" class="awards">
+    <p class="header">Awards & Achievements</p>
+        <div id="grid-container5" class="grid-container5">
+                <div id="box11" class="box11">
+                    <p id="desc1" class="desc1">Maxis Scholarship Award, 2024</p>                    
+                    <p id="desc1" class="desc1">Full Scholarship</p>
+                </div>
+                <div id="box12" class="box12">
+                    <p id="desc1" class="desc1">World Robot Contest, 2024 (Coach)</p>
+                    <p id="desc1" class="desc1">Student:&nbsp;Top 10 Award</p>
+                </div>
+                <div id="box13" class="box13">
+                    <p id="desc1" class="desc1">Kijang Economics Competition, 2023</p>
+                    <p id="desc1" class="desc1">Honourable Mention</p>
+                </div>
+                <div id="box14" class="box14">
+                    <p id="desc1" class="desc1">E-Sports Competition School Level, 2021</p>
+                    <p id="desc1" class="desc1">Advisor</p>   
+                </div>
+                <div id="box15" class="box15">
+                    <p id="desc1" class="desc1">Hope Concept Idea Competition, 2020</p>
+                    <p id="desc1" class="desc1">1st Runner-up</p>
+                </div>
+                <div id="box16" class="box16">
+                    <p id="desc1" class="desc1">National Robotics Competition, 2018 & 2019</p>
+                    <p id="desc1" class="desc1">Bronze</p>
+                </div>
+                <div id="box17" class="box17">
+                    <p id="desc1" class="desc1">Borneo Maths Olympiad Competition, 2019</p>
+                    <p id="desc1" class="desc1">Gold</p>
+                </div>
+                <div id="box18" class="box18">
+                    <p id="desc1" class="desc1">Kangaroo Math Competition, 2019</p>
+                    <p id="desc1" class="desc1">Honourable Mention</p>
+                </div>
+                <div id="box19" class="box19">
+                    <p id="desc1" class="desc1">National Prefects’ Candidate Award, 2021</p>
+                    <p id="desc1" class="desc1">4th Place</p>
+                </div>
+                <div id="box20" class="box20">
+                    <p id="desc1" class="desc1">State Prefects’ Candidate Award, 2021</p>
+                    <p id="desc1" class="desc1">Gold</p>
+                </div>
+                <div id="box21" class="box21">
+                    <p id="desc1" class="desc1">District English Debating Competition, 2020</p>
+                    <p id="desc1" class="desc1">Gold</p>
+                </div>
+                <div id="box22" class="box22">
+                    <p id="desc1" class="desc1">District English Public Speaking Competition, 2021</p>
+                    <p id="desc1" class="desc1">Gold</p>
+                </div>
+    </div>
+    </div>
+    </div>
+</article>
+<div id="content1" class="modal1">
+  <div class="modal-content">
+    <span class="close1">&times;</span>
+    <h1>Education Details</h1>
+    <p>Course:&nbsp;Cambridge A-Level</p>
+    <p>Subjects Taken:&nbsp;Computer Science, Economics, Mathematics</p>
+    <p>Final Results:&nbsp;AAA</p>
+    <p>Institution:&nbsp;Taylor's College, Malaysia</p>
+    <p>Study Period:&nbsp;August 2022 - December 2023</p>
+  </div>
+</div>
+
+<div id="content2" class="modal2">
+  <div class="modal-content">
+    <span class="close2">&times;</span>
+    <h1>Education Details</h1>
+    <p>Exam:&nbsp;IELTS (International English Language Testing System)</p>
+    <p>Final Results:&nbsp;Band 8.0 (CEFR C1)</p>
+    <p>Institution:&nbsp;British Council, Malaysia</p>
+    <p>Effective Date:&nbsp;25 May 2023</p>
+  </div>
+</div>
+
+<div id="content3" class="modal3">
+  <div class="modal-content">
+    <span class="close3">&times;</span>
+    <h1>Education Details</h1>
+    <p>Course:&nbsp;Bachelor of Science (Honours) in Computer Science</p>
+    <p>Awards:&nbsp;Dean's List Award</p>
+    <p>Institution:&nbsp;Sunway University, Malaysia</p>
+    <p>Study Period:&nbsp;February 2025 - present</p>
+  </div>
+</div>
+
+<div id="content4" class="modal4">
+  <div class="modal-content">
+    <span class="close4">&times;</span>
+    <h1>Work Experience</h1>
+    <p>Job Title:&nbsp;Retail Teaching Assistant</p>
+    <p>Company Name:&nbsp;Robot Space Sdn. Bhd.</p>
+    <p>Company Location:&nbsp;Kuala Lumpur, Malaysia</p>
+    <p>Job Period:&nbsp;January 2024 - January 2025</p>
+  </div>
+</div>
+
+<div id="content5" class="modal5">
+  <div class="modal-content">
+    <span class="close5">&times;</span>
+    <h1>Expertise</h1>
+    <p>Skill:&nbsp;Website Building</p>
+    <p>Languages:&nbsp;HTML, CSS, JavaScript, PHP</p>
+    <p>Years of Experience:&nbsp;10+ years</p>
+  </div>
+</div>
+
+<div id="content6" class="modal6">
+  <div class="modal-content">
+    <span class="close6">&times;</span>
+    <h1>Expertise</h1>
+    <p>Skill:&nbsp;Programming</p>
+    <p>Languages:&nbsp;Visual Basic, Python, Java</p>
+    <p>Years of Experience:&nbsp;5+ years</p>
+  </div>
+</div>
+
+<div id="content7" class="modal7">
+  <div class="modal-content">
+    <span class="close7">&times;</span>
+    <h1>Expertise</h1>
+    <p>Skill:&nbsp;Programming</p>
+    <p>Languages:&nbsp;Visual Basic, Python, Java</p>
+    <p>Years of Experience:&nbsp;5+ years</p>
+  </div>
+</div>
+
+<div id="content8" class="modal8">
+  <div class="modal-content">
+    <span class="close8">&times;</span>
+    <h1>Expertise</h1>
+    <p>Skill:&nbsp;Leadership</p>
+    <p>Positions Held:&nbsp;</p>
+    <ul class="positions" id="positions">
+        <li>President</li>
+            <ul>
+                <li>Computer & Robotics Club,&nbsp;SMJK Krian - 2020 & 2021</li>
+            </ul>
+        <li>Vice President</li>
+            <ul>
+                <li>Computer & Robotics Club,&nbsp;SMJK Krian - 2017, 2018 & 2020</li>
+                <li>Sunway Robotics Club - 2025 & 2026</li>
+            </ul>
+        <li>Secretary</li>
+            <ul>
+                <li>Prefect's Board, SMJK Krian - 2020 & 2021</li>
+                <li>Kerian Rover Scouts Troop - 2022 & 2023</li>
+            </ul>      
+        <li>Vice Secretary</li>
+            <ul>
+                <li>Computer & Robotics Club,&nbsp;SMJK Krian - 2019</li>
+                <li>Table Tennis Club, SMJK Krian - 2021</li>
+            </ul>    
+        <li>Treasurer</li>
+            <ul>
+                <li>Purple House,&nbsp;SMJK Krian - 2019</li>
+            </ul>
+        <li>Patrol Leader</li>
+            <ul>
+                <li>Scouts Troop,&nbsp;SMJK Krian - 2021 & 2022</li>
+            </ul>
+    </ul>
+    <p>Years of Experience:&nbsp;5+ years</p>
+  </div>
+</div>
+
+<div id="content9" class="modal9">
+  <div class="modal-content">
+    <span class="close9">&times;</span>
+    <h1>Expertise</h1>
+    <p>Skill:&nbsp;Teaching</p>
+    <p>Curriculum:&nbsp;UASA,&nbsp;SPM,&nbsp;IGCSE/O-Level,&nbsp;A-Level</p>
+    <p>Subjects Taught:&nbsp;Computer Science,&nbsp;Economics,&nbsp;History,&nbsp;English</p>
+    <p>Years of Experience:&nbsp;2+ years</p>
+  </div>
+</div>
+
+<div id="content10" class="modal10">
+  <div class="modal-content">
+    <span class="close10">&times;</span>
+    <h1>Expertise</h1>
+    <p>Skill:&nbsp;Administration</p>
+    <p>Software Used:&nbsp;Microsoft Access,&nbsp;MySQL</p>
+    <p>Years of Experience:&nbsp;5+ years</p>
+  </div>
+</div>
+
+<div id="content11" class="modal11">
+  <div class="modal-content">
+    <span class="close11">&times;</span>
+    <h1>Awards & Achievements</h1>
+    <p>Award:&nbsp;Maxis Scholarship Award,&nbsp;2024</p>
+    <p>Scholarship Type:&nbsp;Full Scholarship</p>
+    <p>Selected Institution:&nbsp;Sunway University</p>
+  </div>
+</div>
+
+<div id="content12" class="modal12">
+  <div class="modal-content">
+    <span class="close12">&times;</span>
+    <h1>Awards & Achievements</h1>
+    <p>Achievement:&nbsp;World Robot Contest,&nbsp;2024</p>
+    <p>Achievement Type:&nbsp;Top 10 Award&nbsp;(Student)</p>
+    <p>Competition Venue:&nbsp;Dewan Sri Sarjana,&nbsp;Universiti Tenaga Nasional,&nbsp;Malaysia</p>
+  </div>
+</div>
+
+<div id="content13" class="modal13">
+  <div class="modal-content">
+    <span class="close13">&times;</span>
+    <h1>Awards & Achievements</h1>
+    <p>Achievement:&nbsp;Kijang Economics Competition,&nbsp;2023</p>
+    <p>Achievement Type:&nbsp;Honourable Mention</p>
+    <p>Organizer:&nbsp;Bank Negara Malaysia</p>
+    <p>Competition Venue:&nbsp;Taylor's University, Malaysia</p>
+  </div>
+</div>
+
+<div id="content14" class="modal14">
+  <div class="modal-content">
+    <span class="close14">&times;</span>
+    <h1>Awards & Achievements</h1>
+    <p>Competition:&nbsp;E-Sports Competition School Level&nbsp;2021</p>
+    <p>Position:&nbsp;Advisor</p>
+    <p>Organizer:&nbsp;Computer & Robotics Club,&nbsp;SMJK Krian</p>
+  </div>
+</div>
+
+<div id="content15" class="modal15">
+  <div class="modal-content">
+    <span class="close15">&times;</span>
+    <h1>Awards & Achievements</h1>
+    <p>Achievement:&nbsp;Hope Concept Idea Competition,&nbsp;2020</p>
+    <p>Achievement Type:&nbsp;1st Runner-up</p>
+    <p>Organizer:&nbsp;Universiti Teknologi Petronas,&nbsp;Malaysia</p>
+  </div>
+</div>
+
+<div id="content16" class="modal16">
+  <div class="modal-content">
+    <span class="close16">&times;</span>
+    <h1>Awards & Achievements</h1>
+    <p>Achievement:&nbsp;National Robotics Competiion,&nbsp;2018 & 2019</p>
+    <p>Achievement Type:&nbsp;Bronze</p>
+    <p>Categories:&nbsp;Rookie (2018),&nbsp;Advance (2019)</p>
+    <p>Organizer:&nbsp;Sasbadi Group&nbsp;&&nbsp;Ministry Of Education,&nbsp;Malaysia</p>
+  </div>
+</div>
+
+<div id="content17" class="modal17">
+  <div class="modal-content">
+    <span class="close17">&times;</span>
+    <h1>Awards & Achievements</h1>
+    <p>Achievement:&nbsp;Borneo Maths Olympiad Competition,&nbsp;2019</p>
+    <p>Achievement Type:&nbsp;Gold</p>
+    <p>Achievement Level:&nbsp;State Level</p>
+  </div>
+</div>
+
+<div id="content18" class="modal18">
+  <div class="modal-content">
+    <span class="close18">&times;</span>
+    <h1>Awards & Achievements</h1>
+    <p>Achievement:&nbsp;Kangaroo Maths Competition&nbsp;2019</p>
+    <p>Achievement Type:&nbsp;Honourable Mention</p>
+    <p>Achievement Level:&nbsp;National Level</p>
+  </div>
+</div>
+
+<div id="content19" class="modal19">
+  <div class="modal-content">
+    <span class="close19">&times;</span>
+    <h1>Awards & Achievements</h1>
+    <p>Achievement:&nbsp;National Prefects’ Candidate Award,&nbsp;2021</p>
+    <p>Achievement Type:&nbsp;4th Place</p>
+    <p>Achievement Level:&nbsp;National Level</p>
+    <p>Organizer:&nbsp;Ministry Of Education,&nbsp;Malaysia</p>
+  </div>
+</div>
+
+<div id="content20" class="modal20">
+  <div class="modal-content">
+    <span class="close20">&times;</span>
+    <h1>Awards & Achievements</h1>
+    <p>Achievement:&nbsp;State Prefects' Candidate Award,&nbsp;2021</p>
+    <p>Achievement Type:&nbsp;Gold</p>
+    <p>Achievement Level:&nbsp;State Level</p>
+    <p>Organizer:&nbsp;Ministry Of Education,&nbsp;Malaysia</p>
+  </div>
+</div>
+
+<div id="content21" class="modal21">
+  <div class="modal-content">
+    <span class="close21">&times;</span>
+    <h1>Awards & Achievements</h1>
+    <p>Achievement:&nbsp;District English Debating Competition,&nbsp;2020&nbsp;</p>
+    <p>Achievement Type:&nbsp;Gold</p>
+    <p>Achievement Level:&nbsp;District Level</p>
+    <p>Competition Venue:&nbsp;SMJK Krian,&nbsp;Malaysia</p>
+  </div>
+</div>
+
+<div id="content22" class="modal22">
+  <div class="modal-content">
+    <span class="close22">&times;</span>
+    <h1>Awards & Achievements</h1>
+    <p>Achievement:&nbsp;District English Public Speaking Competition,&nbsp;2020&nbsp;</p>
+    <p>Achievement Type:&nbsp;Gold</p>
+    <p>Achievement Level:&nbsp;District Level</p>
+    <p>Competition Venue:&nbsp;SMJK Krian,&nbsp;Malaysia</p>
+  </div>
+</div>
+</div>
+</div>
+  <div class="footer">
+  <p>© 2025 Oh Kuan Qi.&nbsp;All rights reserved.</p>
+</div>
+        <script src="script_about.js"></script>
+        <script>
+
+        </script>
+    </body>
+</html>
