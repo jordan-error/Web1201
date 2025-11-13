@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="login.css">
+        <script src="login.js" defer></script>
+        <style>
+        @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+        </style>
+    </head>
+    <body>
+        <div class="main-container">
+            <div class="left-container">
+                    <img src="../assets/left.jpg">
+                </ul>
+            </div>
+            <div class="right-container">
+                <div>
+                    <p class="logo-text">StudyZone</p>
+                </div>
+                <div>
+                    <p id="login-text" class="login-text">Welcome to StudyZone</p>
+                    <form id="login">
+                        <div class="input-div">
+                            <label class="vague" for="username">Username</label>
+                            <input type="text" id="username" name="username"></input>
+                        </div>
+                        <div class="input-div">
+                            <label class="vague"  for="password">Password</label>
+                            <input type="password" id="password" name="password"></input>
+                            <a href="#" class="link forgot">Forgot password?</a>
+                        </div>
+                        <button id="login-button" type="submit" class="login-button">Sign In</button><br>
+                    </form>
+                    <p class="vague register">Don't have an account? <a id="register" class="link" href="#">Register now</a></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
