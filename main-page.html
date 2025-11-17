@@ -8,6 +8,9 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
+    <video autoplay muted loop class="background-video">
+        <source src="/videos/waterfall.mp4" type="video/mp4">
+    </video>
     <div class="navigation-bar">
         <div class="left-column">
             <button class="container">
@@ -52,7 +55,25 @@
                 </button>
             </div>
             <div class="side-content-area">
-                side content area
+                <div class="video-selection">
+                    <div class="video-row">
+                        <div class="video-item-container">
+                        <button class="video-item">
+                            content
+                        </button>
+                        <p class="video-title">This is the video</p> 
+                        </div>
+                        <div class="video-item-container">
+                        <button class="video-item">
+                            content
+                        </button>
+                        <p class="video-title">This is the video</p> 
+                        </div>
+                    </div>
+                </div>
+                <div class="volume-adjust container">
+
+                </div>
             </div>
             <button class="side-panel-toggle" type="button">
                 <span class="material-icons sp-icon-open">arrow_back_ios</span>
@@ -60,11 +81,14 @@
         </div>
         <script>
             document.querySelector('.side-panel-toggle').addEventListener('click', () => {
+                console.log('Side panel toggle clicked');
                 document.querySelector(".wrapper").classList.toggle('side-panel-open');
             });
         </script>
         <script>
             document.querySelector('#background').addEventListener('click', () => {
+                console.log('Background button clicked');
+
                 document.querySelector(".wrapper").classList.toggle('side-panel-open');
             });
         </script>       
