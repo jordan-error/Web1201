@@ -10,7 +10,6 @@ body{
     height: 100%;
     object-fit: cover;
     z-index: -1;
-    
 }
 a{
     text-decoration: none;
@@ -151,14 +150,14 @@ button:active{
 .side-content-area{
     visibility: hidden;
     display: flex;
-    height: 100%;
+    height: 60vh;
 }
 
 .video-selection{
     display: flex;
     flex-direction: column;
     gap: 10px;
-    height: 50vh;
+    height: 85%;
     overflow-y: scroll;
     overflow-x:hidden
 }
@@ -194,4 +193,54 @@ button:active{
 }
 ::-webkit-scrollbar{
     display:none;
+}
+
+#RainyCafeAtNight{
+    background-image: url("/images/cafe-at-night.png");
+    background-size: cover;
+}
+
+#HollowForest{
+    background-image: url("/images/hollow-forest.png");
+    background-size: cover;
+}
+
+#ByTheOcean{
+    background-image: url("/images/by-the-ocean.png");
+    background-size: cover;
+}
+
+#SnowyCabin{
+    background-image: url("/images/snowy-cabin.png");
+    background-size: cover;
+}
+
+#Toronto{
+    background-image: url("/images/toronto.png");
+    background-size: cover;
+}
+
+#StarWars{
+    background-image: url("/images/star-wars.png");
+    background-size: cover;
+}
+
+#AnimeGirlStudying{
+    background-image: url("/images/anime-girl-studying.png");
+    background-size: cover;
+}
+
+#FirePlace{
+    background-image: url("/images/fireplace.png");
+    background-size: cover;
+}
+
+#DystopianCity{
+    background-image: url("/images/dystopian-city.png");
+    background-size: cover;
+}
+
+#Cafe{
+    background-image: url("/images/cafe.png");
+    background-size: cover;
 }

@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Page</title>
     <link href="main-page-styles.css" rel="stylesheet">
+    <script src="main-page.js" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
     <video autoplay muted loop class="background-video">
-        <source src="/videos/waterfall.mp4" type="video/mp4">
+        <source src="https://cdn.pixabay.com/video/2024/02/25/201947-916877801_tiny.mp4">
     </video>
     <div class="navigation-bar">
         <div class="left-column">
@@ -42,9 +43,9 @@
         <div class="wrapper side-panel-open">
             <div class="side-nav-bar">
                 <button class="side-button" id="background">
-                    Button 1
+                    Backgrounds
                 </button>
-                <button class="side-button">
+                <button class="side-button" id="">
                     Button 2
                 </button>
                 <button class="side-button" id="">
@@ -58,40 +59,73 @@
                 <div class="video-selection">
                     <div class="video-row">
                         <div class="video-item-container">
-                        <button class="video-item">
-                            content
+                        <button class="video-item" id="RainyCafeAtNight">
                         </button>
-                        <p class="video-title">This is the video</p> 
+                        <p class="video-title">Rainy Cafe</p> 
                         </div>
                         <div class="video-item-container">
-                        <button class="video-item">
-                            content
+                        <button class="video-item" id="HollowForest">
                         </button>
-                        <p class="video-title">This is the video</p> 
+                        <p class="video-title">Hollow Forest</p> 
+                        </div>
+                    </div>
+                    <div class="video-row">
+                        <div class="video-item-container">
+                        <button class="video-item" id="ByTheOcean">
+                        </button>
+                        <p class="video-title">By The Ocean</p> 
+                        </div>
+                        <div class="video-item-container">
+                        <button class="video-item" id="SnowyCabin">
+                        </button>
+                        <p class="video-title">Snowy Cabin</p> 
+                        </div>
+                    </div>
+                    <div class="video-row">
+                        <div class="video-item-container">
+                        <button class="video-item" id="Toronto">
+                        </button>
+                        <p class="video-title">Toronto</p> 
+                        </div>
+                        <div class="video-item-container">
+                        <button class="video-item" id="StarWars">
+                        </button>
+                        <p class="video-title">Star Wars</p> 
+                        </div>
+                    </div>
+                    <div class="video-row">
+                        <div class="video-item-container">
+                        <button class="video-item" id="AnimeGirlStudying">
+                        </button>
+                        <p class="video-title">Anime Girl</p> 
+                        </div>
+                        <div class="video-item-container">
+                        <button class="video-item" id="FirePlace">
+                        </button>
+                        <p class="video-title">Fire Place</p> 
+                        </div>
+                    </div>
+                    <div class="video-row">
+                        <div class="video-item-container">
+                        <button class="video-item" id="DystopianCity">
+                        </button>
+                        <p class="video-title">Dystopian City</p> 
+                        </div>
+                        <div class="video-item-container">
+                        <button class="video-item" id="Cafe">
+                        </button>
+                        <p class="video-title">Cafe</p> 
                         </div>
                     </div>
                 </div>
                 <div class="volume-adjust container">
-
                 </div>
             </div>
             <button class="side-panel-toggle" type="button">
                 <span class="material-icons sp-icon-open">arrow_back_ios</span>
             </button>
         </div>
-        <script>
-            document.querySelector('.side-panel-toggle').addEventListener('click', () => {
-                console.log('Side panel toggle clicked');
-                document.querySelector(".wrapper").classList.toggle('side-panel-open');
-            });
-        </script>
-        <script>
-            document.querySelector('#background').addEventListener('click', () => {
-                console.log('Background button clicked');
-
-                document.querySelector(".wrapper").classList.toggle('side-panel-open');
-            });
-        </script>       
+    
     </div>
 </body>
 </html>
