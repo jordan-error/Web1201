@@ -6,6 +6,7 @@
     <title>Main Page</title>
     <link href="main-page-styles.css" rel="stylesheet">
     <link href="spaces-side-panel-styles.css" rel="stylesheet">
+    <link href="music-side-panel-styles.css" rel="stylesheet">
     <script src="main-page.js" defer></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -40,14 +41,16 @@
             </a>
         </div>
     </div>
-    <div class="container" id="content">
-        <div class="wrapper side-panel-open">
+    
+    <div class="main-content-area">
+        <div class="wrapper">
+
             <div class="side-nav-bar">
                 <button class="side-button" id="Spaces">
                     Spaces
                 </button>
-                <button class="side-button" id="">
-                    Button 2
+                <button class="side-button" id="Sounds">
+                    Sounds
                 </button>
                 <button class="side-button" id="">
                     Button 3
@@ -56,7 +59,9 @@
                     Button 4
                 </button>
             </div>
+
             <div class="side-content-area">
+                <div class="content-area side-panel-open-1" id="SpacesContent" >
                 <h1 class="side-panel-title">Featured Spaces</h1>
                 <div class="video-selection">
                     <div class="video-row">
@@ -121,11 +126,27 @@
                     </div>
                 </div>
                 <div class="volume-adjust container">
+
                 </div>
             </div>
-            <button class="side-panel-toggle" type="button">
+            <button class="side-panel-toggle" id="SpacesToggleButton" type="button">
                 <span class="material-icons sp-icon-open">arrow_back_ios</span>
             </button>
+
+            <div class="content-area" id="Music" >
+                <h1 class="side-panel-title">Music</h1>
+                <p>Select a playlist or adjust volume.</p>
+                <!-- Add your music controls here, e.g., buttons for playlists, volume slider -->
+                <button>Play Chill Mix</button>
+                <button>Play Focus Beats</button>
+                <input type="range" min="0" max="100" value="50" id="music-volume">
+            </div>
+            <button class="side-panel-toggle" id="MusicToggleButton" type="button">
+                <span class="material-icons sp-icon-open">arrow_back_ios</span>
+            </button>
+
+
+            </div>
         </div>
     
     </div>

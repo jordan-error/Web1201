@@ -1,32 +1,19 @@
-.side-content-area{
-    display:none;
-    width: 200px;
-    height: 447px;
-    flex-shrink: 0;
-    padding: 10px;
-    color: white ;
-    background-color:rgb(128, 161, 186) ;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
-    
-}
-
-.side-panel-open .side-content-area{
-    display: initial; 
-    visibility: visible;
-}
-
-.side-panel-open .side-panel-toggle{
-    display: initial;
-    visibility: visible;
-}
-
-.side-content-area{
-    visibility: hidden;
-    display: flex;
-    height: 80vh;
+#SpacesContent{
+    height: auto;
     width: 370px;
 }
 
+#SpacesToggleButton{
+    display: none;
+}
+
+.side-panel-open-1 #SpacesContent{
+    display: initial; 
+}
+
+.side-panel-open-1 #SpacesToggleButton{
+    display: initial;
+}
 .video-selection{
     display: flex;
     flex-direction: column;

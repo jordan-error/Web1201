@@ -1,16 +1,27 @@
-//Toggle side panel
-document.querySelector('.side-panel-toggle').addEventListener('click', () => {
-    console.log('Side panel toggle clicked');
-    document.querySelector(".wrapper").classList.toggle('side-panel-open');
+//Toggle side panel for Spaces
+document.querySelector('#SpacesToggleButton').addEventListener('click', () => {
+    console.log('Spaces toggle clicked');
+    document.querySelector(".wrapper").classList.toggle('side-panel-open-1');
 });
 
 document.querySelector('#Spaces').addEventListener('click', () => {
-    console.log('Background button clicked');
-    document.querySelector(".wrapper").classList.toggle('side-panel-open');
+    console.log('Spaces button clicked');
+    document.querySelector(".wrapper").classList.toggle('side-panel-open-1');
+    
+});
+
+//Toggle side panel for Music
+document.querySelector('#MusicToggleButton').addEventListener('click', () => {
+    console.log('Music toggle clicked');
+    document.querySelector(".wrapper").classList.toggle('side-panel-open-2');
+});
+
+document.querySelector('#Sounds').addEventListener('click', () => {
+    console.log('Music button clicked');
+    document.querySelector(".wrapper").classList.toggle('side-panel-open-2');
 });
 
 // Change background video on button click
-
 //Changing to Cafe at Night
 var button = document.getElementById("RainyCafeAtNight");
 var bg = document.getElementsByClassName("background-video")[0];
