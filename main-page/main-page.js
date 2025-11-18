@@ -7,7 +7,7 @@ document.querySelector('#SpacesToggleButton').addEventListener('click', () => {
 document.querySelector('#Spaces').addEventListener('click', () => {
     console.log('Spaces button clicked');
     document.querySelector(".wrapper").classList.toggle('side-panel-open-1');
-    
+
 });
 
 //Toggle side panel for Music
@@ -17,7 +17,7 @@ document.querySelector('#MusicToggleButton').addEventListener('click', () => {
 });
 
 document.querySelector('#Sounds').addEventListener('click', () => {
-    console.log('Music button clicked');
+    console.log('Sound button clicked');
     document.querySelector(".wrapper").classList.toggle('side-panel-open-2');
 });
 

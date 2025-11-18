@@ -1,8 +1,20 @@
 
+#Music{
+    width: 350px;
+}
+
 .side-panel-open-2 #Music{
     display: initial; 
 }
 
 .side-panel-open-2 #MusicToggleButton{
     display: initial;
+}
+
+.music-row{
+    padding: 10px;
+    border-style: solid;
+    border-color: red;
+    border-width: 2px;
+    height: 10vh;
 }

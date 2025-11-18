@@ -92,6 +92,7 @@ button:active{
     justify-content: space-around;
     width: 70px;
     height: 60vh;
+    padding: 5px;
     border-radius: 10px;
     background-color: rgb(128, 161, 186);
 }
