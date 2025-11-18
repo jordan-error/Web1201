@@ -481,6 +481,8 @@ li {
 }
 
 .footer {
+  position: absolute;
+  width: 100%;
   font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   background-color: rgba(128, 128, 128, 0.2);
   /* 1. Container Styling: Use flexbox/grid for layout, add padding */
