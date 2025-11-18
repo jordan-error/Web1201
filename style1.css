@@ -9,6 +9,7 @@ body {
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   display: flex;
   flex-direction: row;
+  height: 100vh;
 }
 
 .start p {
@@ -141,8 +142,6 @@ button {
 
 .side {
   width: 25%;
-  max-height: 80vh;
-  margin-bottom: 20vh;
 }
 
 .about {
@@ -154,9 +153,12 @@ button {
   padding-left: 48px;
   padding-right: 48px;
   padding-top: 48px;
-  padding-bottom: 56px;
-  height: 36vh;
+  padding-bottom: 36px;
 } 
+
+#about_desc {
+  display: inline-block;
+}
 
 #personal_about1 {
   display: none;
@@ -194,7 +196,7 @@ button {
 
 #personal_about3 img {
   display: flex;
-  padding-top: 20px;
+  padding-top: 18px;
   margin-left: auto;
   margin-right: auto;
   align-items: center;
