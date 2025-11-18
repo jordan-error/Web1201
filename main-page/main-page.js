@@ -4,9 +4,8 @@ document.querySelector('.side-panel-toggle').addEventListener('click', () => {
     document.querySelector(".wrapper").classList.toggle('side-panel-open');
 });
 
-document.querySelector('#background').addEventListener('click', () => {
+document.querySelector('#Spaces').addEventListener('click', () => {
     console.log('Background button clicked');
-
     document.querySelector(".wrapper").classList.toggle('side-panel-open');
 });
 
