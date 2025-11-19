@@ -16,5 +16,32 @@
     border-style: solid;
     border-color: red;
     border-width: 2px;
-    height: 10vh;
+    height: 7vh;
+    display: flex;
+}
+.music-description{
+    margin-left: 10px;
+    width: 70%;
+    font-size: 30px;
+    align-content: center;
+    font-family: 'Nunito', sans-serif;
+    font-weight: bold;
+}
+
+.play-button{
+    width: 70px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 100px;
+    height: auto;
+    align-items: center;
+}
+.material-symbols-outlined{
+    font-size: 40px !important;
+    color: rgba(253, 247, 231, 0.822);
+    padding-top: 3px;
+}
+#SoundTitle{
+    margin-bottom: 10px;
 }
