@@ -164,6 +164,7 @@ button:active{
 }
 
 .volume-adjust{
+    display: flex;
     height: 13%;
 }
 
@@ -192,6 +193,7 @@ button:active{
     font-size: 14px;
     margin: 0px;
 }
+
 ::-webkit-scrollbar{
     display:none;
 }

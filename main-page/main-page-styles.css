@@ -42,12 +42,6 @@ a{
     justify-content: space-around;
 }
 
-.container{
-    border: red;
-    border-style: solid;
-    border-width: 5px;
-    
-}
 /*Top right navigation bar styles*/
 .navigation{
     margin:auto;
@@ -135,6 +129,21 @@ button:active{
     width: auto;
     height: auto;
     display: flex;
+}
+
+.current-background-title{
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.audio-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 
 .content-area{

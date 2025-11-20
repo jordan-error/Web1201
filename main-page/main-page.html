@@ -135,10 +135,16 @@
                         </div>
                     </div>
                 </div>
+                <!--Volume Adjustment Section-->
                 <div class="volume-adjust container">
-                    <audio loop controls class="background-audio">
+                    <div class="current-background-title" id="CurrentBackgroundTitle">
+                        Rainy Cafe
+                    </div>
+                    <div class="audio-container">
+                    <audio loop controls class="background-audio" id="BackgroundAudioPlayer">
                         <source src="https://pub-ba7c81337874432dbe9c5b19d2cbd787.r2.dev/Delta%20Waves%20(looped).mp3" type="audio/mp3"/>
-                      </audio>
+                    </audio>
+                    </div>
                 </div>
             </div>
             <button class="side-panel-toggle" id="SpacesToggleButton" type="button">
