@@ -1,6 +1,10 @@
 
 #Music{
     width: 350px;
+    padding: 0px;
+}
+#SoundTitle{
+    margin: 5px 5px 5px 10px;
 }
 
 .side-panel-open-2 #Music{
@@ -10,38 +14,70 @@
 .side-panel-open-2 #MusicToggleButton{
     display: initial;
 }
+.music-selection{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    height: 90%;
+    overflow-y: scroll;
+    overflow-x:hidden
+}
 
 .music-row{
-    padding: 10px;
-    border-style: solid;
-    border-color: red;
-    border-width: 2px;
-    height: 7vh;
+    border-bottom: darkgray solid 2px;
+    height: 20vh;
+    width: 100%;
     display: flex;
+    flex-direction: column;
 }
-.music-description{
+
+.slider-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+.audio-header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 17px;
+}
+.audio-name{
     margin-left: 10px;
     width: 70%;
-    font-size: 30px;
-    align-content: center;
+    align-items: flex-end;
     font-family: 'Nunito', sans-serif;
     font-weight: bold;
 }
 
-.play-button{
-    width: 70px;
-    background: none;
-    border: none;
-    cursor: pointer;
-    width: 100px;
-    height: auto;
-    align-items: center;
+audio::-webkit-media-controls-panel{
+    background-color: cornflowerblue;
 }
-.material-symbols-outlined{
-    font-size: 40px !important;
-    color: rgba(253, 247, 231, 0.822);
-    padding-top: 3px;
+audio::-webkit-media-controls-play-button{
+    background-color: lightblue;
+    border-radius: 50%;
 }
-#SoundTitle{
-    margin-bottom: 10px;
+audio::-webkit-media-controls-current-time-display{
+    color: #333;
+}
+audio::-webkit-media-controls-time-remaining-display{
+    color: #333;
+}
+audio::-webkit-media-controls-timeline{
+    border-radius: 40px;
+    background-color: lightblue;
+}
+audio::-webkit-media-controls-volume-slider{
+    background-color: lightblue;
+    border-radius: 50px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+audio::-webkit-media-controls-mute-button{
+    background-color: lightblue;
+    border-radius: 50%;
 }

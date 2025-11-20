@@ -136,7 +136,7 @@
                     </div>
                 </div>
                 <div class="volume-adjust container">
-                    <audio loop controls autoplay>
+                    <audio loop controls class="background-audio">
                         <source src="https://pub-ba7c81337874432dbe9c5b19d2cbd787.r2.dev/Delta%20Waves%20(looped).mp3" type="audio/mp3"/>
                       </audio>
                 </div>
@@ -148,11 +148,96 @@
             <div class="content-area" id="Music">
                 <h1 class="side-panel-title" id="SoundTitle">Sound Playlist</h1>
                 <div class="music-selection">
-                    <div class="music-row">
-                        <div class="music-description">🌊 Delta Waves</div>
-                        <button class="play-button" id="DeltaWaves"><span class="material-symbols-outlined">volume_up</span></button>
+                    <div class="music-row" >
+                        <div class="audio-header">
+                            <div class="audio-name">🔊 Delta Waves</div>
+                        </div>
+                        <div class="slider-container">
+                            <audio class="audio-player" id="DeltaWavesAudio" loop controls>
+                                <source src="https://pub-ba7c81337874432dbe9c5b19d2cbd787.r2.dev/Delta%20Waves%20(looped).mp3" type="audio/mp3"/>
+                              </audio>
+                        </div>
                     </div>
-
+                    <div class="music-row" >
+                        <div class="audio-header">
+                            <div class="audio-name">🔊 Theta Waves</div>
+                        </div>
+                        <div class="slider-container">
+                            <audio class="audio-player"  loop controls>
+                                <source src="https://pub-ba7c81337874432dbe9c5b19d2cbd787.r2.dev/Theta%20waves%20(looped).mp3" type="audio/mp3"/>
+                              </audio>
+                        </div>
+                    </div>
+                    <div class="music-row" >
+                        <div class="audio-header">
+                            <div class="audio-name">☕️ Cafe</div>
+                        </div>
+                        <div class="slider-container">
+                            <audio class="audio-player" loop controls>
+                                <source src="https://pub-ba7c81337874432dbe9c5b19d2cbd787.r2.dev/Cafe%20(looped)-001.mp3"/>
+                              </audio>
+                        </div>
+                    </div>
+                    <div class="music-row" >
+                        <div class="audio-header">
+                            <div class="audio-name">🪵 Fireplace</div>
+                        </div>
+                        <div class="slider-container">
+                            <audio class="audio-player"  loop controls>
+                                <source src="https://pub-ba7c81337874432dbe9c5b19d2cbd787.r2.dev/Fireplace%20(looped).mp3" type="audio/mp3"/>
+                              </audio>
+                        </div>
+                    </div>
+                    <div class="music-row" >
+                        <div class="audio-header">
+                            <div class="audio-name">🔥 Lava</div>
+                        </div>
+                        <div class="slider-container">
+                            <audio class="audio-player"  loop controls>
+                                <source src="https://pub-ba7c81337874432dbe9c5b19d2cbd787.r2.dev/Lava%20(looped).mp3" type="audio/mp3"/>
+                              </audio>
+                        </div>
+                    </div>
+                    <div class="music-row" >
+                        <div class="audio-header">
+                            <div class="audio-name">🌊 Ocean</div>
+                        </div>
+                        <div class="slider-container">
+                            <audio class="audio-player"  loop controls>
+                                <source src="https://pub-ba7c81337874432dbe9c5b19d2cbd787.r2.dev/Ocean%20(looped)-002.mp3" type="audio/mp3"/>
+                              </audio>
+                        </div>
+                    </div>
+                    <div class="music-row" >
+                        <div class="audio-header">
+                            <div class="audio-name">🎮 Minecraft Music 1</div>
+                        </div>
+                        <div class="slider-container">
+                            <audio class="audio-player"  loop controls>
+                                <source src="https://lambda.vgmtreasurechest.com/soundtracks/minecraft/bgdvvqqi/1-18.%20Sweden.mp3" type="audio/mp3"/>
+                              </audio>
+                        </div>
+                    </div>
+                    <div class="music-row" >
+                        <div class="audio-header">
+                            <div class="audio-name">🎮 Minecraft Music 2</div>
+                        </div>
+                        <div class="slider-container">
+                            <audio class="audio-player"  loop controls>
+                                <source src="https://lambda.vgmtreasurechest.com/soundtracks/minecraft/opiwjgbq/1-03.%20Subwoofer%20Lullaby.mp3" type="audio/mp3"/>
+                              </audio>
+                        </div>
+                    </div>
+                    <div class="music-row" >
+                        <div class="audio-header">
+                            <div class="audio-name">🎮 Minecraft Music 3</div>
+                        </div>
+                        <div class="slider-container">
+                            <audio class="audio-player"  loop controls>
+                                <source src="https://lambda.vgmtreasurechest.com/soundtracks/minecraft/dcemwzhl/1-05.%20Living%20Mice.mp3" type="audio/mp3"/>
+                              </audio>
+                        </div>
+                    </div>
             </div>
             </div>
             <button class="side-panel-toggle" id="MusicToggleButton" type="button">
