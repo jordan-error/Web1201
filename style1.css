@@ -147,7 +147,7 @@ button {
   margin-right: 30px;
   margin-bottom: 0;
   grid-template-rows: 6fr 4fr;
-  row-gap: 30px;
+  gap: 30px;
 }
 
 .about {
@@ -223,7 +223,7 @@ button {
   z-index: 10;
   padding-left: 30px;
   padding-right: 30px;
-  margin-top: 20px;
+  padding-top: 10px;
 } 
 
 .article {
