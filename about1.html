@@ -1,0 +1,65 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Light mode favicon -->
+        <link rel="icon" href="images/home_light.png" type="image/x-icon" media="(prefers-color-scheme: light)">
+        <!-- Dark mode favicon -->
+        <link rel="icon" href="images/home_dark.png" type="image/x-icon" media="(prefers-color-scheme: dark)">
+        <link rel="icon" type="image/png" href="images/home.png">
+        <title>About</title>
+        <link rel="stylesheet" href="style_about.css">
+    </head>
+    <body>
+        <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="arrow up"></i></button>
+        <div class="nav">
+                    <a href="#" style="padding: 10px 20px;"><img src="images/john_doe.jpg"></a>
+                    <a href="#" class="name" style="padding: 20px 0">John Doe</a>
+                <div class="right" id="myNav1">
+                    <a href="#">Calendar</a>
+                    <a href="#">Timetable</a>
+                    <a href="#">About Us</a>
+                    <a href="#">Logout</a>
+                    <a onclick="image()" href="#"><img id="themeIcon" src="images/bright.png"></a>
+                </div>
+        </div>
+            <div id="container">
+                <div id="left_side">
+                    <div id="about">
+                        <div>
+                            <p class="header">About Us</p>
+                            <p class="description">We are a team of 4 students pursuing a degree in computer science at Sunway University.</p>
+                            <p class="description">This website is dedicated to students wanting to manage their workflow more efficiently, allowing for a reduction in time needed to complete tasks.</p>
+                        </div>
+                    </div>
+                    <div id="personal_about">
+                        <img src="images/john_doe.jpg" alt="Image">
+                        <p class="details">Name:&nbsp;Oh Kuan Qi
+                        <br><br>Course:&nbsp;Bachelor of Science (Honours) in Computer Science
+                        <br><br>School: &nbsp;Sunway University</p>
+                    </div>
+                    <div id="members">
+                        <button id="mem_button1" class="mem_button1">Daniel Lau Zhe Kai</button>
+                        <button id="mem_button2" class="mem_button2">Jordan Ooi Zixian</button>
+                        <button id="mem_button3" class="mem_button3" onclick="toggleContent3()">Oh Kuan Qi</button>
+                        <button id="mem_button4" class="mem_button4">Poon Chun Lok</button>
+                    </div>
+                </div>
+                <div id="right_side">
+                    <div id="start" class="start">
+                        <p class="description">Click on one of the names on the bottom left menu for individual portfolios!</p>
+                    </div>
+                    <div id="profile3" class="profile3">
+                        <p class="header">About</p>
+                        <p class="description">Born and raised in Malaysia,&nbsp;I have been actively involved in computing and robotics since childhood. My journey began in 2014&nbsp;with the creation of my first website,&nbsp;which ignited a lasting passion for the Web.
+                        <br><br>Since then,&nbsp;I have driven technological advancements within my secondary school through numerous computing projects. For example,&nbsp;in my third year,&nbsp;my friends and I developed a co-curricular activities database system. 
+                        This project was a hands-on introduction to PHP,&nbsp;MySQL,&nbsp;and JavaScript,&nbsp;where I dove into problem-solving and troubleshooting. The success of digitally recording attendance cemented my interest and proficiency in back-end programming.
+                        <br><br>Ultimately,&nbsp;these experiences have solidified my passion for innovation and my aspiration to leverage technology to build a more sustainable world. I aim to create solutions that bridge societal gaps. 
+                        By combining my technical expertise with my leadership skills,&nbsp;I am confident in my ability to make a meaningful difference in everyday lives.</p>
+                    </div>
+                </div>
+            </div> 
+            <div id="footer">
+                <p>Made in Sunway University.</p>
+            </div>
+        <script src="script_about1.js"></script>
+    </body>
