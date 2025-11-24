@@ -4,7 +4,6 @@ body {
     padding: 0;
     background-color: white;
     color: black;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
@@ -25,12 +24,13 @@ body {
 }
 
 #container {
-  display: grid;
-  grid-template-columns: 2fr 5fr;
-  width: 100%;
-  margin: 0 auto;
-  align-items: stretch;
-  flex: 1;
+    display: grid;
+    grid-template-columns: 2fr 5fr;
+    width: 100%;
+    margin: 0 auto;
+    flex: 1;
+
+    height: calc(100vh - 128px); /* nav + footer */
 }
 
 .nav {
@@ -120,7 +120,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-} 
+    overflow-y: auto;
+    max-height: calc(100vh - 64px - 64px - 64px); 
+}
 
 #about, #personal_about{
     box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
@@ -152,6 +154,7 @@ body {
 
 #profile3 {
     display: none;
+    margin-top: 64px;
 }
 
 #members {
@@ -163,6 +166,36 @@ body {
     align-items: center;
     margin-top: auto;
 } 
+
+.grid-container1 {
+  margin-top: 16px;
+  margin-bottom: 64px;
+  display: grid;
+  grid-template-columns: 3fr 6fr 3fr;
+  gap: 30px;
+}
+
+.box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10, .box11, .box12, .box13, .box14, .box15, .box16, .box17, .box18, .box19, .box20, .box21, .box22 {
+  /* Base styles */
+  padding: 10px;  
+  border: none;
+  border-radius: 8px; 
+  background-color: #f9f9f9; 
+  cursor: pointer;
+
+  /* 1. INITIAL SHADOW */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
+  
+  /* 2. THE KEY TO SMOOTHNESS */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.desc1 {
+  width: 100%;
+  text-align: center;
+  line-height: normal;
+  font-size: 22px;
+}
 
 button {
   font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
