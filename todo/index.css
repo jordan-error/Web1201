@@ -1,0 +1,268 @@
+html{
+	font-family: "Plus Jakarta Sans",system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+p{
+	margin:0;
+}
+body{
+	display:flex;
+	background-color: #EBF5FB;
+	height: 100%;
+	margin: 0;
+}
+.top-nav{
+	display: flex;
+	background: #B4DEBD;
+	grid-row: 1/2;
+	grid-column: 1/3;
+}
+
+.top-navbar{
+	list-style-type: none;
+	display:flex;
+	justify-content: space-between;
+	align-items: center;
+	padding:0;
+	margin:0;
+	width: 100%;
+}
+.profile{
+	display:flex;
+	align-items: center;
+	margin-left:20px;
+	gap: 10px;
+}
+.profile > img{
+	height:45px;
+	border-radius: 50%;
+}
+.nav-links{
+	display:flex;
+}
+
+.left-nav{
+	display:flex;
+	flex-direction: column;
+	grid-row: 2/3;
+	grid-column: 1/2;
+	padding: 40px 30px;
+	background-color: #ecece6;
+	border-top-right-radius: 10px;
+}
+.tasks-text{
+	margin:0;
+	font-size: 15px;
+	font-weight: bold;
+}
+.left-navbar{
+	padding-left:10px;
+	display:flex;
+	flex-direction: column;
+	list-style-type: none;
+	height: 100%;
+	margin:0;
+}
+.list-item{
+	border-radius: 10px;
+	width: 200px;
+	text-decoration: none;
+	color: #4e5b59;
+	margin-top: 20px;
+	display:flex;
+	align-items: center;
+	gap: 15px;
+	padding: 0px 10px;
+	/* background-color: #7d7d7d21; */
+}
+.list-item > p{
+	border-radius: 5px;
+	margin-left: auto;
+}
+.list-item:hover{
+	color: #4e5b59b2;
+}
+.tasks-num{
+	font-size: 12px;
+	display: flex;
+	background-color: #80808029;
+	align-items:center;
+	justify-content: center;
+	width: 30px;
+	height: 20px;
+}
+.add-list{
+	align-self: flex-start;
+}
+.new-list > svg{
+	margin-right: 10px;
+}
+.new-list{
+	display: flex;
+	margin-top: 20px;
+	align-items: center;
+	color: #4e5b59;
+	word-spacing: 4px;
+}
+.new-list:hover{
+	color: #4e5b59b2;
+}
+li a{
+	color:#bdb7bc;
+	font-weight: 400;
+	font-size: 16px;
+	text-align: center;
+	padding: 10px;
+	margin: 0 10px;
+	text-decoration: none;
+}
+
+li a:hover{
+	color:#fffafe;
+}
+.main-container{
+	display: flex;
+	overflow:hidden;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+	padding: 20px;
+	gap:60px;
+}
+
+.title{
+	align-self: flex-start;
+	color: #131312c4;
+	font-weight: bold;
+	font-size: 35px;
+	margin-top: 20px;
+	width:50%;
+	background:transparent;
+	resize: none;
+	border:none;
+	overflow: hidden;
+	padding:10px;
+	transition: background 0.5s ease-in-out;
+}
+.title:hover{
+	background-color:#ddeaea;
+	border-radius:15px;
+}
+.title:focus{
+	outline: none;
+}
+.notes{
+	display: flex;
+	position: relative;
+	min-width: 250px;
+	height:250px;
+	justify-content: center;
+	align-items: center;
+	background-color:#78a491;
+	filter: brightness(150%);
+	padding: 60px;
+	text-align: center;
+	border-radius: 26px;
+	box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.2);
+}
+.notes:hover{
+	border: 2px solid #5f857a;
+	cursor:text;
+}
+
+.plus_more{
+	min-width: 250px;
+	height:250px;
+	display:flex;
+	padding: 60px;
+	justify-content: center;
+	align-items: center;
+	background-color: #8080805e;
+	border-radius: 26px;
+	box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.2);
+	transition: margin 0.5s ease;
+}
+#plus_symbol:hover{
+	cursor: pointer;
+	margin-left: 10px;
+}
+.notes_container{
+	display:flex;
+	flex-wrap:wrap;
+	height:100%;
+	width:100%;
+	justify-content: flex-start;
+	overflow-y: auto;
+	gap:20px;
+}	
+.garbage{
+	position:absolute;
+	bottom:15px;
+	height: 24px;
+	right:10px;
+}
+.garbage:hover{
+	cursor:pointer;
+	animation: wobble 0.4s ease;
+}
+
+
+.text_box:focus{
+	outline: none;
+}
+
+.text_box{
+	font-size: 16px;
+	width:250px;
+	height:250px;
+	border:none;
+	resize:none;
+	background:transparent;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+.jam:hover{
+	cursor:pointer;
+}
+
+.settings{
+	visibility: hidden;
+}
+.not-started-child:hover > .settings{
+	visibility: visible;	
+}
+.settings:hover{
+	cursor:pointer;
+}
+
+.done-but:hover{
+	cursor: pointer;
+}
+.not-but:hover{
+	cursor: pointer;
+}
+.garbage-tooltip{
+	visibility: hidden;
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	opacity: 0;
+	transition: opacity 0.3s ease-in;
+}
+.garbage:hover + .garbage-tooltip{
+	visibility: visible;
+	position: absolute;
+	bottom: 50;
+	right: -7;
+	background-color: rgb(25,25,25);
+	font-size: 13px;
+	color: #bdb7bc;
+	opacity:1;
+}
+@keyframes wobble {
+  0%   { transform: rotate(0deg); }
+  40%  { transform: rotate(10deg); }
+  70%  { transform: rotate(-10deg); }
+  100% { transform: rotate(0deg); }
+}
