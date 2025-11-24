@@ -40,14 +40,11 @@ function init_nav(){
 	for(i=0;i<localStorage.length;i++){
 		let matched = localStorage.key(i).match(list_regex)
 		if(matched && matched[0] !== '1'){
-			console.log(matched)
 			numbers = localStorage.key(i).match(/[0-9]+/g)[0]
 			let current_context = JSON.parse(localStorage.getItem(matched[0]));
-			console.log(numbers);
 			create_new_nav_option(numbers);
-			document.getElementById(`list${numbers}_num`).innerText = Object.keys(current_context.length -1);
 			document.getElementById(`list${numbers}_nav_title`).textContent = current_context["title"];
-			document.getElementById(`list${numbers}_num`).innerText = Object.keys(current_context).length - 1;
+			document.getElementById(`${numbers}_num`).innerText = Object.keys(current_context).length - 1;
 
 		}
 	}
@@ -167,7 +164,7 @@ function create_new_nav_option(number=null){
 	current_li.textContent = "LIST";
 	let current_p = document.createElement("p");
 	current_p.classList.add("tasks-num");
-	current_p.id = `list${current_num_lists}_num`
+	current_p.id = `${current_num_lists}_num`
 	current_p.textContent = 0;
 	current_a.appendChild(current_li);
 	current_a.appendChild(current_p);
