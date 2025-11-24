@@ -176,17 +176,12 @@ body {
 }
 
 .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10, .box11, .box12, .box13, .box14, .box15, .box16, .box17, .box18, .box19, .box20, .box21, .box22 {
-  /* Base styles */
   padding: 10px;  
   border: none;
   border-radius: 8px; 
   background-color: #f9f9f9; 
   cursor: pointer;
-
-  /* 1. INITIAL SHADOW */
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
-  
-  /* 2. THE KEY TO SMOOTHNESS */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -199,7 +194,7 @@ body {
 
 button {
   font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-  background-color: #04AA6D; /* Green */
+  background-color: #04AA6D; 
   border: none;
   color: white;
   padding: 18px 36px;
@@ -236,4 +231,60 @@ button {
 #footer p {
     margin: 0 24px;
     font-size: 20px;
+}
+
+/*Dark Mode*/
+body.dark-mode {
+    background-color: #121212;
+    color: #E0E0E0;
+}
+
+body.dark-mode .header, 
+body.dark-mode .description, 
+body.dark-mode .details {
+    color: #E0E0E0;
+}
+
+body.dark-mode .nav {
+    background-color: #1E1E1E;
+    box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.5);
+}
+
+body.dark-mode .nav a {
+    color: #E0E0E0;
+}
+
+body.dark-mode #right_side, 
+body.dark-mode #about, 
+body.dark-mode #personal_about, 
+body.dark-mode #members {
+    background-color: #1E1E1E;
+    box-shadow: rgba(0,0,0,0.7) 0px 8px 24px;
+    color: #E0E0E0;
+}
+
+body.dark-mode .box1, .dark-mode .box2, .dark-mode .box3, .dark-mode .box4,
+body.dark-mode .box5, .dark-mode .box6, .dark-mode .box7, .dark-mode .box8 {
+    background-color: #2A2A2A;
+    color: #E0E0E0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+}
+
+body.dark-mode button {
+    background-color: #1F7A5C; /* darker green */
+    color: white;
+}
+
+body.dark-mode #mem_button1, 
+body.dark-mode #mem_button2, 
+body.dark-mode #mem_button3, 
+body.dark-mode #mem_button4 {
+    background-color: #2A2A2A;
+    color: #E0E0E0;
+    box-shadow: rgba(0,0,0,0.7) 0px 8px 24px;
+}
+
+body.dark-mode #footer {
+    background-color: #1E1E1E;
+    color: #E0E0E0;
 }
