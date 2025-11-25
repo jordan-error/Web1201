@@ -23,18 +23,11 @@ a{
 }
 
 /*Header seperation style*/
-.left-column{
-    display: flex;
-    width: 20%;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-around;
 
-}
 .right-column{
     margin-top: 2vh;
-    background-color: rgb(128, 161, 186);
-    border-radius: 10px;
+    background-color: rgb(34, 40, 48);
+    border-radius: 7px;
     padding: 0.1em;
     min-width: min-content;
     width: 30vw;
@@ -47,8 +40,8 @@ a{
 /*Top right navigation bar styles*/
 .navigation{
     margin: 0vw, 3vw, 0vw, 3vw;
-    padding: 10px;
-    border-radius: 10px;
+    padding: 5px 10px;
+    border-radius: 7px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -58,28 +51,30 @@ a{
 .navigation:hover {
     cursor: pointer;
     color: black;
-    background-color: rgb(145,196,195 );
+    background-color: rgba(81, 80, 81);
 }
 .navigation-bar{
     display:flex;
-    justify-content: space-between;
     margin: 0;
+    justify-content: flex-end;
 }
 .material-symbols-outlined{
     font-size: clamp(1vw,2vw,2.5rem)!important;
+    color: rgba(255, 255, 255, 0.843)!important;
 }
 .nav-description{
-    font-size: clamp(0.3rem,0.5rem,1rem);
+    font-size: clamp(0.3rem,0.7rem,1rem);
     margin-top: 0.1rem;
+    color: rgba(255, 255, 255, 0.843);
 }
-
 
 .main-content-area{
     display: flex;
 }
 
-button:active{
-    background-color: red;
+button:hover{
+    cursor: pointer;
+    background-color: rgba(81, 80, 81);
 }
 
 .main-content-area{
@@ -103,10 +98,10 @@ button:active{
     justify-content: space-around;
     min-width: min-content;
     width: 4vw;
-    height: 60vh;
+    height: min-content;
     padding: 0.5vw;
-    border-radius: 15px;
-    background-color: rgb(128, 161, 186);
+    border-radius: 7px;
+    background-color: rgb(34, 40, 48);
 }
 
 .side-panel-toggle{
@@ -115,8 +110,8 @@ button:active{
     height: 60px;
     flex-shrink: 0;
     place-items: center;
-    color:rgba(8, 89, 165, 0.5);
-    background-color:rgb(128, 161, 186) ;
+    color: rgba(253, 247, 231, 0.822);
+    background-color: rgb(60, 68, 81);
     border: none;
     border-radius: 0 10px 10px 0;
     outline: none;
@@ -157,14 +152,14 @@ button:active{
 
 .content-area{
 flex-shrink: 0;
-color: white ;
-background-color:rgb(18, 87, 139) ;
+color: rgba(253, 247, 231, 0.822);
+background-color: rgb(34, 40, 48);
 box-shadow: 0 0 10px rgba(0, 0, 0, 0.35);
 margin: 0px;
 margin-left: 8px;
 flex-grow: 1;
 padding:10px;
-border-radius: 15px;
+border-radius: 7px;
 display: none;
 font-family: 'Nunito', sans-serif;
 font-weight: bold;
@@ -178,5 +173,7 @@ font-weight: bold;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    margin: 10px 0px;
+    border-radius: 7px;
+    margin: 20px 0px;
+    padding: 10px 0px;
 }
