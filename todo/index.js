@@ -12,12 +12,7 @@ function update_current_list(list_id){
 	current_list = list_id;
 	clear_canvas();
 	init_list();
-	// update_last_visited(list_id);
 }
-
-// function update_last_visited(last_list){
-// 	localStorage.setItem("LastVisited",last_list);
-// }
 
 function clear_canvas(){
 	let active_notes = document.getElementsByClassName("notes");
@@ -36,15 +31,13 @@ function init_list(){
 }
 
 function init_nav(){
-	const list_regex = /[0-9]+/g;
-	for(i=0;i<localStorage.length;i++){
-		let matched = localStorage.key(i).match(list_regex)
-		if(matched && matched[0] !== '1'){
-			numbers = localStorage.key(i).match(/[0-9]+/g)[0]
-			let current_context = JSON.parse(localStorage.getItem(matched[0]));
-			create_new_nav_option(numbers);
-			document.getElementById(`list${numbers}_nav_title`).textContent = current_context["title"];
-			document.getElementById(`${numbers}_num`).innerText = Object.keys(current_context).length - 1;
+	for(i=1;i<=localStorage.length;i++){
+		if(i !== 1){
+			let current_context = JSON.parse(localStorage.getItem(i));
+			create_new_nav_option(i);
+			console.log(current_context);
+			document.getElementById(`list${i}_nav_title`).textContent = current_context["title"];
+			document.getElementById(`${i}_num`).innerText = Object.keys(current_context).length - 1;
 
 		}
 	}
