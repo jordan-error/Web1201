@@ -4,9 +4,6 @@ var current_list = "1";
 var current_notes = JSON.parse(localStorage.getItem(current_list));
 var number_of_lists = 0;
 
-//TODO
-//update page on add new list
-//fix order of nav lists
 
 function update_current_list(list_id){
 	current_list = list_id;

@@ -47,8 +47,8 @@ body{
 	grid-row: 2/3;
 	grid-column: 1/2;
 	padding: 40px 30px;
-	background-color: #ecece6;
-	border-top-right-radius: 10px;
+	background-color: rgb(34, 40, 48);
+	color:rgba(253, 247, 231, 0.822);
 }
 .tasks-text{
 	margin:0;
@@ -65,15 +65,14 @@ body{
 }
 .list-item{
 	border-radius: 10px;
+	color: rgba(253, 247, 231, 0.822);
 	width: 200px;
 	text-decoration: none;
-	color: #4e5b59;
 	margin-top: 20px;
 	display:flex;
 	align-items: center;
 	gap: 15px;
 	padding: 0px 10px;
-	/* background-color: #7d7d7d21; */
 }
 .list-item > p{
 	border-radius: 5px;
@@ -123,6 +122,7 @@ li a:hover{
 .main-container{
 	display: flex;
 	overflow:hidden;
+	background-color: rgb(60, 68, 81);
 	flex-direction: column;
 	align-items: center;
 	width: 100%;
@@ -132,7 +132,7 @@ li a:hover{
 
 .title{
 	align-self: flex-start;
-	color: #131312c4;
+	color: rgba(253, 247, 231, 0.822);
 	font-weight: bold;
 	font-size: 35px;
 	margin-top: 20px;
