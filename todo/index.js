@@ -7,6 +7,12 @@ var number_of_lists = 0;
 
 function update_current_list(list_id){
 	current_list = list_id;
+	//remove the selected class from previous selected list item
+	for (const i of document.querySelectorAll(".selected")){
+		i.classList.remove("selected");
+	}
+	//give the list item the selected class 
+	document.getElementById(`list${current_list}_nav_title`).classList.add("selected");
 	clear_canvas();
 	init_list();
 }
@@ -32,10 +38,8 @@ function init_nav(){
 		if(i !== 1){
 			let current_context = JSON.parse(localStorage.getItem(i));
 			create_new_nav_option(i);
-			console.log(current_context);
 			document.getElementById(`list${i}_nav_title`).textContent = current_context["title"];
 			document.getElementById(`${i}_num`).innerText = Object.keys(current_context).length - 1;
-
 		}
 	}
 }
@@ -48,9 +52,9 @@ function create_span({parentNode,id=null,old_text=null}={}){
 	function create_whole_span(new_div){
 		new_div.classList.add("notes");
 		create_garbage(new_div);
-		new_div.onclick = function(event){
-			buttons_interact(event,this)
-		}
+		// new_div.onclick = function(event){
+		// 	buttons_interact(event,this)
+		// }
 	}
 	let new_span = document.createElement('div');
 	id = id ? id : crypto.randomUUID();
@@ -87,7 +91,39 @@ function create_garbage(parentNode){
 	span.innerText = 'Delete';
 	span.classList.add('garbage-tooltip');
 	div.appendChild(span);
+	div.addEventListener("click",()=>{
+		id = parentNode.getAttribute('rec_id');
+		parentNode.remove();
+		delete current_notes[id];
+		update_localstorage(current_list,current_notes);
+		update_notes_count();
+		number_of_lists = document.getElementsByTagName("li").length-1;
+	})
+}
 
+function create_x(parentNode) {
+    let div = document.createElement("div");
+    let svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+    parentNode.appendChild(div);
+    div.appendChild(svg);
+    div.style.position = "relative";
+    svg.setAttribute("version","1.1");
+    svg.setAttribute("xmlns","http://www.w3.org/2000/svg");
+    svg.setAttribute("xmlns:xlink","http://www.w3.org/1999/xlink");
+    svg.setAttribute("viewBox","0 0 640 640");
+    div.classList.add("setting");
+    svg.style = "enable-background:new 0 0 640 640;";
+    svg.setAttribute("xml:space","preserve");
+    let path = document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('fill', 'rgb(225 94 106)'); 
+    path.setAttribute("d","M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z");
+    svg.appendChild(path);
+	div.addEventListener("click",()=>{
+		let delete_list_num = parentNode.getAttribute("list");
+		console.log(delete_list_num);
+		localStorage.removeItem(delete_list_num)
+		parentNode.remove();
+	})
 }
 
 function create_textbox({parentNode,old_text,rec_id} ={}){
@@ -101,33 +137,6 @@ function create_textbox({parentNode,old_text,rec_id} ={}){
 		current_notes[rec_id] = text_box.value;
 		update_localstorage(current_list,current_notes);
 	})
-}
-
-function buttons_interact(event,current){
-	let target = event.target.localName;
-	let target_id = event.target.id; 
-	let category;
-	let id;
-	if(target === 'svg' || target === 'path'){
-		if(target_id === 'garbage'){
-			category = current.id; 
-			id = current.getAttribute('rec_id');
-			current.remove();
-			delete current_notes[id];
-			update_localstorage(current_list,current_notes);
-			update_notes_count();
-			number_of_lists = document.getElementsByTagName("li").length-1;
-		}
-		else if (target_id === 'settings'){
-			create_settings(current)
-			let popup = document.querySelector('.popup');
-			popup.style.display = 'inline-block';
-			const X = event.clientX+ window.scrollX;
-			const Y = event.clientY+ window.scrollY;
-			popup.style.left = X + 20 + 'px';
-			popup.style.top= `${Y}px`;
-		}	
-	}
 }
 
 function load_notes(){
@@ -147,6 +156,7 @@ function update_notes_count(){
 function create_new_nav_option(number=null){
 	let current_a = document.createElement("a");
 	let current_num_lists = number ? number : ++number_of_lists;
+	current_a.setAttribute("list",current_num_lists);
 	current_a.href = `javascript:update_current_list('${current_num_lists}')`;
 	current_a.classList.add("list-item");
 	let current_li = document.createElement("li");
@@ -162,6 +172,7 @@ function create_new_nav_option(number=null){
 	navbar.insertBefore(current_a,document.getElementById("add-list-item"));
 	update_current_list(`${current_num_lists}`)
 	number_of_lists = document.getElementsByTagName("li").length-1;
+	create_x(current_a)
 }
 
 plus_symbol.addEventListener("click",()=>{ 
