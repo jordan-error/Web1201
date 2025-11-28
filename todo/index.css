@@ -1,6 +1,7 @@
 html{
 	font-family: "Plus Jakarta Sans",system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 	scrollbar-color: rgba(255, 255, 255, 0.2) rgba(0, 0, 0, 0);
+	height: 100%;
 }
 
 p{
@@ -142,6 +143,10 @@ li a:hover{
 	text-align: center;
 	border-radius: 26px;
 	box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.2);
+}
+.notes:hover{
+        border: 2px solid #c9d7cb;
+        cursor:text;
 }
 .plus_more{
 	min-width: 250px;
