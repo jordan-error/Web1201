@@ -233,10 +233,15 @@ function create_new_nav_option(uuid=null){
 function change_theme(){
 	let theme_toggle = document.getElementById('theme-toggle');
 	let html_theme = document.getElementsByTagName('html')[0];
-	mode = document.cookie.split("=")[1];
+	let mode = document.cookie.split("=")[1];
 	mode == "dark" ? theme_toggle.firstChild.innerText = "dark_mode" : theme_toggle.firstChild.innerText = "light_mode"
 	mode == "dark" ? html_theme.setAttribute("data-theme","light") : html_theme.setAttribute("data-theme","dark");
 	mode == "dark" ? document.cookie = "theme=light" : document.cookie = "theme=dark";
+}
+function load_theme(){
+	let mode = document.cookie.split("=")[1];
+	let html_theme = document.getElementsByTagName('html')[0];
+	html_theme.setAttribute("data-theme",mode);
 }
 plus_symbol.addEventListener("click",()=>{ 
 	 create_span({parentNode:notes_container});
@@ -250,5 +255,5 @@ document.getElementById("title").addEventListener("input",()=>{
 document.addEventListener("DOMContentLoaded",()=>{
 	init_list();
 	init_nav();
-	if(!document.cookie)document.cookie = "theme=dark";
+	load_theme();
 })
