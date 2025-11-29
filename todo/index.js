@@ -229,7 +229,8 @@ function create_new_nav_option(uuid=null){
 	current_a.appendChild(current_li);
 	current_a.appendChild(current_p);
 	let navbar = document.getElementById("left-navbar");
-	navbar.insertBefore(current_a,document.getElementById("add-list-item"));
+	navbar.appendChild(current_a);
+	// navbar.insertBefore(current_a,document.getElementById("add-list-item"));
 	update_current_list(`${new_note_uuid}`)
 	create_x(current_a)
 	console.log(`New List Created: ${new_note_uuid}`);

@@ -12,7 +12,8 @@ html[data-theme="dark"]{
 	--list-hover: #4e5b59b2;
 	--task-num: #80808029;
 	--new-list: #4e5b59;
-	--new-list-hover: #4e5b59b2;
+	--new-list-background: #50d4ff;
+	--new-list-hover: #00a0b7;
 	--li_a: #bdb7bc;
 	--li_a_hover: #fffafe;
 	--title_hover: rgb(50, 58, 70);
@@ -36,7 +37,8 @@ html[data-theme="light"]{
 	--list-hover: rgb(105, 140, 160);
 	--task-num: rgba(105, 140, 160, 0.1);
 	--new-list: #4e5b59;
-	--new-list-hover: #4e5b59b2;
+	--new-list-hover: rgb(90, 125, 145);
+	--new-list-background: rgb(105, 140, 160);
 	--li_a: #bdb7bc;
 	--li_a_hover: #fffafe;
 	--title_hover: rgb(230, 225, 215);
@@ -71,7 +73,7 @@ body{
 	flex-basis:300px;
 	background: var(--left-nav);
 	color:var(--text-color);
-	overflow-y: auto;
+	overflow-x:hidden;
 }
 .tasks-text{
 	margin:0;
@@ -131,20 +133,33 @@ body{
 	height: 20px;
 }
 .add-list{
-	align-self: flex-start;
+	text-decoration: none;
 }
 .new-list > svg{
 	margin-right: 10px;
 }
+hr{
+	width:100%;
+	color: #80808078;
+}
 .new-list{
 	display: flex;
-	margin-top: 20px;
+	background:var(--new-list-background);
+	border-radius:8px;
+	font-size: 14px;
+	font-weight:bold;
+	padding:15px 15px;
 	align-items: center;
 	color: var(--new-list);
 	word-spacing: 4px;
+	margin-top: 20px;
+	cursor:pointer;
 }
 .new-list:hover{
-	color: var(--new-list-hover);
+	background:var(--new-list-hover);
+}
+.new-list > p{
+	color:white;
 }
 li a{
 	color:var(--li_a);
