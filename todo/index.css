@@ -29,7 +29,7 @@ html[data-theme="dark"]{
 	--emoji-color: rgba(255, 255, 255, 0.843);
 }
 html[data-theme="light"]{
-	scrollbar-color: rgba(255, 255, 255, 0.2) rgba(0, 0, 0, 0);
+	scrollbar-color: rgba(105, 140, 160, 0.5) rgba(255, 250, 245);
 	--text-color: rgb(74, 58, 41);
 	--main-container: rgb(245, 240, 230);
 	--left-nav: rgb(255, 250, 245);
@@ -46,7 +46,7 @@ html[data-theme="light"]{
 	--notes-shadow: 0 8px 24px rgba(0,0,0,0.15);
 	--notes-hover: rgb(248, 248, 248);
 	--plus_more: rgba(105, 140, 160, 0.15);
-	--selected: ;
+	--selected: var(--list-hover);
 	--right-nav: rgb(255, 250, 245);
 	--right-ul-li-hover: rgb(235, 230, 220);
 	--right-ul-li: rgb(74, 58, 41);
@@ -75,7 +75,7 @@ body{
 }
 .tasks-text{
 	margin:0;
-	font-size: 15px;
+	font-size: 25px;
 	font-weight: bold;
 }
 .left-navbar{
@@ -85,6 +85,9 @@ body{
 	list-style-type: none;
 	height: 100%;
 	margin:0;
+	overflow-y:scroll;
+	overflow-x:hidden;
+	scrollbar-width: thin;
 }
 .list-item{
 	position: relative;
@@ -103,6 +106,12 @@ body{
 	border-radius: 5px;
 	margin-left: auto;
 }
+.list-item > li{
+	white-space: nowrap;
+	overflow:hidden;
+	text-overflow:ellipsis;
+	flex-grow:0;
+}
 .list-item:hover{
 	color: var(--list-hover);
 }
@@ -111,11 +120,13 @@ body{
 	opacity: 1;
 }
 .tasks-num{
+	flex-shrink:0;
 	font-size: 12px;
 	display: flex;
 	background-color: var(--task-num);
 	align-items:center;
 	justify-content: center;
+	padding: 3px;
 	width: 30px;
 	height: 20px;
 }
@@ -160,6 +171,7 @@ li a:hover{
 }
 
 .title{
+	white-space: nowrap;
 	align-self: flex-start;
 	color: var(--text-color);
 	font-weight: bold;
@@ -370,6 +382,7 @@ li a:hover{
 	color:var(--text-color);
 	display:flex;
 	align-items:center;
+	margin-top: 50px;
 	gap: 15px;
 	margin-bottom: 30px;
 	transition: margin 500ms ease-in;

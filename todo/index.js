@@ -116,6 +116,11 @@ function create_span({parentNode,id=null,old_text=null,old_header=null}={}){
 		current_notes[id].header = header.value;
 		update_localstorage();
 	})
+	header.addEventListener("keydown",(event)=>{
+		if(event.key == "Enter"){
+			event.preventDefault();
+		}
+	})
 	new_span.appendChild(header);
 	create_textbox({parentNode:new_span,old_text:old_text,rec_id:id});
 	new_span.setAttribute('rec_id',id);
@@ -256,4 +261,9 @@ document.addEventListener("DOMContentLoaded",()=>{
 	init_list();
 	init_nav();
 	load_theme();
+})
+document.getElementById("title").addEventListener("keydown",(event)=>{
+	if(event.key == "Enter"){
+		event.preventDefault();
+	}
 })
