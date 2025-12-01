@@ -8,6 +8,8 @@
         <style>
         @import url('https://fonts.googleapis.com/css2?family=Pacifico&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
         </style>
+        <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     </head>
     <body>
         <div class="main-container">
@@ -20,22 +22,46 @@
                     <p class="logo-text">StudyZone</p>
                 </div>
                 <div>
-                    <p id="login-text" class="login-text">Welcome to StudyZone</p>
-                    <form id="login">
+                    <p id="login-text" class="login-text">Welcome To StudyZone</p>
+                    <form id="login" method="POST" action="javascript:login()">
                         <div class="input-div">
                             <label class="vague" for="username">Username</label>
-                            <input type="text" id="username" name="username"></input>
+                            <input autocomplete="off" type="text" id="username" name="username" minlength=3 maxlength=15 required></input>
                         </div>
                         <div class="input-div">
                             <label class="vague"  for="password">Password</label>
-                            <input type="password" id="password" name="password"></input>
+                            <input minlength=8 autocomplete="off" type="password" id="password" name="password" required><span class="eye material-symbols-outlined">visibility</span></input>
+                            <p id="error" class="error">incorrect username or password.</p>
                             <a href="#" class="link forgot">Forgot password?</a>
                         </div>
                         <button id="login-button" type="submit" class="login-button">Sign In</button><br>
                     </form>
-                    <p class="vague register">Don't have an account? <a id="register" class="link" href="#">Register now</a></p>
+                    <p class="vague register">Don't have an account? <a id="register-button" onclick="openRegister()" class="link" href="#">Register now</a></p>
                 </div>
             </div>
+        </div>
+        <div class="register-modal" id="register-modal">
+                    <form class="register-form" id="register" method="POST" action="javascript:register()">
+                        <div>
+                            <p class="login-text register-text"><span class="material-symbols-outlined">account_box</span>Register</p>
+                        </div>
+                        <div class="input-div register_input_div">
+                            <label class="vague" for="username">*Username</label>
+                            <input autocomplete="off" type="text" id="register_username" name="username" minlength=5 maxlength=15 required></input>
+                            <p id="username_error" class="register_error"><span class="material-symbols-outlined">close</span>username may only contain letters, numbers, and the characters _, ., and -</p>
+                        </div>
+                        <div class="input-div register_input_div">
+                            <label class="vague"  for="password">*Password</label>
+                            <input minlength=8 autocomplete="off" type="password" id="register_password" name="password" required><span class="eye material-symbols-outlined">visibility</span></input>
+                            <p id="password_error" class="register_error"><span class="material-symbols-outlined">close</span>password must be at least 8 characters long. Only contain letters, numbers, and special characters</p>
+                        </div>
+                        <div class="input-div register_input_div">
+                            <label class="vague" for="confirm">*Confirm Password</label>
+                            <input minlength=8 autocomplete="off" type="password" id="register_confirm_password" name="confirm" required><span class="eye material-symbols-outlined">visibility</span></input>
+                            <p id="confirm_error" class="register_error"><span class="material-symbols-outlined">close</span>Must be Same as Password</p>
+                        </div>
+                        <button id="login-button" type="submit" class="login-button margin-top">Register</button><br>
+            </form>
         </div>
     </body>
 </html>
