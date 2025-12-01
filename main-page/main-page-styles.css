@@ -15,7 +15,6 @@ body{
 }
 a{
     font-family: 'Nunito', sans-serif;
-    font-weight: bold;
     text-decoration: none;
     color: rgba(253, 247, 231, 0.822);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -46,8 +45,8 @@ a{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 2em;
 }
+
 .navigation:hover {
     cursor: pointer;
     color: black;
