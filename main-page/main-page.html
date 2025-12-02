@@ -16,6 +16,7 @@
     <!-- JavaScripts -->
     <script src="music-sidebar.js" defer></script>
     <script src="spaces-sidebar.js" defer></script>
+    <script src="toggle-menu.js" defer></script>
     <!-- Icons from Google -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
@@ -24,48 +25,45 @@
     <video autoplay muted loop class="background-video">
         <source src="https://cdn.pixabay.com/video/2024/02/25/201947-916877801_tiny.mp4">
     </video>
+    <div class="navigation-bar">
         <div class="right-column">
             <a href="#" class="navigation">
+                <span class="material-symbols-outlined">notes</span>
                 <div class="nav-description">Notes</div>
-                <span class="material-symbols-outlined">notes</span>                
-            </a>
-            <a href="/todo" class="navigation" >
-            <div class="nav-description">To Do List</div>
-            <span class="material-symbols-outlined">
-                checklist
-            </span>
             </a>
             <a href="#" class="navigation" >
-                <div class="nav-description">Cal</div>
                 <span class="material-symbols-outlined">
                     today
                 </span>
+            <div class="nav-description">Cal</div>
             </a>
             <a href="#" class="navigation">
-                <div class="nav-description">Timetable</div>
                 <span class="material-symbols-outlined">
                     schedule
                 </span>
+                <div class="nav-description">Timetable</div>
             </a>
-            <a href="/about1.html" class="navigation">
-                <div class="nav-description">About Us</div>
+            <a href="#" class="navigation">
                 <span class="material-symbols-outlined">
                     emoji_people
                 </span>
+            <div class="nav-description">About Us</div>
             </a>
-            <a href="/login/login.html" class="navigation">
-                <div class="nav-description">Log Out</div>
+            <a href="#" class="navigation">
                 <span class="material-symbols-outlined">
                     logout
                  </span>
+            <div class="nav-description">Log Out</div>
             </a>
             <a href="#" class="navigation">
-                <div class="nav-description">Light</div>
                 <span class="material-symbols-outlined">
                     sunny
                 </span>
+            <div class="nav-description">Light</div>
             </a>
-        </div>    
+        </div>
+    </div>
+    
     <div class="main-content-area">
         <div class="wrapper">
 
@@ -259,7 +257,6 @@
                         </div>
                         <div class="slider-container">
                             <audio class="audio-player"  loop controls>
-                                <source src="https://lambda.vgmtreasurechest.com/soundtracks/minecraft/dcemwzhl/1-05.%20Living%20Mice.mp3" type="audio/mp3"/>
                               </audio>
                         </div>
                     </div>

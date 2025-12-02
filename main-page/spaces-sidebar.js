@@ -1,13 +1,24 @@
 // Toggle side panel for Spaces
 document.querySelector('#SpacesToggleButton').addEventListener('click', () => {
     console.log('Spaces toggle clicked');
-    document.querySelector(".wrapper").classList.toggle('side-panel-open-1');
+    const wrapper = document.querySelector(".wrapper");
+
+    //If on mobile, close the other panels first
+    if (window.innerWidth <= 768) {
+        wrapper.classList.remove('side-panel-open-2');
+    }
+    wrapper.classList.toggle('side-panel-open-1')
 });
 
 document.querySelector('#Spaces').addEventListener('click', () => {
     console.log('Spaces button clicked');
-    document.querySelector(".wrapper").classList.toggle('side-panel-open-1');
+    const wrapper = document.querySelector(".wrapper");
+    if (window.innerWidth <= 768) {
+        wrapper.classList.remove('side-panel-open-2');
+    }
+    wrapper.classList.toggle('side-panel-open-1');
 });
+
 
 // Change background video on button click
 function setBackgroundVideoAndAudio(buttonId, videoUrl, backgroundTitle, audioUrl) {
