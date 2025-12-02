@@ -190,6 +190,7 @@ label{
 	height: 100%;
 }
 .register-form{
+	position: relative;
 	display:flex;
 	flex-direction:column;
 	align-items:center;
@@ -234,6 +235,14 @@ label{
 	display:none;
 	align-items:flex-start;
 	color:red;
+}
+.close{
+	position: absolute;
+	top: 53px;
+	right: 40px;
+	background-color: #fffcfc8a;
+	border-radius: 30px;
+	cursor: pointer;
 }
 @keyframes wobble {
   0%   { transform: rotate(0deg); }

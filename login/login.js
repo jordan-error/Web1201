@@ -25,6 +25,39 @@ function login(){
 	}
 	error_text.classList.add("show");
 }
+
+function hide_modal(){
+	document.getElementById("register-modal").style.display = "none";
+}
+
+function register(){
+	alert("Account created");
+	hide_modal();
+}
+
+function change_status(error_element,iserror){
+	if(iserror){
+		error_element.style.display = "flex";
+		error_element.style.color = "red";
+		error_element.childNodes[0].innerText = "close";
+	}
+	else{
+		error_element.style.color = "green";
+		error_element.childNodes[0].innerText = "check";
+	}
+}
+function validate_length_regex(val,length,regex){
+	//return false if the validation fails
+	if(val.length < length || !regex.test(val)){
+		return false;
+	}
+	return true;
+}
+
+function openRegister(){
+	document.getElementById("register-modal").style.display = "flex";
+}
+
 document.querySelectorAll(".eye").forEach(reveal=>{reveal.addEventListener("click",()=>{
 	if(reveal.previousSibling.value){
 		reveal.innerText === "visibility" ? reveal.innerText = "visibility_off" : reveal.innerText = "visibility";
@@ -33,51 +66,43 @@ document.querySelectorAll(".eye").forEach(reveal=>{reveal.addEventListener("clic
 	})
 })
 
-function openRegister(){
-	document.getElementById("register-modal").style.display = "flex";
-}
 register_username.addEventListener("input",()=>{
 	const register_error = document.getElementById("username_error");
 	const input_val = register_username.value;
 	//Regular expression to test for only alphanumeric characters and (.) (_) (-) char
 	const username_regex = /^[a-zA-Z0-9._-]+$/;
-	if(input_val.length < 5 || !username_regex.test(input_val)){
-		register_error.style.display = "flex";
-		register_error.style.color = "red";
-		register_error.childNodes[0].innerText = "close";
+	if(!validate_length_regex(input_val,5,username_regex)){
+		change_status(register_error,true);
 	}
 	else{
-		register_error.style.color = "green";
-		register_error.childNodes[0].innerText = "check";
+		change_status(register_error,false);
 	}
 })
 register_password.addEventListener("input",()=>{
 	const register_error = document.getElementById("password_error");
 	const input_val = register_password.value;
-	//Regular expression to test for only alphanumeric characters and (.) (_) (-) char
+	//Regular expression to test for only alphanumeric characters and special characters
 	const password_regex = /^[\w\s~`!@#$%^&*()_+\-=\[\]{}|\\:;"'<,>.?/]+$/;
-	if(input_val.length < 8 || !password_regex.test(input_val)){
-		register_error.style.display = "flex";
-		register_error.style.color = "red";
-		register_error.childNodes[0].innerText = "close";
+	if(!validate_length_regex(input_val,8,password_regex)){
+		change_status(register_error,true);
 	}
 	else{
-		register_error.style.color = "green";
-		register_error.childNodes[0].innerText = "check";
+		change_status(register_error,false);
 	}
 })
 confirm_password.addEventListener("input",()=>{
 	const register_error = document.getElementById("confirm_error");
 	const input_val = confirm_password.value;
-	//Regular expression to test for only alphanumeric characters and (.) (_) (-) char
+	//Ensure the confirm password value is the same as the password
 	if(input_val !== register_password.value){
-		register_error.style.display = "flex";
-		register_error.style.color = "red";
-		register_error.childNodes[0].innerText = "close";
+		change_status(register_error,true);
 	}
 	else{
-		register_error.style.color = "green";
-		register_error.childNodes[0].innerText = "check";
+		change_status(register_error,false);
 	}
 })
 
+
+document.getElementById("modal-close").addEventListener("click",()=>{
+	hide_modal();
+})
