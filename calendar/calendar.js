@@ -6,86 +6,88 @@ document.addEventListener("DOMContentLoaded", () => {
     const detailTime = document.getElementById("detailTime");
     const detailDesc = document.getElementById("detailDesc");
     const btnDelete = document.getElementById("deleteEventBtn");
-
+    
+    const calendar_days = document.querySelector('.calendar-days');
+    const month_year_display = document.querySelector('#month-year-display');
+    
     let currentId = null;
 
-    loadCalendar();
-    loadSideList();
+    const month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    
+    let currentDateObj = new Date();
+    let currentMonth = { value: currentDateObj.getMonth() };
+    let currentYear = { value: currentDateObj.getFullYear() };
 
-    function loadCalendar() {
-        const existing = document.querySelectorAll(".event-marker");
-        for (let i = 0; i < existing.length; i++) {
-            existing[i].remove();
-        }
+    const isLeapYear = (year) => {
+        return (year % 4 === 0 && year % 100 !== 0 && year % 400 !== 0) || (year % 100 === 0 && year % 400 === 0);
+    };
 
-        let allEvents = JSON.parse(localStorage.getItem("myCalendarEvents"));
-        if (!allEvents) {
-            allEvents = [];
-        }
+    const getFebDays = (year) => {
+        return isLeapYear(year) ? 29 : 28;
+    };
 
-        const days = document.querySelectorAll(".day");
+    const generateCalendar = (month, year) => {
+        calendar_days.innerHTML = '';
         
-        days.forEach(dayBox => {
-            if (dayBox.classList.contains("empty")) return;
+        month_year_display.innerHTML = `${month_names[month]} ${year}`;
 
-            const numSpan = dayBox.querySelector(".date-num");
-            if (numSpan) {
-                let d = numSpan.textContent;
-                if (d.length === 1) {
-                    d = "0" + d;
+        let days_of_month = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        let first_day = new Date(year, month, 1);
+
+        let allEvents = JSON.parse(localStorage.getItem("myCalendarEvents")) || [];
+
+        for (let i = 0; i <= days_of_month[month] + first_day.getDay() - 1; i++) {
+            let day = document.createElement('div');
+            
+            if (i >= first_day.getDay()) {
+                let dayNum = i - first_day.getDay() + 1;
+                
+                day.innerHTML = `<span class="date-num">${dayNum}</span>`;
+                
+                if (dayNum === currentDateObj.getDate() && year === currentDateObj.getFullYear() && month === currentDateObj.getMonth()) {
+                    day.classList.add('current-date');
                 }
-                
-                let checkDate = "2025-11-" + d;
-                
+
+                let checkDate = `${year}-${String(month + 1).padStart(2, '0')}-${String(dayNum).padStart(2, '0')}`;
                 const eventsToday = allEvents.filter(e => e.date === checkDate);
 
-                eventsToday.forEach(evt => {
-                    const div = document.createElement("div");
-                    div.classList.add("event-marker");
-                    div.innerText = evt.name;
-                    div.addEventListener("click", (e) => {
-                        e.stopPropagation();
-                        showModal(evt);
+                if (eventsToday.length > 0) {
+                    eventsToday.forEach(evt => {
+                        const marker = document.createElement("div");
+                        marker.classList.add("event-marker");
+                        marker.innerText = evt.name;
+                        marker.addEventListener("click", (e) => {
+                            e.stopPropagation();
+                            showModal(evt);
+                        });
+                        day.appendChild(marker);
                     });
-                    dayBox.appendChild(div);
-                });
+                }
             }
-        });
-    }
+            calendar_days.appendChild(day);
+        }
+    };
 
     function loadSideList() {
         const list = document.querySelector(".reminder-list");
         if (list) {
             list.innerHTML = "";
-            let myEvents = JSON.parse(localStorage.getItem("myCalendarEvents"));
-            if (!myEvents) myEvents = [];
+            let myEvents = JSON.parse(localStorage.getItem("myCalendarEvents")) || [];
+            
+            myEvents.sort((a, b) => new Date(a.date + " " + a.time) - new Date(b.date + " " + b.time));
 
-            myEvents.sort(function(a, b) {
-                return new Date(a.date + " " + a.time) - new Date(b.date + " " + b.time);
-            });
-
-            for (let i = 0; i < myEvents.length; i++) {
-                const item = myEvents[i];
+            myEvents.forEach(item => {
                 const card = document.createElement("div");
                 card.classList.add("reminder-card");
                 
-                const titleDiv = document.createElement("div");
-                titleDiv.classList.add("reminder-title");
-                titleDiv.innerText = item.name;
+                card.innerHTML = `
+                    <div class="reminder-title">${item.name}</div>
+                    <div class="reminder-time">${item.date} ${item.time}</div>
+                `;
 
-                const timeDiv = document.createElement("div");
-                timeDiv.classList.add("reminder-time");
-                timeDiv.innerText = item.date + " " + item.time;
-
-                card.appendChild(titleDiv);
-                card.appendChild(timeDiv);
-
-                card.addEventListener("click", () => {
-                    showModal(item);
-                });
-
+                card.addEventListener("click", () => showModal(item));
                 list.appendChild(card);
-            }
+            });
         }
     }
 
@@ -94,98 +96,82 @@ document.addEventListener("DOMContentLoaded", () => {
         detailName.innerText = data.name;
         detailDate.innerText = data.date;
         detailTime.innerText = data.time;
-        if (data.description) {
-            detailDesc.innerText = data.description;
-        } else {
-            detailDesc.innerText = "No description provided";
-        }
+        detailDesc.innerText = data.description || "No description provided";
         modal.classList.add("show");
     }
 
     if (btnDelete) {
         btnDelete.addEventListener("click", () => {
             if (confirm("Are you sure you want to delete this event?")) {
-                let data = JSON.parse(localStorage.getItem("myCalendarEvents"));
-                const newData = [];
-                for (let i = 0; i < data.length; i++) {
-                    if (data[i].id !== currentId) {
-                        newData.push(data[i]);
-                    }
-                }
+                let data = JSON.parse(localStorage.getItem("myCalendarEvents")) || [];
+                const newData = data.filter(e => e.id !== currentId);
+                
                 localStorage.setItem("myCalendarEvents", JSON.stringify(newData));
                 modal.classList.remove("show");
-                loadCalendar();
+                
+                generateCalendar(currentMonth.value, currentYear.value);
                 loadSideList();
             }
         });
     }
 
-    if (closeDetailBtn) {
-        closeDetailBtn.addEventListener("click", () => {
-            modal.classList.remove("show");
-        });
-    }
+    if (closeDetailBtn) closeDetailBtn.addEventListener("click", () => modal.classList.remove("show"));
+    window.onclick = (event) => { if (event.target == modal) modal.classList.remove("show"); };
 
-    window.onclick = function(event) {
-        if (event.target == modal) {
-            modal.classList.remove("show");
-        }
-    }
-
-    const toggle = document.querySelector(".ToggleBtn");
+    const form = document.getElementById("eventForm");
     const container = document.querySelector(".EventContainer");
+    const toggle = document.querySelector(".ToggleBtn");
 
     if (toggle) {
         toggle.addEventListener("click", () => {
-            if (container.classList.contains("active")) {
-                container.classList.remove("active");
-            } else {
-                container.classList.add("active");
-            }
+            container.classList.toggle("active");
         });
     }
 
-    const form = document.getElementById("eventForm");
     if (form) {
         form.addEventListener("submit", (e) => {
             e.preventDefault();
-
             const n = document.getElementById("eventName").value;
             const d = document.getElementById("eventDate").value;
             const t = document.getElementById("eventTime").value;
             const desc = document.getElementById("eventDesc").value;
 
-            if (n === "" || d === "" || t === "") {
-                alert("Please fill in required fields!");
-                return;
-            }
+            if (!n || !d || !t) { alert("Please fill in required fields!"); return; }
 
-            const obj = {
-                id: Date.now(),
-                name: n,
-                date: d,
-                time: t,
-                description: desc
-            };
+            const obj = { id: Date.now(), name: n, date: d, time: t, description: desc };
 
-            let arr = JSON.parse(localStorage.getItem("myCalendarEvents"));
-            if (!arr) {
-                arr = [];
-            }
+            let arr = JSON.parse(localStorage.getItem("myCalendarEvents")) || [];
             arr.push(obj);
-
             localStorage.setItem("myCalendarEvents", JSON.stringify(arr));
 
             alert("Event Saved Successfully!");
+            form.reset();
             
-            document.getElementById("eventName").value = "";
-            document.getElementById("eventDate").value = "";
-            document.getElementById("eventTime").value = "";
-            document.getElementById("eventDesc").value = "";
-
             container.classList.remove("active");
-            loadCalendar();
+            
+            generateCalendar(currentMonth.value, currentYear.value);
             loadSideList();
         });
     }
+
+    document.querySelector('#prev-month').onclick = () => {
+        currentMonth.value--;
+        if (currentMonth.value < 0) {
+            currentMonth.value = 11;
+            currentYear.value--;
+        }
+        generateCalendar(currentMonth.value, currentYear.value);
+    };
+
+    document.querySelector('#next-month').onclick = () => {
+        currentMonth.value++;
+        if (currentMonth.value > 11) {
+            currentMonth.value = 0;
+            currentYear.value++;
+        }
+        generateCalendar(currentMonth.value, currentYear.value);
+    };
+
+    generateCalendar(currentMonth.value, currentYear.value);
+    loadSideList();
 });

@@ -33,7 +33,10 @@ body {
 
 .header-center {
     justify-content: center;
-    gap: 10px;
+    gap: 20px;
+    color: white;
+    font-size: 1.4em; 
+    font-weight: bold;
 }
 
 .header-right {
@@ -42,20 +45,27 @@ body {
     position: relative;
 }
 
-.month-button {
-    border-radius: 12px;
-    padding: 5px 10px;
-    background: #eaeaea;
-    border: none;
-    cursor: pointer;
-    color: white;
-}
-
 .calendar-header button {
     border: none;
     cursor: pointer;
     outline: none;
     background-color: transparent;
+}
+
+.month-change {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    font-size: 16px;
+    color: white;
+}
+
+.month-change:hover {
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 .calendar-page {
@@ -97,6 +107,7 @@ body {
     border-radius: 12px;
     padding: 20px;
     box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, .1) 0 6px 20px;
+    position: relative; 
 }
 
 .week-header {
@@ -108,41 +119,69 @@ body {
     text-align: center;
 }
 
-.calendar-grid {
+.calendar-days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     background-color: rgb(60, 68, 81);
     min-height: 700px;
     border-radius: 8px;
+    gap: 1px;
 }
 
-.day {
-    min-height: 50px;
-    padding: 8px;
+.calendar-days > div {
+    min-height: 80px;
+    padding: 6px;
     font-size: 14px;
     background-color: rgb(60, 68, 81);
-    border: 1px solid lightgray;
+    border: 1px solid rgba(255, 255, 255, 0.05);
     color: white;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 4px;
 }
 
-.day.today {
-    font-weight: 600;
+.calendar-days > div:hover {
+    background-color: rgba(255, 255, 255, 0.05);
 }
 
-.day.today .date-num {
-    background-color: red;
+.date-num {
+    font-weight: bold;
+    padding: 0 2px;
+    margin-bottom: 2px;
+    align-self: flex-start;
+}
+
+.calendar-days div.current-date .date-num {
+    background-color: #dc3545;
     color: white;
-    width: 28px;
-    height: 28px;
     border-radius: 50%;
-    display: inline-flex;
+    width: 24px;
+    height: 24px;
+    display: flex;
     align-items: center;
     justify-content: center;
+    padding: 0;
 }
 
-.day:hover {
-    background-color: #f5f5f5;
+.event-marker {
+    display: block;
+    background-color: cyan;
     color: black;
+    font-size: 12px;
+    padding: 5px 4px;
+    margin-top: 2px;
+    border-radius: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    cursor: pointer;
+}
+
+.event-marker:hover {
+    background-color: #00cccc !important;
+    transform: translateY(-1px);
 }
 
 input[type="checkbox"] {
@@ -272,24 +311,6 @@ input {
 .content h1 {
     padding-left: 28px;
     font-size: 30px;
-}
-
-.event-marker {
-    display: block;
-    background-color: cyan;
-    color: black;
-    font-size: 10px;
-    padding: 2px 4px;
-    margin-top: 2px;
-    border-radius: 4px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    cursor: pointer;
-}
-
-.event-marker:hover {
-    background-color: #218838;
 }
 
 .modal {

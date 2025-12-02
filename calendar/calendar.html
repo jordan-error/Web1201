@@ -14,24 +14,24 @@
         </div>
  
         <div class="header-center">
-            <button id="monthBtn" class="month-button">November 2025</button>
+            <span class="month-change" id="prev-month"> &lt; </span>
+            <div class="date-display">
+                <span id="month-year-display"></span>
+            </div>
+            <span class="month-change" id="next-month"> &gt; </span>
         </div>
 
         <div class="header-right">
             <div class="EventContainer">
-                <div class="ToggleBtn">
-                </div>
+                <div class="ToggleBtn"></div>
                 <div class="content">
                     <h1>New Event</h1>
-                    <form id="eventForm"> <label for='eventName'>Event Name</label> 
-                        <input type="text" id="eventName" required> 
-                        <br>
-                        Date: <input type="date" id="eventDate" required>
-                        <br>
-                        Time: <input type="time" id="eventTime" required>
-                        <br>
+                    <form id="eventForm">
+                        <label for='eventName'>Event Name</label> 
+                        <input type="text" id="eventName" required> <br>
+                        Date: <input type="date" id="eventDate" required> <br>
+                        Time: <input type="time" id="eventTime" required> <br>
                         Description: <input type="text" id="eventDesc">
-                        
                         <input type="submit" value="Submit">
                     </form>
                 </div>
@@ -43,90 +43,30 @@
         <input type="checkbox" id="chck1">
         <div class="reminder-panel">
             <h3>Reminder</h3> <div class="reminder-line"></div>
-
-            <div class="reminder-list">
-
-            </div>
+            <div class="reminder-list"></div>
         </div>
-
-
-
-
 
         <div class="calendar-container">
             <div class="week-header">
-                <div>Sun</div>
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thu</div>
-                <div>Fri</div>
-                <div>Sat</div>
+                <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
             </div>
 
-                        <div class="month" id="nov-2025">
-                            <div class="calendar-grid" aria-label="November 2025">
-                                <div class="day empty"></div>
-                                <div class="day empty"></div>
-                                <div class="day empty"></div>
-                                <div class="day empty"></div>
-                                <div class="day empty"></div>
-                                <div class="day empty"></div>
-                                <div class="day"><span class="date-num">1</span></div>
-                                <div class="day"><span class="date-num">2</span></div>
-                                <div class="day"><span class="date-num">3</span></div>
-                                <div class="day"><span class="date-num">4</span></div>
-                                <div class="day"><span class="date-num">5</span></div>
-                                <div class="day"><span class="date-num">6</span></div>
-                                <div class="day"><span class="date-num">7</span></div>
-                                <div class="day"><span class="date-num">8</span></div>
-                                <div class="day"><span class="date-num">9</span></div>
-                                <div class="day"><span class="date-num">10</span></div>
-                                <div class="day"><span class="date-num">11</span></div>
-                                <div class="day"><span class="date-num">12</span></div>
-                                <div class="day"><span class="date-num">13</span></div>
-                                <div class="day"><span class="date-num">14</span></div>
-                                <div class="day"><span class="date-num">15</span></div>
-                                <div class="day"><span class="date-num">16</span></div>
-                                <div class="day"><span class="date-num">17</span></div>
-                                <div class="day"><span class="date-num">18</span></div>
-                                <div class="day"><span class="date-num">19</span></div>
-                                <div class="day"><span class="date-num">20</span></div>
-                                <div class="day"><span class="date-num">21</span></div>
-                                <div class="day"><span class="date-num">22</span></div>
-                                <div class="day"><span class="date-num">23</span></div>
-                                <div class="day"><span class="date-num">24</span></div>
-                                <div class="day today"><span class="date-num">25</span></div>
-                                <div class="day"><span class="date-num">26</span></div>
-                                <div class="day"><span class="date-num">27</span></div>
-                                <div class="day"><span class="date-num">28</span></div>
-                                <div class="day"><span class="date-num">29</span></div>
-                                <div class="day"><span class="date-num">30</span></div>
-                                <div class="day empty"></div>
-                                <div class="day empty"></div>
-                                <div class="day empty"></div>
-                                <div class="day empty"></div>
-                                <div class="day empty"></div>
-                                <div class="day empty"></div>
-                            </div>
-                        </div>
-                        
-
+            <div class="calendar-days"></div>
         </div>
     </div>
+
     <script src="calendar.js"></script>
 
     <div id="viewEventModal" class="modal">
-    <div class="modal-content">
-        <span class="close-details">&times;</span>
-        <h2 id="detailName">Event Name</h2>
-        <p><strong>Date:</strong> <span id="detailDate"></span></p>
-        <p><strong>Time:</strong> <span id="detailTime"></span></p>
-        <p><strong>Description:</strong> <span id="detailDesc"></span></p>
-        
-        <button id="deleteEventBtn" class="delete-btn">Delete Event</button>
+        <div class="modal-content">
+            <span class="close-details">&times;</span>
+            <h2 id="detailName">Event Name</h2>
+            <p><strong>Date:</strong> <span id="detailDate"></span></p>
+            <p><strong>Time:</strong> <span id="detailTime"></span></p>
+            <p><strong>Description:</strong> <span id="detailDesc"></span></p>
+            <button id="deleteEventBtn" class="delete-btn">Delete Event</button>
+        </div>
     </div>
-</div>
-</div>
+
 </body>
 </html>
