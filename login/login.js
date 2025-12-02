@@ -28,6 +28,7 @@ function login(){
 
 function hide_modal(){
 	document.getElementById("register-modal").style.display = "none";
+	document.getElementById("register").classList.remove("active");
 }
 
 
@@ -63,6 +64,7 @@ function validate_length_regex(val,length,regex){
 
 function openRegister(){
 	document.getElementById("register-modal").style.display = "flex";
+	setTimeout(()=>{document.getElementById("register").classList.add("active")},300);
 }
 
 document.querySelectorAll(".eye").forEach(reveal=>{reveal.addEventListener("click",()=>{

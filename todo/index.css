@@ -284,12 +284,12 @@ li a:hover{
 	right:10px;
 	opacity: 0;
 	color: #f006!important;
-	transition: opacity 200ms ease-in;
 	font-size:30px !important;
 }
 .garbage:hover{
 	cursor:pointer;
 	animation: wobble 0.4s ease;
+	transform: scale(1);
 }
 
 

@@ -208,6 +208,11 @@ label{
 	padding: 50px;
 	border-radius: 105px;
 	min-width: 0;
+	transform:scale(0);
+	transition: 0.5s;
+}
+.active{
+	transform:scale(1);
 }
 .margin-top{
 	margin-top: 30px;
