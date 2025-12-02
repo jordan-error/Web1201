@@ -131,17 +131,21 @@ body{
 }
 .link{
 	color:#5A7FA5;
-	transition: margin 0.5s ease;
+	transition: transform 0.5s ease;
 }
 .link:hover{
 	color: #3E6E9C;
-	margin-right: 10px;
+	transform: translateX(10px);
 }
 .register{
 	margin:0;
 	font-size: 13px;
 	margin-top:30px;
 	text-align: center;
+	transition: transform 0.5s ease;
+}
+.register:hover{
+	transform: translateX(10px);
 }
 .register > a{
 	margin-top: 20px;

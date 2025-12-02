@@ -132,24 +132,11 @@ function create_span({parentNode,id=null,old_text=null,old_header=null}={}){
 
 function create_garbage(parentNode){
 	let div = document.createElement('div');
-	let svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
+	let span = document.createElement("span");
+	span.classList.add("material-symbols-outlined");
+	span.classList.add("garbage");
+	span.innerText = "delete_forever";
 	parentNode.appendChild(div);
-	div.appendChild(svg);
-	svg.setAttribute("version","1.1");
-	svg.id = "garbage"; 
-	svg.setAttribute("xmlns","http://www.w3.org/2000/svg");
-	svg.setAttribute("xmlns:xlink","http://www.w3.org/1999/xlink");
-	svg.setAttribute("viewBox","0 0 433 433");
-	svg.classList.add("garbage");
-	svg.style = "enable-background:new0 0 433 433;"
-	svg.setAttribute("xml:space","preserve");
-	let path = document.createElementNS('http://www.w3.org/2000/svg','path');
-	svg.appendChild(path);
-	path.setAttribute("d","M371.5,38h-98.384V0H159.884v38H61.5v90h20.951l20,305h228.098l20-305H371.5V38z M189.884,30h53.232v8h-53.232V30z M91.5,68h250v30h-250V68zM302.451,403H130.549l-18.033-275h207.969L302.451,403z")
-	path.id = "garbage";
-	let span = document.createElement('span');
-	span.innerText = 'Delete';
-	span.classList.add('garbage-tooltip');
 	div.appendChild(span);
 	div.addEventListener("click",()=>{
 		id = parentNode.getAttribute('rec_id');
@@ -162,23 +149,13 @@ function create_garbage(parentNode){
 }
 
 function create_x(parentNode) {
-    let div = document.createElement("div");
-    let svg = document.createElementNS('http://www.w3.org/2000/svg','svg');
-    parentNode.appendChild(div);
-    div.appendChild(svg);
-    div.style.position = "relative";
-    svg.setAttribute("version","1.1");
-    svg.setAttribute("xmlns","http://www.w3.org/2000/svg");
-    svg.setAttribute("xmlns:xlink","http://www.w3.org/1999/xlink");
-    svg.setAttribute("viewBox","0 0 640 640");
-    div.classList.add("setting");
-    svg.style = "enable-background:new 0 0 640 640;";
-    svg.setAttribute("xml:space","preserve");
-    let path = document.createElementNS('http://www.w3.org/2000/svg','path');
-    path.setAttribute('fill', 'rgb(225 94 106)'); 
-    path.setAttribute("d","M183.1 137.4C170.6 124.9 150.3 124.9 137.8 137.4C125.3 149.9 125.3 170.2 137.8 182.7L275.2 320L137.9 457.4C125.4 469.9 125.4 490.2 137.9 502.7C150.4 515.2 170.7 515.2 183.2 502.7L320.5 365.3L457.9 502.6C470.4 515.1 490.7 515.1 503.2 502.6C515.7 490.1 515.7 469.8 503.2 457.3L365.8 320L503.1 182.6C515.6 170.1 515.6 149.8 503.1 137.3C490.6 124.8 470.3 124.8 457.8 137.3L320.5 274.7L183.1 137.4z");
-    svg.appendChild(path);
-	div.addEventListener("click",(event)=>{
+	let span = document.createElement("span");
+	span.classList.add("material-symbols-outlined");
+	span.classList.add("setting");
+	// span.style.color = "red";
+	span.innerText = "close_small";
+	parentNode.appendChild(span);
+	span.addEventListener("click",(event)=>{
 		event.preventDefault();
 		let delete_list_id = parentNode.getAttribute("list");
 		delete list_map[delete_list_id];
@@ -267,4 +244,8 @@ document.getElementById("title").addEventListener("keydown",(event)=>{
 	if(event.key == "Enter"){
 		event.preventDefault();
 	}
+})
+document.getElementById("first-x").addEventListener("click",(event)=>{
+	event.preventDefault();
+	alert("This Can't be Deleted!");
 })
