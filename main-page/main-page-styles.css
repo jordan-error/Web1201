@@ -24,27 +24,33 @@ a{
 /*Header seperation style*/
 
 .right-column{
-    margin-top: 2vh;
+    position:fixed;
+    right: 0px;
+    top: -27px;
     background-color: rgb(34, 40, 48);
-    border-radius: 7px;
-    padding: 0.1em;
+    border-radius: 0px 0px 7px 7px;
+    height: max-content;
     min-width: min-content;
-    width: 30vw;
     margin-right: min(3vw, 1%);
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;;
+    justify-content: space-evenly;
+    transition: top 0.5s ease-out;
+}
+
+.right-column:hover{
+    top:0px;
 }
 
 /*Top right navigation bar styles*/
 .navigation{
-    margin: 0vw, 3vw, 0vw, 3vw;
-    padding: 5px 10px;
     border-radius: 7px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 0.2rem;
+    margin: 0 0.4rem;
 }
 
 .navigation:hover {
@@ -58,13 +64,16 @@ a{
     justify-content: flex-end;
 }
 .material-symbols-outlined{
-    font-size: clamp(1vw,2vw,2.5rem)!important;
     color: rgba(255, 255, 255, 0.843)!important;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    
 }
 .nav-description{
     font-size: clamp(0.3rem,0.7rem,1rem);
-    margin-top: 0.1rem;
+    margin-bottom: 0.3rem;
     color: rgba(255, 255, 255, 0.843);
+    padding-top: 10px;
 }
 
 .main-content-area{
@@ -77,7 +86,7 @@ button:hover{
 }
 
 .main-content-area{
-    margin-top: 2vh;
+    margin-top: 10vh;
     height: 85.2vh;
     width: 100%;
 }
@@ -87,7 +96,6 @@ button:hover{
     width: auto;
     margin-left:10px;
     margin-top: 10px;
-
 }
 
 .side-nav-bar{
