@@ -30,10 +30,6 @@ function hide_modal(){
 	document.getElementById("register-modal").style.display = "none";
 }
 
-function register(){
-	alert("Account created");
-	hide_modal();
-}
 
 function change_status(error_element,iserror){
 	if(iserror){
@@ -45,6 +41,17 @@ function change_status(error_element,iserror){
 		error_element.style.color = "green";
 		error_element.childNodes[0].innerText = "check";
 	}
+}
+
+function register(){
+	alert("Account created");
+	document.getElementById("register").reset();
+	hide_modal();
+	document.querySelectorAll(".register_error").forEach(error_text=>{
+		change_status(error_text,true);
+		error_text.style.display = "none";
+	})
+	change_status()
 }
 function validate_length_regex(val,length,regex){
 	//return false if the validation fails
