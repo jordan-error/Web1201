@@ -66,6 +66,16 @@ document.addEventListener("DOMContentLoaded", () => {
             }
             calendar_days.appendChild(day);
         }
+
+        let lastDayIndex = new Date(year, month, days_of_month[month]).getDay();
+        
+        if (lastDayIndex !== 6) {
+            let nextDays = 6 - lastDayIndex;
+            for (let j = 0; j < nextDays; j++) {
+                let emptyDay = document.createElement('div');
+                calendar_days.appendChild(emptyDay);
+            }
+        }
     };
 
     function loadSideList() {

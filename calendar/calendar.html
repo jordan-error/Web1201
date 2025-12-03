@@ -4,54 +4,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Calendar Page</title>
     <link rel="stylesheet" href="calendar.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
     
-    <div class="calendar-header">
-        <div class="header-left">
-            <button><img src="../images/user.png" alt="account"></button>
-            <label for="chck1" class="reminder-panel-input">🔔</label>
-        </div>
- 
-        <div class="header-center">
-            <span class="month-change" id="prev-month"> &lt; </span>
-            <div class="date-display">
-                <span id="month-year-display"></span>
+    <div class="nav">
+        <div class="icon">
+            <div class="icon-img"><img src="../images/john_doe.jpg" alt=""/></div>
+            <div class="icon-con"> 
+                <p>Good Day</p>
+                <h2>John Doe</h2>
             </div>
-            <span class="month-change" id="next-month"> &gt; </span>
         </div>
-
-        <div class="header-right">
-            <div class="EventContainer">
-                <div class="ToggleBtn"></div>
-                <div class="content">
-                    <h1>New Event</h1>
-                    <form id="eventForm">
-                        <label for='eventName'>Event Name</label> 
-                        <input type="text" id="eventName" required> <br>
-                        Date: <input type="date" id="eventDate" required> <br>
-                        Time: <input type="time" id="eventTime" required> <br>
-                        Description: <input type="text" id="eventDesc">
-                        <input type="submit" value="Submit">
-                    </form>
+        
+        <div class="line"></div>
+        <div class="title">
+            <p>Menu</p>
+        </div>
+        <div class="menu">
+            <a href="../main-page/main-page.html" class="item">
+                <div class="licon">
+                    <span class="material-symbols-outlined">home</span>
                 </div>
-            </div>
+                <div class="con">Dashboard</div> 
+            </a>
+
+            <a href="../login/login.html" class="item">
+                <div class="licon">
+                    <span class="material-symbols-outlined">account_circle</span>
+                </div>
+                <div class="con">Profile</div>
+            </a>
+
         </div>
     </div>
 
-    <div class="calendar-page">
-        <input type="checkbox" id="chck1">
-        <div class="reminder-panel">
-            <h3>Reminder</h3> <div class="reminder-line"></div>
-            <div class="reminder-list"></div>
-        </div>
-
-        <div class="calendar-container">
-            <div class="week-header">
-                <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+    <div class="main-content">
+        <div class="calendar-header">
+            <div class="header-left">
+                <label for="chck1" class="reminder-panel-input">
+                    <span class="material-symbols-outlined">schedule</span>
+                </label>
+            </div>
+    
+            <div class="header-center">
+                <span class="month-change" id="prev-month"> &lt; </span>
+                <div class="date-display">
+                    <span id="month-year-display"></span>
+                </div>
+                <span class="month-change" id="next-month"> &gt; </span>
             </div>
 
-            <div class="calendar-days"></div>
+            <div class="header-right">
+                <div class="EventContainer">
+                    <div class="ToggleBtn"></div>
+                    <div class="content">
+                        <h1>New Event</h1>
+                        <form id="eventForm">
+                            <label for='eventName'>Event Name</label> 
+                            <input type="text" id="eventName" required> <br>
+                            Date: <input type="date" id="eventDate" required> <br>
+                            Time: <input type="time" id="eventTime" required> <br>
+                            Description: <input type="text" id="eventDesc">
+                            <input type="submit" value="Save Event">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="calendar-page">
+            <input type="checkbox" id="chck1">
+            <div class="reminder-panel">
+                <h3>Reminder</h3> <div class="reminder-line"></div>
+                <div class="reminder-list"></div>
+            </div>
+
+            <div class="calendar-container">
+                <div class="week-header">
+                    <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div><div>Thu</div><div>Fri</div><div>Sat</div>
+                </div>
+
+                <div class="calendar-days"></div>
+            </div>
         </div>
     </div>
 
