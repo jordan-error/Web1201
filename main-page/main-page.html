@@ -13,10 +13,11 @@
     <!-- CSS -->
     <link href="spaces-side-panel-styles.css" rel="stylesheet">
     <link href="music-side-panel-styles.css" rel="stylesheet">
+    <link href="pomodoro-timer-styles.css" rel="stylesheet">
     <!-- JavaScripts -->
     <script src="music-sidebar.js" defer></script>
     <script src="spaces-sidebar.js" defer></script>
-    <script src="toggle-menu.js" defer></script>
+    <script src="pomodoro-timer.js" defer></script>
     <!-- Icons from Google -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
@@ -27,29 +28,23 @@
     </video>
     <div class="navigation-bar">
         <div class="right-column">
-            <a href="#" class="navigation">
+            <a href="todo/index.html" class="navigation">
                 <span class="material-symbols-outlined">notes</span>
                 <div class="nav-description">Notes</div>
             </a>
-            <a href="#" class="navigation" >
+            <a href="/calendar/calendar.html" class="navigation" >
                 <span class="material-symbols-outlined">
                     today
                 </span>
             <div class="nav-description">Cal</div>
             </a>
-            <a href="#" class="navigation">
-                <span class="material-symbols-outlined">
-                    schedule
-                </span>
-                <div class="nav-description">Timetable</div>
-            </a>
-            <a href="#" class="navigation">
+            <a href="/about1.html" class="navigation">
                 <span class="material-symbols-outlined">
                     emoji_people
                 </span>
             <div class="nav-description">About Us</div>
             </a>
-            <a href="#" class="navigation">
+            <a href="/login/login.html" class="navigation">
                 <span class="material-symbols-outlined">
                     logout
                  </span>
@@ -76,7 +71,7 @@
                     <span class="material-symbols-outlined">volume_up</span>
                     <div class="nav-description">Sounds</div>
                 </button>
-                <button class="side-button" id="">
+                <button class="side-button" id="Timer">
                     <span class="material-symbols-outlined">timer</span>
                     <div class="nav-description">Timer</div>
                 </button>
@@ -265,8 +260,18 @@
             <button class="side-panel-toggle" id="MusicToggleButton" type="button">
                 <span class="material-icons sp-icon-open">arrow_back_ios</span>
             </button>
-
-
+            <!-- Pomodoro Timer -->
+            <div class="pomodoro-timer-section">
+                <div class="pomodoro-timer-container">
+                    <div class="title" id="pomodoro-title">Pomodoro Timer</div>
+                    <div class="timer" id="timer">25:00</div>
+                    <div class="controls" id="timer-controls">
+                        <button id="start">Start</button>
+                        <button id="stop">Stop</button>
+                        <button id="reset">Reset</button>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
     
