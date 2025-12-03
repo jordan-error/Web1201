@@ -6,7 +6,7 @@ document.querySelector('#SpacesToggleButton').addEventListener('click', () => {
     //If on mobile, close the other panels first
     if (window.innerWidth <= 768) {
         wrapper.classList.remove('side-panel-open-2');
-    }
+        }
     wrapper.classList.toggle('side-panel-open-1')
 });
 
@@ -15,6 +15,7 @@ document.querySelector('#Spaces').addEventListener('click', () => {
     const wrapper = document.querySelector(".wrapper");
     if (window.innerWidth <= 768) {
         wrapper.classList.remove('side-panel-open-2');
+        wrapper.classList.remove('side-panel-open-3');
     }
     wrapper.classList.toggle('side-panel-open-1');
 });
