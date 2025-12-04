@@ -17,11 +17,11 @@ body {
 
 .description {
   font-size: 22px;
-  line-height: 1.3;
+  line-height: 1.2;
 }
 
 .details {
-  font-size: 1.4vw;
+  font-size: 22px;
   line-height: 1.2;
 }
 
@@ -100,7 +100,7 @@ body {
 }
 
 /* Updated .right a to use flexbox for internal centering */
-.right a {
+.right a, .smallright a {
     /* margin: auto; removed auto margin */
     /* float: left; removed float */
     text-decoration: none;
@@ -119,6 +119,20 @@ body {
 .right img {
   width: 26px;
   height: 26px;
+}
+
+.smallright {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+    color: white; /* Default Dark Mode color */
+    align-items: center; /* Vertically center content */
+    background-color: rgb(34, 40, 48);
+    width: auto;
+    height: 10vh;
+    margin-right: 32px;
+    border-radius: 20px;
+    border: 1px solid rgb(34, 40, 48);
+    margin-top: 20px;
 }
 
 #myBtn {
@@ -163,8 +177,9 @@ body {
     margin-right: 32px;
     margin-bottom: 32px;
     padding: 32px;
+    gap: 30px;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
     overflow-y: auto;
     max-height: 75vh;
@@ -181,16 +196,16 @@ body {
     background-color: rgb(34, 40, 48);
 } 
 
-#personal_about {
+#personal_about, #profile3 {
     display: none;
 } 
 
 #personal_about img{
-    width: 50%;
+    width: 10vw;
     margin-left: auto;
     margin-right: auto;
-    margin-bottom: 12px;
     margin-top: 0;
+    margin-bottom: 16px;
 } 
 
 #start {
@@ -198,11 +213,6 @@ body {
     height: 80vh;
     text-align: center;
     align-items: center;
-}
-
-#profile3 {
-    display: none;
-    height: 80vh;
 }
 
 #members {
@@ -215,7 +225,7 @@ body {
     margin-bottom: auto;
     min-height: 30vh;
     overflow-y: scroll;
-        background-color: rgb(34, 40, 48);
+    background-color: rgb(34, 40, 48);
 } 
 
 .grid-container1 {
@@ -302,6 +312,9 @@ body.dark-mode .right a {
     color: black;
 }
 
+body.dark-mode .hamburger-icon {
+    color: black; /* Bright Mode color */
+}
 
 body.dark-mode #right_side, 
 body.dark-mode #about, 
@@ -336,4 +349,29 @@ body.dark-mode #mem_button4 {
     background-color: white; /* Invert: White background */
     color: black; /* Invert: Black text */
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+/*Media Screen < 750px */
+@media screen and (max-width: 1000px) {
+    /* Hide the desktop nav sections */
+    .right {
+        display: none;
+    }
+    
+    /* Show the hamburger icon */
+    .smallright {
+        display: flex;
+        align-items: center;
+        /* Position the icon on the right */
+    }
+    
+    /* Ensure the logo/image is visible on the far left */
+    .left a:first-child {
+        display: flex;
+    }
+
+    /* Override the nav display for mobile to only show the required elements (logo and hamburger) */
+    .nav {
+        justify-content: space-between;
+    }
 }
