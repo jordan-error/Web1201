@@ -3,7 +3,7 @@
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" href="./index.css"/>
-		<script src="./index.js"/ defer></script>
+		<script src="./index.js" defer></script>
 		<style>
 		@import url('https://fonts.googleapis.com/css2?family=Caveat&family=Inter&family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 		</style>
@@ -11,7 +11,10 @@
 		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	</head>
 	<body>
-		<nav class="left-nav">
+		<button onmousedown="togglemobilemenu()" class="mobile-menu-btn" id="mobile-menu-btn">
+			<span class="material-symbols-outlined">menu</span>
+		</button>
+		<nav id="left-nav" class="left-nav">
 			<p class="tasks-text">MENU</p>
 			<ul id="left-navbar" class="left-navbar">
 				<a list="35fd7e4c-5e49-4b36-8d81-f9da7b66bc82" href="javascript:update_current_list('35fd7e4c-5e49-4b36-8d81-f9da7b66bc82')" class="list-item" >
@@ -22,7 +25,7 @@
 				</a>
 			</ul>
 			<hr>
-			<a id="add-list-item" href="javascript:create_new_nav_option()" class="add-list">
+			<a id="add-list-item" onclick="create_new_nav_option()"  class="add-list">
 				<div id="new-list" class="new-list">
 				    <svg viewBox="0 0 16 16" class="plus-symbol" style="width:30px;height:14px; display:flex; fill: rgb(255,255,255);">
 					<path d="M7.977 14.963c.407 0 .747-.324.747-.723V8.72h5.362c.399 0 .74-.34.74-.747a.746.746 0 00-.74-.738H8.724V1.706c0-.398-.34-.722-.747-.722a.732.732 0 00-.739.722v5.529h-5.37a.746.746 0 00-.74.738c0 .407.341.747.74.747h5.37v5.52c0 .399.332.723.739.723z"></path>

@@ -152,7 +152,6 @@ function create_x(parentNode) {
 	let span = document.createElement("span");
 	span.classList.add("material-symbols-outlined");
 	span.classList.add("setting");
-	// span.style.color = "red";
 	span.innerText = "close_small";
 	parentNode.appendChild(span);
 	span.addEventListener("click",(event)=>{
@@ -207,7 +206,6 @@ function create_new_nav_option(uuid=null){
 	current_a.appendChild(current_p);
 	let navbar = document.getElementById("left-navbar");
 	navbar.appendChild(current_a);
-	// navbar.insertBefore(current_a,document.getElementById("add-list-item"));
 	update_current_list(`${new_note_uuid}`)
 	create_x(current_a)
 	console.log(`New List Created: ${new_note_uuid}`);
@@ -223,12 +221,21 @@ function change_theme(){
 }
 function load_theme(){
 	let mode = document.cookie.split("=")[1];
+	if(!mode){
+		mode = "dark";
+		document.cookie = "theme=dark";
+	}
 	let html_theme = document.getElementsByTagName('html')[0];
 	html_theme.setAttribute("data-theme",mode);
+}
+function togglemobilemenu(){
+	const left_nav = document.getElementById("left-nav");
+	left_nav.style.display === "block" ? left_nav.style.display = "none" : left_nav.style.display = "block";
 }
 plus_symbol.addEventListener("click",()=>{ 
 	 create_span({parentNode:notes_container});
 })
+
 document.getElementById("title").addEventListener("input",()=>{
 	current_list["title"] = document.getElementById("title").value;
 	document.getElementById(`${current_list_id}_nav_title`).textContent = current_list['title'];
