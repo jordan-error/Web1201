@@ -11,17 +11,46 @@ body {
 }
 
 .header {
-  font-size: 28px;
+  font-size: 1.8vw;
   font-weight: 600;
 }
 
 .description {
-  font-size: 22px;
+  font-size: 1.3vw;
   line-height: 1.2;
 }
 
+#fixedbutton {
+    position: fixed;
+    top: 50%;
+    right: -85;
+    display: inline-flex;
+    flex-direction: row;
+    border: 0.2px solid white;
+}
+
+#fixedbutton button {
+    color: white;
+    background-color: rgb(34, 40, 48);
+    height: 10vh;  
+    width: 30px;
+    margin: 0;
+    padding: 0;
+    box-shadow: 12px;
+}
+
+#fixedbutton #contact {
+    display: inline-flex;
+    flex-direction: column;
+    width: auto;
+}
+
+#fixedbutton:hover {
+    width: 200px;
+}
+
 .details {
-  font-size: 22px;
+  font-size: 1.3vw;
   line-height: 1.2;
 }
 
@@ -45,13 +74,13 @@ body {
     align-items: center; 
     /* Distribute space between .left and .right */
     justify-content: space-between; 
-    height: 10vh;
+    height: 12vh;
     background-color: transparent;
 }
 
 .nav img {
   display: block;
-  height: 45px;
+  height: 38px;
   /* margin: auto; removed auto margin */
   border-radius: 50%;
   object-fit: cover;
@@ -62,7 +91,7 @@ body {
   /* float: left; removed float */
     display: flex; /* Make it a flex container */
     align-items: center; /* Vertically center content */
-    height: 10vh; /* Keep height for consistency */
+    height: 12vh; /* Keep height for consistency */
     margin-left: 32px;
     margin-top: 20px;
     background-color: rgb(34, 40, 48);
@@ -71,18 +100,20 @@ body {
 }
 
 .left a {
-  /* float: left; removed float */
-  color: white;
-  text-decoration: none;
-  font-size: 20px;
-  display: block;
-  height: 10vh;
-  /* Add padding to give space around the text */
-  padding: 0 15px; 
-  /* Center text vertically and horizontally inside the link */
-  display: flex; 
-  align-items: center; 
-  justify-content: center;
+    /* float: left; removed float */
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    height: 12vh;
+    /* Add padding to give space around the text */
+    padding: 0 15px; 
+    /* Center text vertically and horizontally inside the link */
+    display: inline-flex; 
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    gap: 16px; /* Space between text and image */
 }
 
 /* Updated .right to use flexbox */
@@ -92,7 +123,7 @@ body {
   align-items: center; /* Vertically center content */
     background-color: rgb(34, 40, 48);
   width: auto;
-  height: 10vh;
+  height: 12vh;
   margin-right: 32px;
   border-radius: 20px;
   border: 1px solid rgb(34, 40, 48);
@@ -111,7 +142,7 @@ body {
     /* Center content horizontally and vertically */
     align-items: center; 
     justify-content: center;
-    gap: 16px; /* Space between text and image */
+    gap: 24px; /* Space between text and image */
     padding: 0 25px; /* Add padding for space */
     color: white;
 }
@@ -128,7 +159,7 @@ body {
     align-items: center; /* Vertically center content */
     background-color: rgb(34, 40, 48);
     width: auto;
-    height: 10vh;
+    height: 12vh;
     margin-right: 32px;
     border-radius: 20px;
     border: 1px solid rgb(34, 40, 48);
@@ -159,7 +190,7 @@ body {
 }
 
 #myBtn:hover {
-  background-color: #555;
+  background-color: white;
 }
 
 #left_side {
@@ -185,22 +216,23 @@ body {
     max-height: 75vh;
 }
 
-#about, #personal_about{
+#about, #personal_about1{
     border-radius: 20px;
     padding: 32px;
     margin: auto;
     display: inline-flex;
     flex-direction: column;
+    justify-content: center;
     min-height: 40vh;  
-    overflow-y: scroll;
+    overflow: hidden;
     background-color: rgb(34, 40, 48);
 } 
 
-#personal_about, #profile3 {
+#personal_about1, #profile3, #profile4 {
     display: none;
 } 
 
-#personal_about img{
+#personal_about1 img{
     width: 10vw;
     margin-left: auto;
     margin-right: auto;
@@ -249,7 +281,7 @@ body {
   width: 100%;
   text-align: center;
   line-height: normal;
-  font-size: 22px;
+  font-size: 1.3vw;
 }
 
 button {
@@ -265,12 +297,16 @@ button {
   cursor: pointer;
 }
 
-#mem_button1, #mem_button2, #mem_button3, #mem_button4 {
+#mem_button {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   width: 100%;
   border-radius: 20px;
   color: white;
   background-color: rgb(34, 40, 48);
+}
+
+#mem_button:hover {
+    background-color: darkgray;
 }
 
 
@@ -312,13 +348,19 @@ body.dark-mode .right a {
     color: black;
 }
 
+body.dark-mode .smallright {
+    background-color: white;
+    border: 1px solid white;
+    box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
+}
+
 body.dark-mode .hamburger-icon {
     color: black; /* Bright Mode color */
 }
 
 body.dark-mode #right_side, 
 body.dark-mode #about, 
-body.dark-mode #personal_about, 
+body.dark-mode #personal_about1, 
 body.dark-mode #members {
     background-color: white; /* Invert: White background */
     box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px; /* Use a lighter shadow */
@@ -342,22 +384,73 @@ body.dark-mode button {
     color: white;
 }
 
-body.dark-mode #mem_button1, 
-body.dark-mode #mem_button2, 
-body.dark-mode #mem_button3, 
-body.dark-mode #mem_button4 {
+body.dark-mode #mem_button{
     background-color: white; /* Invert: White background */
     color: black; /* Invert: Black text */
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-/*Media Screen < 750px */
+/*Media Screen < 1300px */
+@media screen and (max-width: 1300px) {
+    #container {
+        grid-template-columns: 3fr 5fr;
+    }
+
+    button {
+        font-size: 1.8vw;
+    }
+
+    .description {
+        font-size: 1.6vw;
+        line-height: 1.2;
+    }
+
+    .header {
+        font-size: 2vw;;
+    }
+
+    .desc1, .details {
+        font-size: 1.5vw;
+    }
+
+}
+
+/*Media Screen < 1000px */
 @media screen and (max-width: 1000px) {
     /* Hide the desktop nav sections */
     .right {
         display: none;
     }
-    
+
+    /* Mobile Menu Container - Displayed when the .mobile-open class is added */
+    .right.mobile-open {
+        display: flex; /* Show the container */
+        position: absolute; /* Take it out of the nav flow */
+        top: 12vh; /* Position it just below the header bar (which is 10vh tall) */
+        width: 100%; /* Full width */
+        height: auto; /* Let content define height */
+        flex-direction: column; /* Stack links vertically */
+        background-color: rgb(34, 40, 48); /* Dark background */
+        border-radius: 20px; /* Rounded corners only on the bottom */
+        z-index: 10; /* Ensure it appears above main content */
+        padding: 0; /* Clear padding */
+    }
+
+    /* Style for individual links in the mobile menu */
+    .right.mobile-open a {
+        width: 100%;
+        padding: 20px 0; /* Larger touch targets */
+        border-bottom: 1px solid rgba(100, 110, 120, 0.5); /* Separator line */
+        box-sizing: border-box;
+        height: auto; /* Reset link height */
+        flex-direction: row; /* Change back to horizontal layout */
+    }
+
+    /* Remove the border from the last link */
+    .right.mobile-open a:last-child {
+        border-bottom: none;
+    }
+
     /* Show the hamburger icon */
     .smallright {
         display: flex;
@@ -370,8 +463,113 @@ body.dark-mode #mem_button4 {
         display: flex;
     }
 
+    .description {
+        font-size: 1.9vw;
+        line-height: 1.2;
+    }
+
+    .header {
+        font-size: 2.5vw;;
+    }
+
     /* Override the nav display for mobile to only show the required elements (logo and hamburger) */
     .nav {
         justify-content: space-between;
+    }
+
+    .desc1, .details {
+        font-size: 1.8vw;
+    }
+
+    #grid-container1 {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+    }
+
+    #desc1 {
+        font-size: 2vw;
+    }
+}
+
+@media screen and (max-width: 850px) {
+    #container {
+        /* This is the key change: setting the grid to a single column */
+        grid-template-columns: 1fr;
+        
+        /* The previous line in your original code: 
+           grid-template-rows: auto; 
+           This is not strictly necessary but can remain if you want the rows 
+           to size themselves based on content. */
+        grid-template-rows: auto auto; /* Explicitly defining two auto-sized rows */
+    }
+
+    #desc1 {
+        font-size: 3vw;
+    }
+
+    /* It's good practice to adjust padding/margins for smaller screens too */
+    #left_side{
+        margin: 0;
+    }
+
+    #right_side {
+        margin: 0 32px 32px 32px;
+    }
+
+    .description, .details {
+        font-size: 2.8vw; /* Example adjustment for legibility on small screens */
+    }
+
+    .header {
+        font-size: 3.5vw; /* Example adjustment for legibility on small screens */
+    }
+
+    button {
+        font-size: 2.8vw;
+    }
+
+    #right_side, #start {
+        display: none;
+    }
+
+    #personal_about1 img {
+        width: 25%;
+    }
+
+    #personal_about1, #about {
+        min-height: auto;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    #container {
+        /* This is the key change: setting the grid to a single column */
+        grid-template-columns: 1fr;
+        
+        /* The previous line in your original code: 
+           grid-template-rows: auto; 
+           This is not strictly necessary but can remain if you want the rows 
+           to size themselves based on content. */
+        grid-template-rows: auto auto; /* Explicitly defining two auto-sized rows */
+    }
+
+    .description, .details {
+        font-size: 3.6vw; /* Example adjustment for legibility on small screens */
+    }
+
+    .header {
+        font-size: 4.5vw; /* Example adjustment for legibility on small screens */
+    }
+
+    button {
+        font-size: 4vw;
+    }
+
+    #right_side, #start {
+        display: none;
+    }
+
+    #personal_about1 img {
+        width: 25%;
     }
 }
