@@ -13,7 +13,7 @@ function toggleContent3() {
     } else {
         element2.style.display = 'none';
         element1.style.display = 'inline-flex';
-        start.style.display = 'block';
+        start.style.display = 'flex';
         profile3.style.display = 'none';
     }
 }

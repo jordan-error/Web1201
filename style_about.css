@@ -2,10 +2,12 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin: 0;
     padding: 0;
-    background-color: white;
-    color: black;
+    background-color: rgb(60, 68, 81);
+    color: white;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    font-weight: normal;
 }
 
 .header {
@@ -19,7 +21,7 @@ body {
 }
 
 .details {
-  font-size: 22px;
+  font-size: 1.4vw;
   line-height: 1.2;
 }
 
@@ -29,43 +31,89 @@ body {
     width: 100%;
     margin: 0 auto;
     flex: 1;
-    height: 100vh;
+    height: 90vh;
 }
 
 .nav {
     position: sticky;
     top: 0;
     list-style-type: none;
-    margin: 0;
-    padding: 0;
     width: 100%;
-    height: 64px;
-    box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.2);
-    background-color: white;
+    /* Use flexbox for the main container */
+    display: flex; 
+    /* Vertically align items in the center */
+    align-items: center; 
+    /* Distribute space between .left and .right */
+    justify-content: space-between; 
+    height: 10vh;
+    background-color: transparent;
 }
 
 .nav img {
   display: block;
   height: 45px;
+  /* margin: auto; removed auto margin */
   border-radius: 50%;
   object-fit: cover;
 }
 
-.nav a {
-  align-items: center;
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 20px 20px;
-  text-decoration: none;
-  font-size: 22px;
-  display: flex;
+/* Updated .left to use flexbox */
+.left {
+  /* float: left; removed float */
+    display: flex; /* Make it a flex container */
+    align-items: center; /* Vertically center content */
+    height: 10vh; /* Keep height for consistency */
+    margin-left: 32px;
+    margin-top: 20px;
+    background-color: rgb(34, 40, 48);
+    border: 1px solid rgb(34, 40, 48);
+    border-radius: 20px;
 }
 
-
-.right {
-  float: right;
+.left a {
+  /* float: left; removed float */
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
   display: block;
+  height: 10vh;
+  /* Add padding to give space around the text */
+  padding: 0 15px; 
+  /* Center text vertically and horizontally inside the link */
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+/* Updated .right to use flexbox */
+.right {
+  /* float: right; removed float */
+  display: flex; /* Make it a flex container */
+  align-items: center; /* Vertically center content */
+    background-color: rgb(34, 40, 48);
+  width: auto;
+  height: 10vh;
+  margin-right: 32px;
+  border-radius: 20px;
+  border: 1px solid rgb(34, 40, 48);
+  margin-top: 20px;
+}
+
+/* Updated .right a to use flexbox for internal centering */
+.right a {
+    /* margin: auto; removed auto margin */
+    /* float: left; removed float */
+    text-decoration: none;
+    font-size: 20px;
+    /* Make the link a flex container */
+    display: inline-flex; 
+    flex-direction: column;
+    /* Center content horizontally and vertically */
+    align-items: center; 
+    justify-content: center;
+    gap: 16px; /* Space between text and image */
+    padding: 0 25px; /* Add padding for space */
+    color: white;
 }
 
 .right img {
@@ -82,9 +130,7 @@ body {
   font-size: 20px;
   border: none;
   outline: none;
-  background-color: rgb(230, 228, 228);
   box-shadow: 3px 8px 16px 8px rgba(0, 0, 0, 0.05);
-  color: black;
   cursor: pointer;
   padding: 15px;
   padding-top: 25px;
@@ -107,10 +153,11 @@ body {
     flex-direction: column;
     padding: 32px;
     gap: 30px;
+    max-height: 80vh;
 }
 
 #right_side {
-    box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
+    background-color: rgb(34, 40, 48);
     border-radius: 20px;
     margin-top: 32px;
     margin-right: 32px;
@@ -120,22 +167,22 @@ body {
     justify-content: center;
     align-items: center;
     overflow-y: auto;
+    max-height: 75vh;
 }
 
 #about, #personal_about{
-    box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
     border-radius: 20px;
     padding: 32px;
+    margin: auto;
     display: inline-flex;
     flex-direction: column;
-    justify-content: center;
-    min-height: 360;     /* choose any height */
+    min-height: 40vh;  
+    overflow-y: scroll;
+    background-color: rgb(34, 40, 48);
 } 
 
 #personal_about {
     display: none;
-    padding-top: 18px;
-    padding-bottom: 18px;
 } 
 
 #personal_about img{
@@ -147,22 +194,28 @@ body {
 } 
 
 #start {
-    display: block;
+    display: flex;
+    height: 80vh;
+    text-align: center;
+    align-items: center;
 }
 
 #profile3 {
     display: none;
-    margin-top: 64px;
+    height: 80vh;
 }
 
 #members {
     display: flex;
     flex-direction: column;
-    box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
     border-radius: 20px;
     padding: 8px 32px 8px 32px;
     align-items: center;
     margin-top: auto;
+    margin-bottom: auto;
+    min-height: 30vh;
+    overflow-y: scroll;
+        background-color: rgb(34, 40, 48);
 } 
 
 .grid-container1 {
@@ -175,9 +228,8 @@ body {
 
 .box1, .box2, .box3, .box4, .box5, .box6, .box7, .box8, .box9, .box10, .box11, .box12, .box13, .box14, .box15, .box16, .box17, .box18, .box19, .box20, .box21, .box22 {
   padding: 10px;  
-  border: none;
+  border: 0.5px solid white;
   border-radius: 8px; 
-  background-color: #f9f9f9; 
   cursor: pointer;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); 
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -192,15 +244,13 @@ body {
 
 button {
   font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
-  background-color: #04AA6D; 
   border: none;
-  color: white;
   padding: 18px 36px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
-  font-size: 24px;
-  margin: 4px 2px;
+  font-size: 1.4vw;
+  margin: auto;
   transition-duration: 0.3s;
   cursor: pointer;
 }
@@ -209,50 +259,73 @@ button {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   width: 100%;
   border-radius: 20px;
-  background-color: white;
-  color: black;
+  color: white;
+  background-color: rgb(34, 40, 48);
 }
 
 
-/*Dark Mode*/
 body.dark-mode {
-    background-color: #121212;
-    color: #E0E0E0;
+    background-color: white; /* Invert: White background */
+    color: black; /* Invert: Black text */
+    font-weight: normal;
 }
 
 body.dark-mode .header, 
 body.dark-mode .description, 
 body.dark-mode .details {
-    color: #E0E0E0;
+    color: black; /* Invert: Black text */
 }
 
 body.dark-mode .nav {
-    background-color: #1E1E1E;
-    box-shadow: 0px 6px 12px 0px rgba(0,0,0,0.5);
+    background-color: transparent; /* Invert: Transparent background */
+    box-shadow: none; /* Remove dark shadow */
 }
 
 body.dark-mode .nav a {
-    color: #E0E0E0;
+    color: black; /* Invert: Black text */
+    /* Maintain flex alignment */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+/* Invert nav container colors for bright mode */
+body.dark-mode .left, 
+body.dark-mode .right {
+    background-color: white;
+    border: 1px solid white;
+    box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
+}
+
+body.dark-mode .left a,
+body.dark-mode .right a {
+    color: black;
+}
+
 
 body.dark-mode #right_side, 
 body.dark-mode #about, 
 body.dark-mode #personal_about, 
 body.dark-mode #members {
-    background-color: #1E1E1E;
-    box-shadow: rgba(0,0,0,0.7) 0px 8px 24px;
-    color: #E0E0E0;
+    background-color: white; /* Invert: White background */
+    box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px; /* Use a lighter shadow */
+    color: black; /* Invert: Black text */
 }
 
 body.dark-mode .box1, .dark-mode .box2, .dark-mode .box3, .dark-mode .box4,
-body.dark-mode .box5, .dark-mode .box6, .dark-mode .box7, .dark-mode .box8 {
-    background-color: #2A2A2A;
-    color: #E0E0E0;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+body.dark-mode .box5, .dark-mode .box6, .dark-mode .box7, .dark-mode .box8,
+body.dark-mode .box9, .dark-mode .box10, body.dark-mode .box11, body.dark-mode .box12,
+body.dark-mode .box13, body.dark-mode .box14, body.dark-mode .box15, body.dark-mode .box16,
+body.dark-mode .box17, body.dark-mode .box18, body.dark-mode .box19, body.dark-mode .box20,
+body.dark-mode .box21, body.dark-mode .box22 {
+    background-color: #f9f9f9; /* Invert: Light gray background */
+    color: black; /* Invert: Black text */
+    border: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); /* Use lighter shadow */
 }
 
 body.dark-mode button {
-    background-color: #1F7A5C; /* darker green */
+    background-color: #04AA6D; /* Use standard green button color */
     color: white;
 }
 
@@ -260,7 +333,7 @@ body.dark-mode #mem_button1,
 body.dark-mode #mem_button2, 
 body.dark-mode #mem_button3, 
 body.dark-mode #mem_button4 {
-    background-color: #2A2A2A;
-    color: #E0E0E0;
-    box-shadow: rgba(0,0,0,0.7) 0px 8px 24px;
+    background-color: white; /* Invert: White background */
+    color: black; /* Invert: Black text */
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
