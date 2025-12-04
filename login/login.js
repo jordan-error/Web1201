@@ -110,6 +110,24 @@ confirm_password.addEventListener("input",()=>{
 		change_status(register_error,false);
 	}
 })
+function change_theme(){
+	let theme_toggle = document.getElementById('theme-toggle');
+	let html_theme = document.getElementsByTagName('html')[0];
+	let mode = document.cookie.split("=")[1];
+	mode == "dark" ? theme_toggle.firstChild.innerText = "dark_mode" : theme_toggle.firstChild.innerText = "light_mode"
+	mode == "dark" ? html_theme.setAttribute("data-theme","light") : html_theme.setAttribute("data-theme","dark");
+	mode == "dark" ? document.cookie = "theme=light" : document.cookie = "theme=dark";
+}
+
+function load_theme(){
+	let mode = document.cookie.split("=")[1];
+	if(!mode){
+		mode = "dark";
+		document.cookie = "theme=dark";
+	}
+	let html_theme = document.getElementsByTagName('html')[0];
+	html_theme.setAttribute("data-theme",mode);
+}
 
 
 document.getElementById("modal-close").addEventListener("click",()=>{
