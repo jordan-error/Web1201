@@ -193,7 +193,7 @@ function create_new_nav_option(uuid=null){
 	let current_a = document.createElement("a");
 	let new_note_uuid = uuid ? uuid : crypto.randomUUID();
 	current_a.setAttribute("list",new_note_uuid);
-	current_a.href = `javascript:update_current_list('${new_note_uuid}')`;
+	current_a.onclick = `javascript:update_current_list('${new_note_uuid}')`;
 	current_a.classList.add("list-item");
 	let current_li = document.createElement("li");
 	current_li.id = `${new_note_uuid}_nav_title`;
