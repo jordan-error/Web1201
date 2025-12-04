@@ -1,5 +1,5 @@
 body {
-    background-color: rgb(34, 40, 48);
+    background-color: rgb(60, 68, 81);
     font-family: Helvetica, Arial, sans-serif;
     margin: 0;
     overflow: hidden;
@@ -13,7 +13,7 @@ body {
 .nav {
     width: 110px;
     height: 100%;
-    background: rgb(60, 68, 81);
+    background: rgb(34, 40, 48);
     border-radius: 20px;
     overflow: hidden;
     transition: 0.5s;
@@ -160,7 +160,7 @@ body {
 .calendar-header {
     display: flex;
     align-items: center;
-    background: rgb(60, 68, 81);
+    background: rgb(34, 40, 48);
     border-radius: 12px;
     padding: 2px 20px;
     font-size: 10px;
@@ -170,9 +170,8 @@ body {
 }
 
 .calendar-header img {
-    width: 40px;
-    height: 40px;
-    padding: 10px;
+    width: 30px;
+    height: 30px;
 }
 
 .header-left,
@@ -236,7 +235,7 @@ body {
     font-size: 15px;
     font-weight: bold;
     width: 0px;
-    background-color: rgb(60, 68, 81);
+    background-color: rgb(34, 40, 48);
     border-radius: 12px;
     height: 100%;
     padding: 0px;
@@ -261,7 +260,7 @@ body {
 .calendar-container {
     flex-grow: 1;
     height: 100%;
-    background: rgb(60, 68, 81);
+    background: rgb(34, 40, 48);
     border-radius: 12px;
     padding: 20px;
     box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, .1) 0 6px 20px;
@@ -282,7 +281,7 @@ body {
 .calendar-days {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
-    background-color: rgb(60, 68, 81);
+    background-color: rgb(34, 40, 48);
     min-height: 700px;
     border-radius: 8px;
     gap: 1px;
@@ -292,7 +291,7 @@ body {
     min-height: 80px;
     padding: 6px;
     font-size: 14px;
-    background-color: rgb(60, 68, 81);
+    background-color: rgb(34, 40, 48);
     border: 1px solid rgba(255, 255, 255, 0.05);
     color: white;
     position: relative;
@@ -498,7 +497,7 @@ input {
     padding: 25px;
     border-radius: 12px;
     width: 300px;
-    color: rgb(60, 68, 81);
+    color: rgb(34, 40, 48);
     position: relative;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
