@@ -29,8 +29,7 @@ body {
     width: 100%;
     margin: 0 auto;
     flex: 1;
-
-    height: calc(100vh - 128px); /* nav + footer */
+    height: 100vh;
 }
 
 .nav {
@@ -121,7 +120,6 @@ body {
     justify-content: center;
     align-items: center;
     overflow-y: auto;
-    max-height: calc(100vh - 64px - 64px - 64px); 
 }
 
 #about, #personal_about{
@@ -215,23 +213,6 @@ button {
   color: black;
 }
 
-#footer {
-    position: sticky;
-    height: 64px;
-    width: 100%;
-    bottom: 0;
-    background-color: rgba(128, 128, 128);
-    color: black;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: auto;
-}
-
-#footer p {
-    margin: 0 24px;
-    font-size: 20px;
-}
 
 /*Dark Mode*/
 body.dark-mode {
@@ -282,9 +263,4 @@ body.dark-mode #mem_button4 {
     background-color: #2A2A2A;
     color: #E0E0E0;
     box-shadow: rgba(0,0,0,0.7) 0px 8px 24px;
-}
-
-body.dark-mode #footer {
-    background-color: #1E1E1E;
-    color: #E0E0E0;
 }
