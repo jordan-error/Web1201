@@ -1,17 +1,36 @@
 *{
-	--background-color: #121212;
 	--text-color: #3B3023;
 	--primary-color: #A0E7F0;
 	font-family: "Plus Jakarta Sans",system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
+html[data-theme="dark"]{
+	--background-color: #222830;
+	--main-container: rgb(23, 32, 47);
+	--eye: white;
+	--text-color: white;
+	--box-shadow-main: 0 0 25px rgba(66, 153, 225, 0.4);
+	--right-ul-li: white;
+	--right-nav: rgb(23, 32, 47);
+	--right-ul-li-hover: rgba(81, 80, 81);
+	--close-color: white;
+}
+html[data-theme="light"]{
+	--background-color: rgb(245, 240, 230);
+	--main-container: rgb(255, 250, 245);
+	--box-shadow-main: 0 0 30px rgba(255, 235, 200, 0.6),0 0 10px rgba(255, 235, 200, 0.4);
+	--right-ul-li: rgb(74, 58, 41);
+	--right-nav: rgb(255, 250, 245);
+	--right-ul-li-hover: rgb(235, 230, 220);
+	--close-color: black;
+
+}
 body{
+	position:relative;
 	display:flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	background-image: url(../assets/bg.jpg);
-	background-size: cover;
-	background-repeat: no-repeat;
+	background: var(--background-color);
 	min-height:100vh;
 	margin:0;
 	overflow-x:hidden;
@@ -19,7 +38,6 @@ body{
 .main-container{
 	position:relative;
 	display: flex;
-	box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 	border-radius: 25px;
 	max-width: 1000px;
 	width: 100%;
@@ -27,7 +45,7 @@ body{
 	height: auto;
 	margin: 50px;
 	opacity: 0.9;
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
+	box-shadow: var(--box-shadow-main);
 }
 .left-container{
 	display:flex;
@@ -45,7 +63,6 @@ body{
 	position: absolute;
 	top: 10px;
 	left: 170px;
-	color: hsl(0,0%,100%);
 	font-weight: bold;
 	font-size: 40px;
 	font-family: "Kode Mono";
@@ -54,13 +71,12 @@ body{
 	flex:1;
 	padding: 25px;
 	display:flex;
-	background-color: #EBF5FB;
+	background-color: var(--main-container);
 	flex-direction: column;
 	position: relative;
 	align-items: center;
 	border-top-right-radius: 25px;
 	border-bottom-right-radius: 25px;
-	box-shadow: -4px 0 12px rgba(0,0,0,0.15);
 
 }
 .logo-text{
@@ -85,12 +101,10 @@ body{
 .input-div > input{
 	position:relative;
 	height: 30px;
-	box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
 	padding: 10px 10px 3px 10px;
 	background: transparent;
 	border-style: none;
 	border-bottom: 1px outset #e8cece4f;
-	/* width: 100%; */
 	width: 350px;
 	color: var(--text-color);
 	transition: background 0.5s ease;
@@ -181,6 +195,7 @@ label{
 	position:absolute;
 	top: 37px;
 	right: 4px;
+	color: var(--eye);
 }
 .eye:hover{
 	cursor:pointer;
@@ -204,7 +219,7 @@ label{
 	flex-direction:column;
 	align-items:center;
 	gap: 30px;
-	background-color: #EBF5FB;
+	background-color: var(--main-container);
 	padding: 50px;
 	border-radius: 105px;
 	min-width: 0;
@@ -230,26 +245,6 @@ label{
 	word-break:break-word;
 	overflow-wrap: break-word;
 }
-@media screen and (max-width: 900px){
-	.main-container{
-		min-height:auto;
-	}
-	.left-container{
-		display: none;
-	}
-	.right-container{
-		flex-grow: 1 1 80%;
-		width:100%;
-	}
-}
-@media only screen and (max-width: 450px){
-	input{
-		width: 230px !important;
-	}
-	.register-form{
-		flex: 1 1 100%;
-	}
-}
 .register_error{
 	display:none;
 	align-items:flex-start;
@@ -261,6 +256,76 @@ label{
 	right: 40px;
 	border-radius: 30px;
 	cursor: pointer;
+	color: var(--close-color);
+}
+.right-nav{
+	position: fixed;
+	top: 45%;
+	right: -66px;
+	height:fit-content;
+	background-color: var(--right-nav);
+	border-radius: 10px;
+	transition: right 0.5s ease-out;
+}
+.right-nav:hover{
+	right:-4px;
+}
+.right-ul{
+	display:flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 10px;
+	gap: 20px;
+}
+.right-ul > li{
+	list-style-type: none;
+}
+.right-ul-li{
+	display: flex;
+	text-decoration:none;
+	gap: 15px;
+	align-items: center;
+	padding: 5px;
+	color: var(--right-ul-li);
+}
+.right-ul-li:hover{
+	background-color:var(--right-ul-li-hover);
+	border-radius: 10px;
+}
+
+@media screen and (max-width: 900px){
+	.main-container{
+		min-height:auto;
+	}
+	.left-container{
+		display: none;
+	}
+	.right-container{
+		flex-grow: 1 1 80%;
+		width:100%;
+	}
+	.right-nav{
+		top: auto;
+		bottom: -45px;
+		right: 50%;
+		transform: translateX(50%);
+		border-radius:20px;
+		z-index:100;
+	}
+	.right-nav:hover{
+		right:50%;
+	}
+	.right-ul-li{
+		flex-direction:column;
+	}
+}
+@media only screen and (max-width: 450px){
+	input{
+		width: 230px !important;
+	}
+	.register-form{
+		flex: 1 1 100%;
+	}
 }
 @keyframes wobble {
   0%   { transform: rotate(0deg); }
