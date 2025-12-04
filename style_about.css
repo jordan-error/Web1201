@@ -127,7 +127,13 @@ body {
   margin-right: 32px;
   border-radius: 20px;
   border: 1px solid rgb(34, 40, 48);
-  margin-top: 20px;
+  margin-top: -100px;
+      transition: margin-top 0.5s;
+}
+
+.right:hover {
+    margin-top: 20px;
+    transition: margin-top 0.5s;
 }
 
 /* Updated .right a to use flexbox for internal centering */
@@ -426,7 +432,7 @@ body.dark-mode #mem_button{
     .right.mobile-open {
         display: flex; /* Show the container */
         position: absolute; /* Take it out of the nav flow */
-        top: 12vh; /* Position it just below the header bar (which is 10vh tall) */
+        top: 26vh; /* Position it just below the header bar (which is 10vh tall) */
         width: 100%; /* Full width */
         height: auto; /* Let content define height */
         flex-direction: column; /* Stack links vertically */
