@@ -1,61 +1,188 @@
-function toggleContent3() {
-    var element = document.body;
-    const element1 = document.getElementById("about");
-    const element2 = document.getElementById("personal_about");
-    const profile3 = document.getElementById("profile3");
-    const start = document.getElementById("start");
-    const parts = document.getElementById("parts");
-    const rightside = document.getElementById("right_side");
+// Variable declarations at the top (can remain outside functions as they are constants)
+const element1 = document.getElementById("about");
+const element2 = document.getElementById("personal_about1");
+const profile3 = document.getElementById("profile3");
+const start = document.getElementById("start");
+const rightside = document.getElementById("right_side");
+const membersDiv = document.getElementById("members");
+const toggleBtn = document.getElementById('darkModeToggle');
 
-    // Check the current state of element2.style.display
-    if (element2.style.display === 'none' || element2.style.display === '') {
-        // Switch to personal_about view
+
+/**
+ * Toggles the display between the main #about/#start view and the individual #personal_about/profile views.
+ * Triggered by member buttons (e.g., Oh Kuan Qi).
+ */
+function toggleContent3() {
+    // Determine the action: Show personal_about (true) or Hide personal_about (false)
+    const isShowingPersonalAbout = element2.style.display === 'none' || element2.style.display === '';
+
+    if (isShowingPersonalAbout) {
+        // --- Logic to SHOW personal_about / profile3 ---
+        
+        // 1. If on mobile, override CSS and show #right_side, and hide the member list.
+        if (window.innerWidth <= 850) {
+            rightside.style.display = 'flex'; 
+            if (membersDiv) {
+                membersDiv.style.display = 'none'; 
+            }
+        }
+        
+        // 2. Show the new content structure
         element2.style.display = 'inline-flex';
+        profile3.style.display = 'block';
+
+        // 3. Hide the main content area components
         element1.style.display = 'none';
         start.style.display = 'none';
-        profile3.style.display = 'block';
-        parts.style.display = "inline-flex";
-        rightside.style.height = "60vh";
+
     } else {
-        // Switch back to about view
+        // --- Logic to HIDE personal_about / profile3 and revert to #about / #start ---
+
+        // 1. Hide the personal views
         element2.style.display = 'none';
-        element1.style.display = 'inline-flex';
-        // Note: I changed start.style.display to 'none' if profile3 is 'block' 
-        // in the first block, so setting it back to 'flex' here makes sense.
-        start.style.display = 'flex'; 
         profile3.style.display = 'none';
-        parts.style.display = "none";
-        rightside.style.height = "80vh";
+
+        // 2. Revert to default structure
+        element1.style.display = 'inline-flex';
+        start.style.display = 'flex'; 
+        
+        // 3. On Mobile, hide #right_side again to follow the @media CSS rule
+        if (window.innerWidth <= 850) {
+            rightside.style.display = 'none';
+        } else {
+            // 4. On Desktop, ensure membersDiv is visible (in case it was hidden)
+            if (membersDiv) {
+                membersDiv.style.display = 'flex';
+            }
+        }
     }
 }
 
-const toggleBtn = document.getElementById('darkModeToggle');
+function toggleContent4() {
+    // Determine the action: Show personal_about (true) or Hide personal_about (false)
+    const isShowingPersonalAbout = element2.style.display === 'none' || element2.style.display === '';
 
+    if (isShowingPersonalAbout) {
+        // --- Logic to SHOW personal_about / profile3 ---
+        
+        // 1. If on mobile, override CSS and show #right_side, and hide the member list.
+        if (window.innerWidth <= 850) {
+            rightside.style.display = 'flex'; 
+            if (membersDiv) {
+                membersDiv.style.display = 'none'; 
+            }
+        }
+        
+        // 2. Show the new content structure
+        element2.style.display = 'inline-flex';
+        profile3.style.display = 'block';
+
+        // 3. Hide the main content area components
+        element1.style.display = 'none';
+        start.style.display = 'none';
+
+    } else {
+        // --- Logic to HIDE personal_about / profile3 and revert to #about / #start ---
+
+        // 1. Hide the personal views
+        element2.style.display = 'none';
+        profile3.style.display = 'none';
+
+        // 2. Revert to default structure
+        element1.style.display = 'inline-flex';
+        start.style.display = 'flex'; 
+        
+        // 3. On Mobile, hide #right_side again to follow the @media CSS rule
+        if (window.innerWidth <= 850) {
+            rightside.style.display = 'none';
+        } else {
+            // 4. On Desktop, ensure membersDiv is visible (in case it was hidden)
+            if (membersDiv) {
+                membersDiv.style.display = 'flex';
+            }
+        }
+    }
+}
+
+
+/**
+ * Handles responsiveness on window resize and initial load.
+ * Overrides mobile CSS rules when switching to desktop size (> 850px).
+ */
+function checkAndShowMembersDiv() {
+    if (window.innerWidth > 850) {
+        // --- Desktop View: Restore desktop layout ---
+
+        // 1. Ensure right_side is visible (overrides mobile CSS display: none)
+        rightside.style.display = 'flex'; 
+
+        // 2. Ensure members div is visible (if it was hidden by mobile logic)
+        if (membersDiv) {
+             membersDiv.style.display = 'flex'; 
+        }
+
+    } else {
+        // --- Mobile View: Enforce mobile layout rules ---
+        
+        // 1. If currently showing a profile (profile3 is block), keep rightside visible
+        if (profile3.style.display === 'block') {
+             rightside.style.display = 'flex';
+             if (membersDiv) {
+                 membersDiv.style.display = 'none'; // Keep member list hidden while profile is open
+             }
+        } else {
+             // 2. Otherwise (on #start or #about), hide rightside to follow the @media CSS rule
+             rightside.style.display = 'none';
+             if (membersDiv) {
+                 membersDiv.style.display = 'flex'; // Show member list (which is the main content on mobile)
+             }
+        }
+    }
+}
+
+// 🍔 HAMBURGER MENU TOGGLE
+function openMobileMenu() {
+    const navLinks = document.getElementById("myNav1");
+    // Target the icon span inside the .smallright container
+    const hamburgerIcon = document.querySelector('.smallright .hamburger-icon .material-symbols-outlined');
+
+    navLinks.classList.toggle("mobile-open");
+
+    // Swap the icon
+    if (navLinks.classList.contains("mobile-open")) {
+        hamburgerIcon.textContent = 'close';
+    } else {
+        hamburgerIcon.textContent = 'menu';
+    }
+}
+
+// DARK MODE TOGGLE
 toggleBtn.addEventListener('click', () => {
-    // 1. Toggle the 'dark-mode' class on the body
     document.body.classList.toggle('dark-mode');
     
-    // 2. Identify the icon span and the link text
     const iconSpan = toggleBtn.querySelector('.material-symbols-outlined');
     
-    // 3. Change icon and text based on the resulting state
     if (document.body.classList.contains('dark-mode')) {
-        // If 'dark-mode' is now active (meaning we are in the BRIGHT theme)
-        
-        // Change icon to signal switching back to DARK mode (moon icon)
         if (iconSpan) {
-            iconSpan.textContent = 'dark_mode'; // Material Symbol for moon/dark mode
+            iconSpan.textContent = 'dark_mode';
         }
-        // Change link text to reflect the action/target state
-        toggleBtn.childNodes[1].nodeValue = ' Dark'; // Assuming the text node is the 3rd child
+        // Using index 1 as confirmed by you
+        toggleBtn.childNodes[1].nodeValue = ' Dark'; 
     } else {
-        // If 'dark-mode' is NOT active (meaning we are in the DEFAULT DARK theme)
-        
-        // Change icon to signal switching to LIGHT mode (sun icon)
         if (iconSpan) {
-            iconSpan.textContent = 'sunny'; // Material Symbol for sun/light mode
+            iconSpan.textContent = 'sunny';
         }
-        // Change link text to reflect the action/target state
+        // Using index 1 as confirmed by you
         toggleBtn.childNodes[1].nodeValue = ' Light';
     }
 });
+
+
+// -----------------------------------------------------------
+// 🌟 Event Listeners
+
+// Listener for window resizing
+window.addEventListener('resize', checkAndShowMembersDiv);
+
+// Listener for initial load
+document.addEventListener('DOMContentLoaded', checkAndShowMembersDiv);

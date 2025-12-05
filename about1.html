@@ -13,10 +13,13 @@
     </head>
     <body>
         <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="arrow up"></i></button>
+        <div id="fixedbutton">
+            <button><span class="material-symbols-outlined">keyboard_arrow_left</span></button>
+            <button id="contact"><span class="material-symbols-outlined">notes</span>Notes</button>
+        </div>
         <div class="nav">
                 <div class="left">
-                    <a href="#"><img src="images/john_doe.jpg"></a>
-                    <a href="#" class="name">Admin</a>
+                    <a href="#"><img src="images/john_doe.jpg">Admin</a>
                 </div>
                 <div class="right" id="myNav1">
                     <a href="#"><span class="material-symbols-outlined">notes</span>Notes</a>
@@ -27,7 +30,7 @@
                 </div>
                 <div class="smallright">
                     <a href="javascript:void(0);" class="hamburger-icon" onclick="openMobileMenu()">
-                        <span class="material-symbols-outlined">menu</span>
+                        <span class="material-symbols-outlined">menu</span>Menu
                     </a>
                 </div>
         </div>
@@ -37,20 +40,21 @@
                         <div>
                             <p class="header">About Us</p>
                             <p class="description">We are a team of 4 students pursuing a degree in computer science at Sunway University.</p>
-                            <p class="description">This website is dedicated to students wanting to manage their workflow more efficiently, allowing for a reduction in time needed to complete tasks.</p>
+                            <p class="description">This website is dedicated to students wanting to manage their workflow more efficiently,&nbsp;allowing for lesser time needed to complete tasks.</p>
+                            <p class="description">For individual portfolios,&nbsp;click on one of the names on the bottom menu.</p>
                         </div>
                     </div>
-                    <div id="personal_about">
+                    <div id="personal_about1">
                         <img src="images/john_doe.jpg" alt="Image">
                         <p class="details">Name:&nbsp;Oh Kuan Qi
                         <br><br>Course:&nbsp;Bachelor of Science (Honours) in Computer Science
                         <br><br>School: &nbsp;Sunway University</p>
                     </div>
                     <div id="members">
-                        <button id="mem_button1" class="mem_button1">Daniel Lau Zhe Kai</button>
-                        <button id="mem_button2" class="mem_button2">Jordan Ooi Zixian</button>
-                        <button id="mem_button3" class="mem_button3" onclick="toggleContent3()">Oh Kuan Qi</button>
-                        <button id="mem_button4" class="mem_button4">Poon Chun Lok</button>
+                        <button id="mem_button" class="mem_button1">Daniel Lau Zhe Kai</button>
+                        <button id="mem_button" class="mem_button2">Jordan Ooi Zixian</button>
+                        <button id="mem_button" class="mem_button3" onclick="toggleContent3()">Oh Kuan Qi</button>
+                        <button id="mem_button" class="mem_button4" onclick="toggleContent4()">Poon Chun Lok</button>
                     </div>
                 </div>
                 <div id="right_side">
@@ -78,6 +82,28 @@
                                         <p id="desc1" class="desc1">2025&nbsp;-&nbsp;present</p>
                                     </div>
                                     <div id="box3" class="box3">
+                                        <p id="desc1" class="desc1">IELTS</p>
+                                        <p id="desc1" class="desc1">British Council,&nbsp;Malaysia</p>
+                                        <p id="desc1" class="desc1">2023</p>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                    <div id="profile4" class="profile4">
+                        <p class="header">About</p>
+                        <p class="description">Born and raised in Hong Kong, I grew up exceedingly keen on learning about technology. 
+                        During high school, numerous data breaches and viruses like WannaCry dominated the headlines, which piqued my interest. 
+                        I decided to teach myself programming, learning Python, HTML, CSS, and JavaScript. Through this process, I became immersed in the fascinating world of computing. 
+                        I hope to use my skills to secure the internet and create software that benefits humanity.</p>
+                            <div id="education" class="education">
+                                <p class="header">Education</p>
+                                <div id="grid-container2" class="grid-container2">
+                                    <div id="box1" class="box1">
+                                        <p id="desc1" class="desc1">Bachelor of Science (Honours) in Computer Science</p>
+                                        <p id="desc1" class="desc1">Sunway University,&nbsp;Malaysia</p>
+                                        <p id="desc1" class="desc1">2025&nbsp;-&nbsp;present</p>
+                                    </div>
+                                    <div id="box2" class="box2">
                                         <p id="desc1" class="desc1">IELTS</p>
                                         <p id="desc1" class="desc1">British Council,&nbsp;Malaysia</p>
                                         <p id="desc1" class="desc1">2023</p>
