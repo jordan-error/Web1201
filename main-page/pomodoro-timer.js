@@ -2,9 +2,11 @@ const wrapper = document.querySelector(".wrapper");
 document.querySelector('#Timer').addEventListener('click', () => {
     console.log('Timer button clicked');
     const wrapper = document.querySelector(".wrapper");
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 808) {
         wrapper.classList.remove('side-panel-open-1');
         wrapper.classList.remove('side-panel-open-2');
+        wrapper.classList.remove('side-panel-open-4');
+
     }
     wrapper.classList.toggle('side-panel-open-3');
 });

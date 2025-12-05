@@ -14,10 +14,13 @@
     <link href="spaces-side-panel-styles.css" rel="stylesheet">
     <link href="music-side-panel-styles.css" rel="stylesheet">
     <link href="pomodoro-timer-styles.css" rel="stylesheet">
+    <link href="motivation-styles.css" rel="stylesheet">
     <!-- JavaScripts -->
     <script src="music-sidebar.js" defer></script>
     <script src="spaces-sidebar.js" defer></script>
     <script src="pomodoro-timer.js" defer></script>
+    <script src="motivation.js" defer></script>
+    <script src="main-page.js" defer></script>
     <!-- Icons from Google -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
@@ -27,7 +30,7 @@
         <source src="https://cdn.pixabay.com/video/2024/02/25/201947-916877801_tiny.mp4">
     </video>
     <div class="navigation-bar">
-        <div class="right-column">
+        <div class="right-column" id="rightColumn">
             <a href="todo/index.html" class="navigation">
                 <span class="material-symbols-outlined">notes</span>
                 <div class="nav-description">Notes</div>
@@ -62,7 +65,7 @@
     <div class="main-content-area">
         <div class="wrapper">
 
-            <div class="side-nav-bar">
+            <div class="side-nav-bar" id="sideNavBar">
                 <button class="side-button" id="Spaces">
                     <span class="material-symbols-outlined">globe</span>
                     <div class="nav-description">Spaces</div>
@@ -75,7 +78,7 @@
                     <span class="material-symbols-outlined">timer</span>
                     <div class="nav-description">Timer</div>
                 </button>
-                <button class="side-button" id="">
+                <button class="side-button" id="Motivation">
                     <span class="material-symbols-outlined">
                         heart_plus</span>                   
                     <div class="nav-description">Motivation</div>
@@ -270,6 +273,13 @@
                         <button id="stop">Stop</button>
                         <button id="reset">Reset</button>
                     </div>
+                </div>
+            </div>
+            <div class="popup-overlay" id="motivation-popup">
+                <div class="popup-content">
+                    <h2>Daily Inspiration</h2>
+                    <p id="quote-text">Loading...</p>
+                    <button id="close-popup-btn">Close</button>
                 </div>
             </div>
             </div>

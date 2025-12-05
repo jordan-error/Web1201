@@ -2,20 +2,16 @@
 document.querySelector('#SpacesToggleButton').addEventListener('click', () => {
     console.log('Spaces toggle clicked');
     const wrapper = document.querySelector(".wrapper");
-
-    //If on mobile, close the other panels first
-    if (window.innerWidth <= 768) {
-        wrapper.classList.remove('side-panel-open-2');
-        }
     wrapper.classList.toggle('side-panel-open-1')
 });
 
 document.querySelector('#Spaces').addEventListener('click', () => {
     console.log('Spaces button clicked');
     const wrapper = document.querySelector(".wrapper");
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= 800) {
         wrapper.classList.remove('side-panel-open-2');
         wrapper.classList.remove('side-panel-open-3');
+        wrapper.classList.remove('side-panel-open-4');
     }
     wrapper.classList.toggle('side-panel-open-1');
 });
