@@ -98,16 +98,28 @@ register_password.addEventListener("input",()=>{
 	else{
 		change_status(register_error,false);
 	}
+	const confirm_error = document.getElementById("confirm_error");
+	const confirm_val = confirm_password.value;
+	if(register_password.value.length > 0){
+		if(confirm_val !== register_password.value){
+		change_status(confirm_error,true);
+		}
+		else{
+			change_status(confirm_error,false);
+		}
+	}
 })
 confirm_password.addEventListener("input",()=>{
 	const register_error = document.getElementById("confirm_error");
 	const input_val = confirm_password.value;
 	//Ensure the confirm password value is the same as the password
-	if(input_val !== register_password.value){
-		change_status(register_error,true);
-	}
-	else{
-		change_status(register_error,false);
+	if(register_password.value.length > 0){
+		if(input_val !== register_password.value){
+			change_status(register_error,true);
+		}
+		else{
+			change_status(register_error,false);
+		}
 	}
 })
 function change_theme(){
