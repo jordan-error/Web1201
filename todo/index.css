@@ -108,6 +108,7 @@ body {
 @media (hover: hover) {
     .list-item:hover {
         color: var(--list-hover);
+	cursor:pointer;
     }
     .list-item:hover > .setting {
         visibility: visible;
