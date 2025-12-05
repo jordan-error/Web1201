@@ -143,24 +143,30 @@ function checkAndShowMembersDiv() {
 // 🍔 HAMBURGER MENU TOGGLE
 function openMobileMenu() {
     const navLinks = document.getElementById("myNav1");
-    // Target the icon span inside the .smallright container
-    const hamburgerIcon = document.querySelector('.smallright .hamburger-icon .material-symbols-outlined');
-
+    // Target the image element using an ID or a specific selector
+    const mobileMenuIcon = document.getElementById('mobileMenuIcon'); 
+    
+    // Define the paths to your icon images
+    const menuIconSrc = 'images/menu.png';
+    const closeIconSrc = 'images/close.png';
+    
     navLinks.classList.toggle("mobile-open");
 
-    // Swap the icon
+    // Swap the icon source
     if (navLinks.classList.contains("mobile-open")) {
-        hamburgerIcon.textContent = 'close';
+        // Change the source to the close image
+        mobileMenuIcon.src = closeIconSrc; 
+        mobileMenuIcon.alt = 'Close';
     } else {
-        hamburgerIcon.textContent = 'menu';
+        // Change the source back to the menu image
+        mobileMenuIcon.src = menuIconSrc;
+        mobileMenuIcon.alt = 'Menu';
     }
 }
 
 // DARK MODE TOGGLE
 toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
-    
-    const iconSpan = toggleBtn.querySelector('.material-symbols-outlined');
     
     if (document.body.classList.contains('dark-mode')) {
         if (iconSpan) {
