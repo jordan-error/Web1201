@@ -138,18 +138,22 @@ body{
 	align-self: center;
 	transition: width 0.5s ease, background-color 0.5s ease;
 }
-.login-button:hover{
-	cursor: pointer;
-	width: 300px;
-	background-color: #67AFD2;
+@media (hover:hover){
+	.login-button:hover{
+		cursor: pointer;
+		width: 300px;
+		background-color: #67AFD2;
+	}
 }
 .link{
 	color:#5A7FA5;
 	transition: transform 0.5s ease;
 }
-.link:hover{
-	color: #3E6E9C;
-	transform: translateX(10px);
+@media (hover:hover){
+	.link:hover{
+		color: #3E6E9C;
+		transform: translateX(10px);
+	}
 }
 .register{
 	margin:0;
@@ -197,9 +201,11 @@ label{
 	right: 4px;
 	color: var(--eye);
 }
-.eye:hover{
-	cursor:pointer;
-	animation: wobble 0.4s ease;
+@media (hover:hover){
+	.eye:hover{
+		cursor:pointer;
+		animation: wobble 0.4s ease;
+	}
 }
 .register-modal{
 	display:none;
@@ -267,8 +273,10 @@ label{
 	border-radius: 10px;
 	transition: right 0.5s ease-out;
 }
-.right-nav:hover{
-	right:-4px;
+@media (hover:hover){
+	.right-nav:hover{
+		right:-4px;
+	}
 }
 .right-ul{
 	display:flex;
@@ -288,9 +296,11 @@ label{
 	padding: 5px;
 	color: var(--right-ul-li);
 }
-.right-ul-li:hover{
-	background-color:var(--right-ul-li-hover);
-	border-radius: 10px;
+@media (hover:hover){
+	.right-ul-li:hover{
+		background-color:var(--right-ul-li-hover);
+		border-radius: 10px;
+	}
 }
 
 @media screen and (max-width: 900px){
@@ -312,8 +322,10 @@ label{
 		border-radius:20px;
 		z-index:100;
 	}
-	.right-nav:hover{
-		right:50%;
+	@media (hover:hover){
+		.right-nav:hover{
+			right:50%;
+		}
 	}
 	.right-ul-li{
 		flex-direction:column;
