@@ -79,7 +79,7 @@ register_username.addEventListener("input",()=>{
 	const register_error = document.getElementById("username_error");
 	const input_val = register_username.value;
 	//Regular expression to test for only alphanumeric characters and (.) (_) (-) char
-	const username_regex = /^[a-zA-Z0-9._-]+$/;
+	const username_regex = /^[a-zA-Z0-9@._-\s]+$/;
 	if(!validate_length_regex(input_val,5,username_regex)){
 		change_status(register_error,true);
 	}
