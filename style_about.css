@@ -150,6 +150,10 @@ body {
     .right, .smallright {
         margin-top: 20px;
     }
+
+    #fixedbutton {
+        right: 20;
+    }
 }
 
 /* Updated .right a to use flexbox for internal centering */
