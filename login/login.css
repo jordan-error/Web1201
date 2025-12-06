@@ -310,7 +310,7 @@ label{
 		display: none;
 	}
 	.right-container{
-		flex-grow: 1 1 80%;
+		flex: 1 1 80%;
 		width:100%;
 	}
 	.right-nav{
