@@ -33,6 +33,7 @@ body {
     right: -116px;
     top: 50%;
     transition: right 0.5s;
+    width: 180px;
 }
 
 #fixedbutton a {
@@ -255,6 +256,76 @@ body {
     background-color: rgb(34, 40, 48);
 } 
 
+/* AFTER - Find this block and change it */
+#form {
+    display: none; /* Keep #form hidden if it's used elsewhere, but remove 'form' */
+}
+/* New Rule for form container - hide by default */
+#contactform { 
+    display: none; 
+    /* Add styling here to position/format your contact form container */
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000; /* Ensure it is above other content */
+    background-color: rgb(34, 40, 48); /* Match dark mode background */
+    border-radius: 20px;
+    padding: 32px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    min-width: 300px;
+    max-width: 90vw;
+}
+
+/* Style the actual form element inside the container */
+#contactform form {
+    display: flex; /* Make the form content appear */
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Style for form labels and inputs/textarea */
+#contactform label {
+    font-size: 1.2vw;
+    margin-top: 10px;
+}
+
+#contactform input[type="name"], 
+#contactform input[type="text"], 
+#contactform input[type="email"], 
+#contactform textarea {
+    padding: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+    background-color: rgb(60, 68, 81);
+    color: white;
+    font-size: 16px;
+}
+
+#contactform textarea {
+    resize: vertical;
+}
+
+#contactform input[type="submit"] {
+    margin-top: 20px;
+    padding: 15px;
+    font-size: 1.2vw;
+    background-color: white;
+    color: black;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#contactform input[type="submit"]:hover {
+    background-color: lightgray;
+}
+
+/* Class to show the form, to be added by JavaScript */
+.contactform-open {
+    display: block !important;
+}
+
+
 #personal_about1, #profile3, #profile4 {
     display: none;
 } 
@@ -400,6 +471,27 @@ body.dark-mode .smallright {
 
 body.dark-mode .hamburger-icon {
     color: black; /* Bright Mode color */
+}
+
+/* Dark Mode Form Styles */
+body.dark-mode #contactform {
+    background-color: white; /* Invert */
+    border: 1px solid black;
+    color: black;
+}
+
+body.dark-mode #contactform input[type="name"], 
+body.dark-mode #contactform input[type="text"], 
+body.dark-mode #contactform input[type="email"], 
+body.dark-mode #contactform textarea {
+    background-color: #f0f0f0; /* Lighter background for inputs */
+    color: black;
+    border: 1px solid gray;
+}
+
+body.dark-mode #contactform input[type="submit"] {
+    background-color: rgb(34, 40, 48);
+    color: white;
 }
 
 body.dark-mode #right_side, 

@@ -164,21 +164,47 @@ function openMobileMenu() {
     }
 }
 
+// In script_about1.js:
+
+function openContact() {
+    const contactFormContainer = document.getElementById("contactform"); 
+    // Target the image element directly by its ID
+    const MenuIcon = document.getElementById('menuicon'); 
+    // Target the text node within the link (it's the second child node of the <a> tag)
+    // We get the parent <a> tag first, then find its text content node
+    const fixedButtonLink = document.querySelector('#fixedbutton a');
+    const buttonTextNode = fixedButtonLink.childNodes[1]; // Index 1 is the text node 'Contact Us'
+
+    // Define the paths to your icon images
+    const menuIconSrc = 'images/contact.png';
+    const closeIconSrc = 'images/close.png';
+    
+    // Toggle the CSS class to show/hide the form container
+    contactFormContainer.classList.toggle("contactform-open");
+
+    // Swap the icon source and text based on the new class presence
+    if (contactFormContainer.classList.contains("contactform-open")) {
+        // Form is open, change the source to the close image and update text
+        MenuIcon.src = closeIconSrc; 
+        MenuIcon.alt = 'Close';
+        buttonTextNode.nodeValue = 'Close'; // Update the text
+    } else {
+        // Form is closed, change the source back to the contact image and update text
+        MenuIcon.src = menuIconSrc;
+        MenuIcon.alt = 'Contact Us';
+        buttonTextNode.nodeValue = 'Contact Us'; // Update the text
+    }
+}
+
 // DARK MODE TOGGLE
 toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     
     if (document.body.classList.contains('dark-mode')) {
-        if (iconSpan) {
-            iconSpan.textContent = 'dark_mode';
-        }
-        // Using index 1 as confirmed by you
-        toggleBtn.childNodes[1].nodeValue = ' Dark'; 
+        toggleBtn.childNodes[0].src = 'images/dark.png';
+        toggleBtn.childNodes[1].nodeValue = 'Dark'; 
     } else {
-        if (iconSpan) {
-            iconSpan.textContent = 'sunny';
-        }
-        // Using index 1 as confirmed by you
+        toggleBtn.childNodes[0].src = 'images/light.png';
         toggleBtn.childNodes[1].nodeValue = ' Light';
     }
 });
