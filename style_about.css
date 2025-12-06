@@ -21,32 +21,41 @@ body {
 }
 
 #fixedbutton {
+  /* float: left; removed float */
     position: fixed;
-    top: 50%;
-    right: -85;
-    display: inline-flex;
-    flex-direction: row;
-    border: 0.2px solid white;
-}
-
-#fixedbutton button {
-    color: white;
+    align-items: center; /* Vertically center content */
+    height: 12vh; /* Keep height for consistency */
+    margin-left: 32px;
+    margin-top: 20px;
     background-color: rgb(34, 40, 48);
-    height: 10vh;  
-    width: 30px;
-    margin: 0;
-    padding: 0;
-    box-shadow: 12px;
+    border: 0.1px solid white;
+    border-radius: 20px;
+    right: -116px;
+    top: 50%;
+    transition: right 0.5s;
 }
 
-#fixedbutton #contact {
-    display: inline-flex;
-    flex-direction: column;
-    width: auto;
+#fixedbutton a {
+    /* float: left; removed float */
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+    height: 12vh;
+    /* Add padding to give space around the text */
+    padding: 0 15px; 
+    /* Center text vertically and horizontally inside the link */
+    display: inline-flex; 
+    flex-direction: row;
+    align-items: center; 
+    justify-content: center;
+    gap: 16px; /* Space between text and image */
 }
+
 
 #fixedbutton:hover {
-    width: 200px;
+    right: 10px;
+    transition: right 0.5s;
 }
 
 .details {
@@ -78,7 +87,7 @@ body {
     background-color: transparent;
 }
 
-.nav img {
+.nav img, #fixedbutton img {
   display: block;
   height: 38px;
   /* margin: auto; removed auto margin */
@@ -118,22 +127,28 @@ body {
 
 /* Updated .right to use flexbox */
 .right {
-  /* float: right; removed float */
-  display: flex; /* Make it a flex container */
-  align-items: center; /* Vertically center content */
+    /* float: right; removed float */
+    display: flex; /* Make it a flex container */
+    align-items: center; /* Vertically center content */
     background-color: rgb(34, 40, 48);
-  width: auto;
-  height: 12vh;
-  margin-right: 32px;
-  border-radius: 20px;
-  border: 1px solid rgb(34, 40, 48);
-  margin-top: -100px;
-      transition: margin-top 0.5s;
+    width: auto;
+    height: 12vh;
+    margin-right: 32px;
+    border-radius: 20px;
+    border: 1px solid rgb(34, 40, 48);
+    margin-top: -100px;
+    transition: margin-top 0.5s;
 }
 
 .right:hover {
-    margin-top: 20px;
-    transition: margin-top 0.5s;
+        margin-top: 20px;
+        transition: margin-top 0.5s;
+    }
+
+@media (pointer:coarse) {
+    .right, .smallright {
+        margin-top: 20px;
+    }
 }
 
 /* Updated .right a to use flexbox for internal centering */
@@ -169,7 +184,13 @@ body {
     margin-right: 32px;
     border-radius: 20px;
     border: 1px solid rgb(34, 40, 48);
+    margin-top: -100px;
+    transition: margin-top 0.5s;
+}
+
+.smallright:hover {
     margin-top: 20px;
+    transition: margin-top 0.5s;
 }
 
 #myBtn {
@@ -322,6 +343,10 @@ body.dark-mode {
     font-weight: normal;
 }
 
+body.dark-mode .nav .right a img {
+    filter: invert(1);
+}
+
 body.dark-mode .header, 
 body.dark-mode .description, 
 body.dark-mode .details {
@@ -347,6 +372,19 @@ body.dark-mode .right {
     background-color: white;
     border: 1px solid white;
     box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
+}
+
+body.dark-mode #fixedbutton {
+    background-color: white;
+    border: 0.2px solid gray;
+}
+
+body.dark-mode #fixedbutton a {
+    color: black;
+}
+
+body.dark-mode #fixedbutton img {
+    filter: invert(1);
 }
 
 body.dark-mode .left a,
