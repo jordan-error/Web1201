@@ -14,16 +14,16 @@
         <div id="fixedbutton" onclick="openContact()">
             <a href="#"><img id="menuicon" src="images/contact.png" alt="contact">Contact Us</a>
         </div>
-        <div id="contactform">
+        <div id="contactform" onsubmit="submit()">
             <form>
                 <label for="name">Name</label>
-                <input type="name" id="name" name="name" placeholder="Insert your name">
+                <input type="name" id="name" name="name" placeholder="Insert your name" required>
 
                 <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="Insert your email address">
+                <input type="email" id="email" name="email" placeholder="Insert your email address" required>
 
                 <label for="details">Details</label>
-                <textarea id="details" name="details" placeholder="Write something.." style="height:200px"></textarea>
+                <textarea id="details" name="details" placeholder="Write something.." style="height:200px" required></textarea>
 
                 <input type="submit" value="Submit">
             </form>

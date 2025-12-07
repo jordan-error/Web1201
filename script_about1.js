@@ -2,104 +2,145 @@
 const element1 = document.getElementById("about");
 const element2 = document.getElementById("personal_about1");
 const profile3 = document.getElementById("profile3");
+const profile4 = document.getElementById("profile4");
 const start = document.getElementById("start");
 const rightside = document.getElementById("right_side");
 const membersDiv = document.getElementById("members");
 const toggleBtn = document.getElementById('darkModeToggle');
 
 
+function hideAllProfiles() {
+    element2.style.display = 'none'; // Personal image/details container
+    profile3.style.display = 'none'; // Oh Kuan Qi profile
+    profile4.style.display = 'none'; // Poon Chun Lok profile
+}
+
 /**
- * Toggles the display between the main #about/#start view and the individual #personal_about/profile views.
- * Triggered by member buttons (e.g., Oh Kuan Qi).
+ * Toggles the display for Oh Kuan Qi's profile (profile3).
+ * Now supports direct switching from another profile.
  */
 function toggleContent3() {
-    // Determine the action: Show personal_about (true) or Hide personal_about (false)
-    const isShowingPersonalAbout = element2.style.display === 'none' || element2.style.display === '';
+    // Check if profile3 is currently displayed. If so, close it.
+    const isProfile3Active = profile3.style.display === 'block';
 
-    if (isShowingPersonalAbout) {
-        // --- Logic to SHOW personal_about / profile3 ---
+    // 1. First, hide all specific profile content
+    hideAllProfiles();
+
+    if (isProfile3Active) {
+        // If profile3 was already open, close it and revert to main view
+        element1.style.display = 'inline-flex';
+        start.style.display = 'flex'; 
+
+        // Revert mobile layout if necessary
+        if (window.innerWidth <= 850) {
+            rightside.style.display = 'none';
+        } else if (membersDiv) {
+            membersDiv.style.display = 'flex';
+        }
+
+    } else {
+        // If profile3 was closed (or another profile was open), show profile3
+
+        // Show the new content structure
+        element2.style.display = 'inline-flex';
+        profile3.style.display = 'block';
+
+        // Hide the main content area components
+        element1.style.display = 'none';
+        start.style.display = 'none';
         
-        // 1. If on mobile, override CSS and show #right_side, and hide the member list.
+        // Handle mobile layout: show right_side and hide members list
         if (window.innerWidth <= 850) {
             rightside.style.display = 'flex'; 
             if (membersDiv) {
                 membersDiv.style.display = 'none'; 
-            }
-        }
-        
-        // 2. Show the new content structure
-        element2.style.display = 'inline-flex';
-        profile3.style.display = 'block';
-
-        // 3. Hide the main content area components
-        element1.style.display = 'none';
-        start.style.display = 'none';
-
-    } else {
-        // --- Logic to HIDE personal_about / profile3 and revert to #about / #start ---
-
-        // 1. Hide the personal views
-        element2.style.display = 'none';
-        profile3.style.display = 'none';
-
-        // 2. Revert to default structure
-        element1.style.display = 'inline-flex';
-        start.style.display = 'flex'; 
-        
-        // 3. On Mobile, hide #right_side again to follow the @media CSS rule
-        if (window.innerWidth <= 850) {
-            rightside.style.display = 'none';
-        } else {
-            // 4. On Desktop, ensure membersDiv is visible (in case it was hidden)
-            if (membersDiv) {
-                membersDiv.style.display = 'flex';
             }
         }
     }
 }
 
-function toggleContent4() {
-    // Determine the action: Show personal_about (true) or Hide personal_about (false)
-    const isShowingPersonalAbout = element2.style.display === 'none' || element2.style.display === '';
 
-    if (isShowingPersonalAbout) {
-        // --- Logic to SHOW personal_about / profile3 ---
+/**
+ * Toggles the display for Poon Chun Lok's profile (profile4).
+ * Now supports direct switching from another profile.
+ */
+function toggleContent4() {
+    // Check if profile4 is currently displayed. If so, close it.
+    const isProfile4Active = profile4.style.display === 'block';
+
+    // 1. First, hide all specific profile content
+    hideAllProfiles();
+
+    if (isProfile4Active) {
+        // If profile4 was already open, close it and revert to main view
+        element1.style.display = 'inline-flex';
+        start.style.display = 'flex'; 
+
+        // Revert mobile layout if necessary
+        if (window.innerWidth <= 850) {
+            rightside.style.display = 'none';
+        } else if (membersDiv) {
+            membersDiv.style.display = 'flex';
+        }
+
+    } else {
+        // If profile4 was closed (or another profile was open), show profile4
+
+        // Show the new content structure
+        element2.style.display = 'inline-flex';
+        profile4.style.display = 'block'; // NOTE: Switched to profile4
         
-        // 1. If on mobile, override CSS and show #right_side, and hide the member list.
+        // Hide the main content area components
+        element1.style.display = 'none';
+        start.style.display = 'none';
+
+        // Handle mobile layout: show right_side and hide members list
         if (window.innerWidth <= 850) {
             rightside.style.display = 'flex'; 
             if (membersDiv) {
                 membersDiv.style.display = 'none'; 
             }
         }
-        
-        // 2. Show the new content structure
-        element2.style.display = 'inline-flex';
-        profile3.style.display = 'block';
+    }
+}
 
-        // 3. Hide the main content area components
-        element1.style.display = 'none';
-        start.style.display = 'none';
+// ... (checkAndShowMembersDiv and other functions need an update too) ...
+
+/**
+ * Handles responsiveness on window resize and initial load.
+ * Overrides mobile CSS rules when switching to desktop size (> 850px).
+ * Updated to check for *both* profile3 and profile4 status.
+ */
+function checkAndShowMembersDiv() {
+    // Determine if any profile is currently open
+    const isAnyProfileOpen = profile3.style.display === 'block' || profile4.style.display === 'block'; 
+
+    if (window.innerWidth > 850) {
+        // --- Desktop View: Restore desktop layout ---
+
+        // 1. Ensure right_side is visible (overrides mobile CSS display: none)
+        rightside.style.display = 'flex'; 
+
+        // 2. Ensure members div is visible (if it was hidden by mobile logic)
+        if (membersDiv) {
+             membersDiv.style.display = 'flex'; 
+        }
 
     } else {
-        // --- Logic to HIDE personal_about / profile3 and revert to #about / #start ---
-
-        // 1. Hide the personal views
-        element2.style.display = 'none';
-        profile3.style.display = 'none';
-
-        // 2. Revert to default structure
-        element1.style.display = 'inline-flex';
-        start.style.display = 'flex'; 
+        // --- Mobile View: Enforce mobile layout rules ---
         
-        // 3. On Mobile, hide #right_side again to follow the @media CSS rule
-        if (window.innerWidth <= 850) {
-            rightside.style.display = 'none';
+        // 1. If currently showing a profile, keep rightside visible
+        if (isAnyProfileOpen) {
+             rightside.style.display = 'flex';
+             if (membersDiv) {
+                 membersDiv.style.display = 'none'; // Keep member list hidden while profile is open
+             }
         } else {
-            // 4. On Desktop, ensure membersDiv is visible (in case it was hidden)
-            if (membersDiv) {
-                membersDiv.style.display = 'flex';
-            }
+             // 2. Otherwise (on #start or #about), hide rightside to follow the @media CSS rule
+             rightside.style.display = 'none';
+             if (membersDiv) {
+                 membersDiv.style.display = 'flex'; // Show member list (which is the main content on mobile)
+             }
         }
     }
 }
@@ -208,6 +249,10 @@ toggleBtn.addEventListener('click', () => {
         toggleBtn.childNodes[1].nodeValue = ' Light';
     }
 });
+
+function submit() {
+    alert("Form submitted!");
+}
 
 
 // -----------------------------------------------------------
