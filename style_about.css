@@ -193,6 +193,21 @@ body {
     transition: margin-top 0.5s;
 }
 
+.smallclose {
+    display: none; /* Hidden on desktop */
+    cursor: pointer;
+    color: white; /* Default Dark Mode color */
+    align-items: center; /* Vertically center content */
+    background-color: rgb(34, 40, 48);
+    width: auto;
+    height: 12vh;
+    margin-right: 32px;
+    border-radius: 20px;
+    border: 1px solid rgb(34, 40, 48);
+    margin-top: -100px;
+    transition: margin-top 0.5s;
+}
+
 .smallright:hover {
     margin-top: 20px;
     transition: margin-top 0.5s;
