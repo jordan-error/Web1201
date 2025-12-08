@@ -185,10 +185,10 @@ function openMobileMenu() {
 
     if (navLinks.classList.contains("mobile-open")) {
         mobileMenuIcon.src = closeIconSrc; 
-        mobileMenuIcon.alt = 'Close';
+        mobileMenuIcon.parentElement.childNodes[2].nodeValue = 'Close';
     } else {
         mobileMenuIcon.src = menuIconSrc;
-        mobileMenuIcon.alt = 'Menu';
+        mobileMenuIcon.parentElement.childNodes[2].nodeValue = 'Menu';
     }
 }
 
@@ -289,6 +289,7 @@ function applySavedTheme() {
 function submit() {
     alert("Form submitted!");
 }
+
 
 // Listener for window resizing
 window.addEventListener('resize', checkAndShowMembersDiv);

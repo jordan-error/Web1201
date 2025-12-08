@@ -162,7 +162,7 @@ textarea {
     /* Center content horizontally and vertically */
     align-items: center; 
     justify-content: center;
-    gap: 24px; /* Space between text and image */
+    gap: 20px; /* Space between text and image */
     padding: 0 25px; /* Add padding for space */
     color: white;
 }
@@ -435,7 +435,8 @@ body.dark-mode {
     font-weight: normal;
 }
 
-body.dark-mode .nav .right a img {
+
+head.dark-mode link, body.dark-mode .nav .right a img, body.dark-mode .nav .smallright a img, body.dark-mode .nav .smallclose a img {
     filter: invert(1);
 }
 
@@ -484,7 +485,7 @@ body.dark-mode .right a {
     color: black;
 }
 
-body.dark-mode .smallright {
+body.dark-mode .smallright, body.dark-mode .smallclose {
     background-color: white;
     border: 1px solid white;
     box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
@@ -612,6 +613,10 @@ body.dark-mode #mem_button{
         flex-direction: row; /* Change back to horizontal layout */
     }
 
+    .right.mobile-open:hover {
+        transition: 0;
+    }
+
     /* Remove the border from the last link */
     .right.mobile-open a:last-child {
         border-bottom: none;
@@ -624,6 +629,19 @@ body.dark-mode #mem_button{
         /* Position the icon on the right */
     }
     
+    .right {
+        margin-top: 20px; /* Force position to the visible state */
+        /* Optionally remove transition for immediate visual change, though 
+           it's not strictly necessary since hover is removed */
+        transition: none; 
+    }
+
+    /* Remove the hover effect completely */
+    .right:hover {
+        margin-top: 20px; /* Keep it at the static position */
+        transition: none;
+    }
+
     /* Ensure the logo/image is visible on the far left */
     .left a:first-child {
         display: flex;
@@ -647,13 +665,19 @@ body.dark-mode #mem_button{
         font-size: 1.8vw;
     }
 
-    #grid-container1 {
+    #grid-container1, #grid-container2, #grid-container3, #grid-container4 {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr auto;
     }
 
     #desc1 {
         font-size: 2vw;
+    }
+
+    #fixedbutton {
+        margin-bottom: 20px;
+        top: 85vh;
+
     }
 }
 
