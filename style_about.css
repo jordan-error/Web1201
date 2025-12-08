@@ -10,6 +10,10 @@ body {
     font-weight: normal;
 }
 
+textarea {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
 .header {
   font-size: 1.8vw;
   font-weight: 600;
@@ -146,18 +150,8 @@ body {
         transition: margin-top 0.5s;
     }
 
-@media (pointer:coarse) {
-    .right, .smallright {
-        margin-top: 20px;
-    }
-
-    #fixedbutton {
-        right: 20;
-    }
-}
-
 /* Updated .right a to use flexbox for internal centering */
-.right a, .smallright a {
+.right a, .smallright a, .smallclose a {
     /* margin: auto; removed auto margin */
     /* float: left; removed float */
     text-decoration: none;
@@ -178,22 +172,22 @@ body {
   height: 26px;
 }
 
-.smallright {
-    display: none; /* Hidden on desktop */
-    cursor: pointer;
-    color: white; /* Default Dark Mode color */
-    align-items: center; /* Vertically center content */
-    background-color: rgb(34, 40, 48);
-    width: auto;
-    height: 12vh;
-    margin-right: 32px;
-    border-radius: 20px;
-    border: 1px solid rgb(34, 40, 48);
-    margin-top: -100px;
-    transition: margin-top 0.5s;
-}
+    .smallclose {
+        display: none; /* Hidden on desktop */
+        cursor: pointer;
+        color: white; /* Default Dark Mode color */
+        align-items: center; /* Vertically center content */
+        background-color: rgb(34, 40, 48);
+        width: auto;
+        height: 12vh;
+        margin-right: 0;
+        border-radius: 20px;
+        margin-top: 20px;
+        border: 1px solid rgb(34, 40, 48);
+        transition: margin-top 0.5s;
+    }
 
-.smallclose {
+.smallright {
     display: none; /* Hidden on desktop */
     cursor: pointer;
     color: white; /* Default Dark Mode color */
@@ -263,7 +257,7 @@ body {
     max-height: 75vh;
 }
 
-#about, #personal_about1{
+#about, #personal_about1, #personal_about2, #personal_about3, #personal_about4{
     border-radius: 20px;
     padding: 32px;
     margin: auto;
@@ -305,7 +299,7 @@ body {
 
 /* Style for form labels and inputs/textarea */
 #contactform label {
-    font-size: 1.2vw;
+    font-size: 18px;
     margin-top: 10px;
 }
 
@@ -328,7 +322,7 @@ body {
 #contactform input[type="submit"] {
     margin-top: 20px;
     padding: 15px;
-    font-size: 1.2vw;
+    font-size: 18px;
     background-color: white;
     color: black;
     border-radius: 5px;
@@ -345,11 +339,11 @@ body {
 }
 
 
-#personal_about1, #profile3, #profile4 {
+#personal_about1, #personal_about2, #personal_about3, #personal_about4, #profile1, #profile2, #profile3, #profile4 {
     display: none;
 } 
 
-#personal_about1 img{
+#personal_about1 img, #personal_about2 img, #personal_about3 img, #personal_about4 img{
     width: 10vw;
     margin-left: auto;
     margin-right: auto;
@@ -524,6 +518,9 @@ body.dark-mode #contactform input[type="submit"] {
 body.dark-mode #right_side, 
 body.dark-mode #about, 
 body.dark-mode #personal_about1, 
+body.dark-mode #personal_about2, 
+body.dark-mode #personal_about3, 
+body.dark-mode #personal_about4, 
 body.dark-mode #members {
     background-color: white; /* Invert: White background */
     box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px; /* Use a lighter shadow */
@@ -585,11 +582,17 @@ body.dark-mode #mem_button{
         display: none;
     }
 
+    @media (pointer:coarse) {
+        .right, .smallright, .smallclose {
+            margin-top: 20px;
+        }
+    }
+
     /* Mobile Menu Container - Displayed when the .mobile-open class is added */
     .right.mobile-open {
         display: flex; /* Show the container */
         position: absolute; /* Take it out of the nav flow */
-        top: 26vh; /* Position it just below the header bar (which is 10vh tall) */
+        top: 120px; /* Position it just below the header bar (which is 10vh tall) */
         width: 100%; /* Full width */
         height: auto; /* Let content define height */
         flex-direction: column; /* Stack links vertically */
@@ -695,11 +698,11 @@ body.dark-mode #mem_button{
         display: none;
     }
 
-    #personal_about1 img {
+    #personal_about1 img, #personal_about2 img, #personal_about3 img, #personal_about4 img {
         width: 25%;
     }
 
-    #personal_about1, #about {
+    #personal_about1, #personal_about2, #personal_about3, #personal_about4, #about {
         min-height: auto;
     }
 }
@@ -732,7 +735,7 @@ body.dark-mode #mem_button{
         display: none;
     }
 
-    #personal_about1 img {
+    #personal_about1 img, #personal_about2 img, #personal_about3 img, #personal_about4 img {
         width: 25%;
     }
 }

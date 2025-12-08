@@ -1,127 +1,156 @@
-// Variable declarations at the top (can remain outside functions as they are constants)
+// Variable declarations at the top (keep as is)
 const element1 = document.getElementById("about");
-const element2 = document.getElementById("personal_about1");
+const element2 = document.getElementById("personal_about3");
+const element3 = document.getElementById("personal_about1");
+const element4 = document.getElementById("personal_about2");
+const element5 = document.getElementById("personal_about4");
+const profile1 = document.getElementById("profile1");
+const profile2 = document.getElementById("profile2");
 const profile3 = document.getElementById("profile3");
 const profile4 = document.getElementById("profile4");
 const start = document.getElementById("start");
 const rightside = document.getElementById("right_side");
 const membersDiv = document.getElementById("members");
 const toggleBtn = document.getElementById('darkModeToggle');
+const smallCloseBtn = document.querySelector('.smallclose');
 
 
 function hideAllProfiles() {
     element2.style.display = 'none'; // Personal image/details container
+    element3.style.display = 'none'; // Personal image/details container
+    element4.style.display = 'none'; // Personal image/details container
+    element5.style.display = 'none'; // Personal image/details container
     profile3.style.display = 'none'; // Oh Kuan Qi profile
     profile4.style.display = 'none'; // Poon Chun Lok profile
+    profile1.style.display = 'none';
 }
 
-/**
- * Toggles the display for Oh Kuan Qi's profile (profile3).
- * Now supports direct switching from another profile.
- */
+function closeProfileView() {
+    // 1. Hide the profile views and the close button
+    hideAllProfiles();
+    smallCloseBtn.style.display = 'none';
+
+    // 2. Revert to default structure (show main content)
+    element1.style.display = 'inline-flex';
+    // Fix: Show 'start' content as well, not just membersDiv (which is already visible on desktop)
+    start.style.display = 'flex';
+    membersDiv.style.display = 'flex';
+    
+    // 3. Handle mobile layout reversion (hide right_side)
+    if (window.innerWidth <= 850) {
+        rightside.style.display = 'none';
+    } else {
+        // 4. On Desktop, ensure membersDiv is visible
+        if (membersDiv) {
+            membersDiv.style.display = 'flex';
+        }
+    }
+}
+
+function toggleContent1() {
+    const isProfile1Active = profile1.style.display === 'block';
+
+    // 1. First, hide all specific profile content (using the helper function)
+    hideAllProfiles();
+
+    if (isProfile1Active) {
+        // If profile3 was already open, close it using the dedicated function
+        closeProfileView();
+
+    } else {
+        // --- Opening Profile 3: Show profile content ---
+        element3.style.display = 'inline-flex';
+        profile1.style.display = 'block';
+        element1.style.display = 'none';
+        start.style.display = 'none';
+        
+        // Handle mobile layout: show right_side and hide members list (for <= 850px)
+        if (window.innerWidth <= 850) {
+            rightside.style.display = 'flex'; 
+            if (membersDiv) {
+                membersDiv.style.display = 'none'; 
+            }
+        }
+        
+        // Show the close button on open if screen <= 1000px
+        if (window.innerWidth <= 1000) {
+            smallCloseBtn.style.display = 'flex'; 
+        }
+    }
+}
+
 function toggleContent3() {
-    // Check if profile3 is currently displayed. If so, close it.
     const isProfile3Active = profile3.style.display === 'block';
 
-    // 1. First, hide all specific profile content
+    // 1. First, hide all specific profile content (using the helper function)
     hideAllProfiles();
 
     if (isProfile3Active) {
-        // If profile3 was already open, close it and revert to main view
-        element1.style.display = 'inline-flex';
-        start.style.display = 'flex'; 
-
-        // Revert mobile layout if necessary
-        if (window.innerWidth <= 850) {
-            rightside.style.display = 'none';
-        } else if (membersDiv) {
-            membersDiv.style.display = 'flex';
-        }
+        // If profile3 was already open, close it using the dedicated function
+        closeProfileView();
 
     } else {
-        // If profile3 was closed (or another profile was open), show profile3
-
-        // Show the new content structure
+        // --- Opening Profile 3: Show profile content ---
         element2.style.display = 'inline-flex';
         profile3.style.display = 'block';
-
-        // Hide the main content area components
         element1.style.display = 'none';
         start.style.display = 'none';
         
-        // Handle mobile layout: show right_side and hide members list
+        // Handle mobile layout: show right_side and hide members list (for <= 850px)
         if (window.innerWidth <= 850) {
             rightside.style.display = 'flex'; 
             if (membersDiv) {
                 membersDiv.style.display = 'none'; 
             }
         }
+        
+        // Show the close button on open if screen <= 1000px
+        if (window.innerWidth <= 1000) {
+            smallCloseBtn.style.display = 'flex'; 
+        }
     }
 }
 
-
-/**
- * Toggles the display for Poon Chun Lok's profile (profile4).
- * Now supports direct switching from another profile.
- */
 function toggleContent4() {
-    // Check if profile4 is currently displayed. If so, close it.
     const isProfile4Active = profile4.style.display === 'block';
 
-    // 1. First, hide all specific profile content
+    // 1. First, hide all specific profile content (using the helper function)
     hideAllProfiles();
 
     if (isProfile4Active) {
-        // If profile4 was already open, close it and revert to main view
-        element1.style.display = 'inline-flex';
-        start.style.display = 'flex'; 
-
-        // Revert mobile layout if necessary
-        if (window.innerWidth <= 850) {
-            rightside.style.display = 'none';
-        } else if (membersDiv) {
-            membersDiv.style.display = 'flex';
-        }
+        // If profile4 was already open, close it using the dedicated function
+        closeProfileView();
 
     } else {
-        // If profile4 was closed (or another profile was open), show profile4
-
-        // Show the new content structure
-        element2.style.display = 'inline-flex';
-        profile4.style.display = 'block'; // NOTE: Switched to profile4
-        
-        // Hide the main content area components
+        // --- Opening Profile 4: Show profile content ---
+        element5.style.display = 'inline-flex';
+        profile4.style.display = 'block';
         element1.style.display = 'none';
         start.style.display = 'none';
 
-        // Handle mobile layout: show right_side and hide members list
+        // Handle mobile layout: show right_side and hide members list (for <= 850px)
         if (window.innerWidth <= 850) {
             rightside.style.display = 'flex'; 
             if (membersDiv) {
                 membersDiv.style.display = 'none'; 
             }
         }
+        
+        // Show the close button on open if screen <= 1000px
+        if (window.innerWidth <= 1000) {
+            smallCloseBtn.style.display = 'flex'; 
+        }
     }
 }
 
-// ... (checkAndShowMembersDiv and other functions need an update too) ...
-
-/**
- * Handles responsiveness on window resize and initial load.
- * Overrides mobile CSS rules when switching to desktop size (> 850px).
- * Updated to check for *both* profile3 and profile4 status.
- */
+// Check and Show Members Div function logic (Updated to use both profile states)
 function checkAndShowMembersDiv() {
     // Determine if any profile is currently open
     const isAnyProfileOpen = profile3.style.display === 'block' || profile4.style.display === 'block'; 
 
     if (window.innerWidth > 850) {
         // --- Desktop View: Restore desktop layout ---
-
-        // 1. Ensure right_side is visible (overrides mobile CSS display: none)
         rightside.style.display = 'flex'; 
-
-        // 2. Ensure members div is visible (if it was hidden by mobile logic)
         if (membersDiv) {
              membersDiv.style.display = 'flex'; 
         }
@@ -129,137 +158,145 @@ function checkAndShowMembersDiv() {
     } else {
         // --- Mobile View: Enforce mobile layout rules ---
         
-        // 1. If currently showing a profile, keep rightside visible
         if (isAnyProfileOpen) {
              rightside.style.display = 'flex';
              if (membersDiv) {
-                 membersDiv.style.display = 'none'; // Keep member list hidden while profile is open
+                 membersDiv.style.display = 'none'; 
              }
         } else {
-             // 2. Otherwise (on #start or #about), hide rightside to follow the @media CSS rule
              rightside.style.display = 'none';
              if (membersDiv) {
-                 membersDiv.style.display = 'flex'; // Show member list (which is the main content on mobile)
+                 membersDiv.style.display = 'flex'; 
              }
         }
     }
 }
 
-
-/**
- * Handles responsiveness on window resize and initial load.
- * Overrides mobile CSS rules when switching to desktop size (> 850px).
- */
-function checkAndShowMembersDiv() {
-    if (window.innerWidth > 850) {
-        // --- Desktop View: Restore desktop layout ---
-
-        // 1. Ensure right_side is visible (overrides mobile CSS display: none)
-        rightside.style.display = 'flex'; 
-
-        // 2. Ensure members div is visible (if it was hidden by mobile logic)
-        if (membersDiv) {
-             membersDiv.style.display = 'flex'; 
-        }
-
-    } else {
-        // --- Mobile View: Enforce mobile layout rules ---
-        
-        // 1. If currently showing a profile (profile3 is block), keep rightside visible
-        if (profile3.style.display === 'block') {
-             rightside.style.display = 'flex';
-             if (membersDiv) {
-                 membersDiv.style.display = 'none'; // Keep member list hidden while profile is open
-             }
-        } else {
-             // 2. Otherwise (on #start or #about), hide rightside to follow the @media CSS rule
-             rightside.style.display = 'none';
-             if (membersDiv) {
-                 membersDiv.style.display = 'flex'; // Show member list (which is the main content on mobile)
-             }
-        }
-    }
-}
 
 // 🍔 HAMBURGER MENU TOGGLE
 function openMobileMenu() {
     const navLinks = document.getElementById("myNav1");
-    // Target the image element using an ID or a specific selector
     const mobileMenuIcon = document.getElementById('mobileMenuIcon'); 
     
-    // Define the paths to your icon images
     const menuIconSrc = 'images/menu.png';
     const closeIconSrc = 'images/close.png';
     
     navLinks.classList.toggle("mobile-open");
 
-    // Swap the icon source
     if (navLinks.classList.contains("mobile-open")) {
-        // Change the source to the close image
         mobileMenuIcon.src = closeIconSrc; 
         mobileMenuIcon.alt = 'Close';
     } else {
-        // Change the source back to the menu image
         mobileMenuIcon.src = menuIconSrc;
         mobileMenuIcon.alt = 'Menu';
     }
 }
 
-// In script_about1.js:
-
 function openContact() {
     const contactFormContainer = document.getElementById("contactform"); 
-    // Target the image element directly by its ID
     const MenuIcon = document.getElementById('menuicon'); 
-    // Target the text node within the link (it's the second child node of the <a> tag)
-    // We get the parent <a> tag first, then find its text content node
     const fixedButtonLink = document.querySelector('#fixedbutton a');
-    const buttonTextNode = fixedButtonLink.childNodes[1]; // Index 1 is the text node 'Contact Us'
+    const buttonTextNode = fixedButtonLink.childNodes[1]; 
 
-    // Define the paths to your icon images
     const menuIconSrc = 'images/contact.png';
     const closeIconSrc = 'images/close.png';
     
-    // Toggle the CSS class to show/hide the form container
     contactFormContainer.classList.toggle("contactform-open");
 
-    // Swap the icon source and text based on the new class presence
     if (contactFormContainer.classList.contains("contactform-open")) {
-        // Form is open, change the source to the close image and update text
         MenuIcon.src = closeIconSrc; 
         MenuIcon.alt = 'Close';
-        buttonTextNode.nodeValue = 'Close'; // Update the text
+        buttonTextNode.nodeValue = 'Close'; 
     } else {
-        // Form is closed, change the source back to the contact image and update text
         MenuIcon.src = menuIconSrc;
         MenuIcon.alt = 'Contact Us';
-        buttonTextNode.nodeValue = 'Contact Us'; // Update the text
+        buttonTextNode.nodeValue = 'Contact Us'; 
     }
 }
 
-// DARK MODE TOGGLE
+// DARK MODE TOGGLE (MODIFIED: Saves preference to localStorage)
 toggleBtn.addEventListener('click', () => {
     document.body.classList.toggle('dark-mode');
     
-    if (document.body.classList.contains('dark-mode')) {
-        toggleBtn.childNodes[0].src = 'images/dark.png';
+    const isLightModeActive = document.body.classList.contains('dark-mode');
+
+    if (isLightModeActive) {
+        // Save the preference: User prefers light mode
+        localStorage.setItem('theme', 'light');
+        toggleBtn.childNodes[0].src = 'images/dark.png'; // Offers Dark next
         toggleBtn.childNodes[1].nodeValue = 'Dark'; 
     } else {
-        toggleBtn.childNodes[0].src = 'images/light.png';
+        // Save the preference: User prefers dark mode
+        localStorage.setItem('theme', 'dark');
+        toggleBtn.childNodes[0].src = 'images/light.png'; // Offers Light next
         toggleBtn.childNodes[1].nodeValue = ' Light';
     }
 });
+
+
+// ... (rest of the script remains the same)
+
+// -----------------------------------------------------------
+// 🌟 INITIAL LOAD FUNCTIONALITY (CORRECTED: Reads System Preference)
+
+/**
+ * Checks localStorage OR System preference for theme and applies it on page load.
+ */
+function applySavedTheme() {
+    const savedTheme = localStorage.getItem('theme');
+    
+    // Check the system's preference for dark mode
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    let themeToApply = 'dark'; // Default theme from CSS
+
+    if (savedTheme) {
+        // PRIORITY 1: If user manually chose a theme, use that
+        themeToApply = savedTheme;
+    } else if (systemPrefersDark) {
+        // PRIORITY 2: If no saved preference, and system prefers dark
+        themeToApply = 'dark';
+    } else {
+        // PRIORITY 3: If no saved preference, and system prefers light
+        themeToApply = 'light';
+    }
+    
+    // Apply the theme class
+    if (themeToApply === 'light') {
+        // The 'dark-mode' class enables light mode styles via CSS
+        document.body.classList.add('dark-mode'); 
+    } else {
+        // The absence of 'dark-mode' class enables dark mode styles (the default)
+        document.body.classList.remove('dark-mode');
+    }
+    
+    // Update the toggle button's text and icon to show the *next* action
+    const isLightModeActive = document.body.classList.contains('dark-mode');
+    
+    if (toggleBtn) {
+        if (isLightModeActive) {
+            // Page is currently LIGHT, button should offer DARK
+            toggleBtn.childNodes[0].src = 'images/dark.png';
+            toggleBtn.childNodes[1].nodeValue = 'Dark';
+        } else {
+            // Page is currently DARK, button should offer LIGHT
+            toggleBtn.childNodes[0].src = 'images/light.png';
+            toggleBtn.childNodes[1].nodeValue = ' Light';
+        }
+    }
+}
 
 function submit() {
     alert("Form submitted!");
 }
 
-
-// -----------------------------------------------------------
-// 🌟 Event Listeners
-
 // Listener for window resizing
 window.addEventListener('resize', checkAndShowMembersDiv);
 
-// Listener for initial load
-document.addEventListener('DOMContentLoaded', checkAndShowMembersDiv);
+// Listener for initial load (MODIFIED to apply theme first)
+document.addEventListener('DOMContentLoaded', () => {
+    // Apply theme preference (Saved OR System)
+    applySavedTheme();        
+    // Then run existing responsive checks
+    checkAndShowMembersDiv(); 
+});

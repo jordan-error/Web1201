@@ -15,7 +15,7 @@
             <a href="#"><img id="menuicon" src="images/contact.png" alt="contact">Contact Us</a>
         </div>
         <div id="contactform" onsubmit="submit()">
-            <form>
+            <form> 
                 <label for="name">Name</label>
                 <input type="name" id="name" name="name" placeholder="Insert your name" required>
 
@@ -40,8 +40,8 @@
                     <a id="darkModeToggle" href="#"><img src="images/light.png" alt="sunny">Light</a>
                 </div>
                 <div class="smallclose">
-                    <a href="javascript:void(0)" class="close-icon" onclick="closemenu()">
-                        <img id="close" src="images/close.png">
+                    <a href="javascript:void(0)" class="close-icon" onclick="closeProfileView()">
+                        <img id="close" src="images/close.png">Close
                     </a>
                 </div>
                 <div class="smallright">
@@ -62,12 +62,33 @@
                     </div>
                     <div id="personal_about1">
                         <img src="images/john_doe.jpg" alt="Image">
+                        <p class="details">Name:&nbsp;Daniel Lau Zhe Kai
+                        <br><br>Course:&nbsp;Bachelor of Science (Honours) in Computer Science
+                        <br><br>School: &nbsp;Sunway University</p>
+                    </div>
+                                       
+                    <div id="personal_about2">
+                        <img src="images/john_doe.jpg" alt="Image">
+                        <p class="details">Name:&nbsp;Jordan Ooi Zixian
+                        <br><br>Course:&nbsp;Bachelor of Science (Honours) in Computer Science
+                        <br><br>School: &nbsp;Sunway University</p>
+                    </div>                 
+
+                    <div id="personal_about3">
+                        <img src="images/john_doe.jpg" alt="Image">
                         <p class="details">Name:&nbsp;Oh Kuan Qi
                         <br><br>Course:&nbsp;Bachelor of Science (Honours) in Computer Science
                         <br><br>School: &nbsp;Sunway University</p>
                     </div>
+
+                    <div id="personal_about4">
+                        <img src="images/john_doe.jpg" alt="Image">
+                        <p class="details">Name:&nbsp;Poon Chun Lok
+                        <br><br>Course:&nbsp;Bachelor of Science (Honours) in Computer Science
+                        <br><br>School: &nbsp;Sunway University</p>
+                    </div>
                     <div id="members">
-                        <button id="mem_button" class="mem_button1">Daniel Lau Zhe Kai</button>
+                        <button id="mem_button" class="mem_button1" onclick="toggleContent1()">Daniel Lau Zhe Kai</button>
                         <button id="mem_button" class="mem_button2">Jordan Ooi Zixian</button>
                         <button id="mem_button" class="mem_button3" onclick="toggleContent3()">Oh Kuan Qi</button>
                         <button id="mem_button" class="mem_button4" onclick="toggleContent4()">Poon Chun Lok</button>
@@ -76,6 +97,29 @@
                 <div id="right_side">
                     <div id="start" class="start">
                         <p class="description">Click on one of the names on the bottom left menu for individual portfolios!</p>
+                    </div>
+                    <div id="profile1" class="profile1">
+                        <p class="header">About</p>
+                        <p class="description">Hi, I am Daniel.&nbsp;I am currently a Computer Science student at Sunway University.&nbsp;I am passionate about Data Science and Analytics.&nbsp;Although this website is a Web Development project,&nbsp;I see it as a great way to learn how to present information clearly. In the future,&nbsp;I hope to combine my coding skills with data analysis to uncover hidden patterns in the digital world.
+                        <br><br>
+                        To achieve this,&nbsp;I am focusing on building a versatile technical toolkit. I am gaining proficiency in HTML, CSS, and SQL,&nbsp;and I am deeply interested in how data is structured and managed. I enjoy the process of logical reasoning and finding efficient solutions to complex problems.
+                        <br><br>
+                        Outside of my studies,&nbsp;I am an avid gamer who enjoys titles like Valorant.&nbsp;Gaming has taught me the value of teamwork and quick decision-making under pressure. Thank you for visiting my site—feel free to explore my work!</p>
+                            <div id="education" class="education">
+                                <p class="header">Education</p>
+                                <div id="grid-container2" class="grid-container2">
+                                    <div id="box1" class="box1">
+                                        <p id="desc1" class="desc1">Foundation in Information Technology</p>
+                                        <p id="desc1" class="desc1">Multimedia University,&nbsp;Cyberjaya
+                                        <p id="desc1" class="desc1">2023&nbsp;-&nbsp;2024</p>
+                                    </div>
+                                    <div id="box2" class="box2">
+                                        <p id="desc1" class="desc1">Bachelor of Science (Honours) in Computer Science</p>
+                                        <p id="desc1" class="desc1">Sunway University,&nbsp;Malaysia</p>
+                                        <p id="desc1" class="desc1">2025&nbsp;-&nbsp;present</p>
+                                    </div>
+                                </div>
+                            </div>
                     </div>
                     <div id="profile3" class="profile3">
                         <p class="header">About</p>

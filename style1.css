@@ -156,7 +156,7 @@ button {
 } 
 
 
-#personal_about1 {
+#personal_about3 {
   display: none;
   box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
   margin: 100px 30px 30px 30px;
@@ -749,7 +749,7 @@ body.dark-mode #mem_button1, body.dark-mode #mem_button2, body.dark-mode #mem_bu
 }
 
 /* Add this to your dark mode section */
-body.dark-mode #personal_about1, 
+body.dark-mode #personal_about3, 
 body.dark-mode #personal_about2, 
 body.dark-mode #personal_about3, 
 body.dark-mode #personal_about4 {
