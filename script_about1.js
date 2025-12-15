@@ -22,6 +22,7 @@ function hideAllProfiles() {
     element5.style.display = 'none'; // Personal image/details container
     profile3.style.display = 'none'; // Oh Kuan Qi profile
     profile4.style.display = 'none'; // Poon Chun Lok profile
+    profile2.style.display = 'none';
     profile1.style.display = 'none';
 }
 
@@ -61,6 +62,38 @@ function toggleContent1() {
         // --- Opening Profile 3: Show profile content ---
         element3.style.display = 'inline-flex';
         profile1.style.display = 'block';
+        element1.style.display = 'none';
+        start.style.display = 'none';
+        
+        // Handle mobile layout: show right_side and hide members list (for <= 850px)
+        if (window.innerWidth <= 850) {
+            rightside.style.display = 'flex'; 
+            if (membersDiv) {
+                membersDiv.style.display = 'none'; 
+            }
+        }
+        
+        // Show the close button on open if screen <= 1000px
+        if (window.innerWidth <= 1000) {
+            smallCloseBtn.style.display = 'flex'; 
+        }
+    }
+}
+
+function toggleContent2() {
+    const isProfile2Active = profile2.style.display === 'block';
+
+    // 1. First, hide all specific profile content (using the helper function)
+    hideAllProfiles();
+
+    if (isProfile2Active) {
+        // If profile3 was already open, close it using the dedicated function
+        closeProfileView();
+
+    } else {
+        // --- Opening Profile 3: Show profile content ---
+        element4.style.display = 'inline-flex';
+        profile2.style.display = 'block';
         element1.style.display = 'none';
         start.style.display = 'none';
         
