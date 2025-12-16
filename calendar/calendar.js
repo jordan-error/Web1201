@@ -80,25 +80,37 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function loadSideList() {
         const list = document.querySelector(".reminder-list");
-        if (list) {
-            list.innerHTML = "";
-            let myEvents = JSON.parse(localStorage.getItem("myCalendarEvents")) || [];
-            
-            myEvents.sort((a, b) => new Date(a.date + " " + a.time) - new Date(b.date + " " + b.time));
+        if (!list) return;
 
-            myEvents.forEach(item => {
-                const card = document.createElement("div");
-                card.classList.add("reminder-card");
-                
-                card.innerHTML = `
-                    <div class="reminder-title">${item.name}</div>
-                    <div class="reminder-time">${item.date} ${item.time}</div>
-                `;
+        list.innerHTML = "";
+        let myEvents = JSON.parse(localStorage.getItem("myCalendarEvents")) || [];
+    
+        myEvents.sort((a, b) => new Date(a.date + " " + a.time) - new Date(b.date + " " + b.time));
 
-                card.addEventListener("click", () => showModal(item));
-                list.appendChild(card);
-            });
-        }
+        const now = new Date();
+
+        myEvents.forEach(item => {
+            const card = document.createElement("div");
+            card.classList.add("reminder-card");
+        
+            const eventDate = new Date(`${item.date} ${item.time}`);
+            const isExpired = eventDate < now;
+
+            if (isExpired) {
+                card.classList.add("expired");
+            }
+
+            card.innerHTML = `
+                <div class="reminder-title">
+                    ${item.name}
+                    ${isExpired ? '<span class="expired-badge">Expired</span>' : ''}
+                </div>
+                <div class="reminder-time">${item.date} ${item.time}</div>
+            `;
+
+            card.addEventListener("click", () => showModal(item));
+            list.appendChild(card);
+        });
     }
 
     function showModal(data) {
@@ -112,16 +124,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (btnDelete) {
         btnDelete.addEventListener("click", () => {
-            if (confirm("Are you sure you want to delete this event?")) {
-                let data = JSON.parse(localStorage.getItem("myCalendarEvents")) || [];
-                const newData = data.filter(e => e.id !== currentId);
+            let data = JSON.parse(localStorage.getItem("myCalendarEvents")) || [];
+            const newData = data.filter(e => e.id !== currentId);
                 
-                localStorage.setItem("myCalendarEvents", JSON.stringify(newData));
-                modal.classList.remove("show");
+            localStorage.setItem("myCalendarEvents", JSON.stringify(newData));
+            modal.classList.remove("show");
                 
-                generateCalendar(currentMonth.value, currentYear.value);
-                loadSideList();
-            }
+            generateCalendar(currentMonth.value, currentYear.value);
+            loadSideList();
         });
     }
 
@@ -154,7 +164,6 @@ document.addEventListener("DOMContentLoaded", () => {
             arr.push(obj);
             localStorage.setItem("myCalendarEvents", JSON.stringify(arr));
 
-            alert("Event Saved Successfully!");
             form.reset();
             
             container.classList.remove("active");
@@ -185,3 +194,18 @@ document.addEventListener("DOMContentLoaded", () => {
     generateCalendar(currentMonth.value, currentYear.value);
     loadSideList();
 });
+
+    function switchtheme() {
+        document.body.classList.toggle('light-mode');
+
+        const themeText = document.getElementById('theme-text');
+        const themeIcon = document.getElementById('theme-icon');
+
+        if (document.body.classList.contains('light-mode')) {
+            if (themeText) themeText.innerText = "Dark Mode";
+            if (themeIcon) themeIcon.src = "../images/moon.png";
+        } else {
+            if (themeText) themeText.innerText = "Light Mode";
+            if (themeIcon) themeIcon.src = "../images/sun.png";
+        }
+    }
