@@ -422,7 +422,6 @@ input:checked~.reminder-panel .reminder-line {
     top: 29px;
     right: 30px;
     z-index: 50;
-    overflow: hidden;
 }
 
 .EventContainer.active {
