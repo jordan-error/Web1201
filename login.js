@@ -11,7 +11,7 @@ const confirm_password = document.getElementById("register_confirm_password");
 
 function login(){
 	if(username.value === "admin" && password.value === "password"){
-		window.location.href = "/main-page/main-page.html"
+		window.location.href = "main-page.html"
 		return;
 	}
 	username.classList.add("wrong")
