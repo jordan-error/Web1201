@@ -33,14 +33,25 @@ function hide_modal(){
 
 
 function change_status(error_element,iserror){
+	let mode = document.cookie.split("=")[1];
 	if(iserror){
 		error_element.style.display = "flex";
 		error_element.style.color = "red";
-		error_element.childNodes[0].innerText = "close";
+		if(mode == "dark"){
+			error_element.childNodes[0].src = "images/close_small.png";
+		}
+		else{
+			error_element.childNodes[0].src = "images/close_small_dark.png";
+		}
 	}
 	else{
 		error_element.style.color = "green";
-		error_element.childNodes[0].innerText = "check";
+		if(mode == "dark"){
+			error_element.childNodes[0].src = "images/check.png";
+		}
+		else{
+			error_element.childNodes[0].src = "images/check_dark.png";
+		}
 	}
 }
 
@@ -69,7 +80,8 @@ function openRegister(){
 
 document.querySelectorAll(".eye").forEach(reveal=>{reveal.addEventListener("click",()=>{
 	if(reveal.previousSibling.value){
-		reveal.innerText === "visibility" ? reveal.innerText = "visibility_off" : reveal.innerText = "visibility";
+		console.log(reveal.src);
+		reveal.src === `${window.location}images/visibility.png` ? reveal.src = `${window.location}images/visibility_off.png` : reveal.src = `${window.location}images/visibility.png`;
 		reveal.previousSibling.type === "text" ? reveal.previousSibling.type = "password": reveal.previousSibling.type = "text";
 		}
 	})
@@ -122,13 +134,25 @@ confirm_password.addEventListener("input",()=>{
 		}
 	}
 })
-function change_theme(){
-	let theme_toggle = document.getElementById('theme-toggle');
-	let html_theme = document.getElementsByTagName('html')[0];
-	let mode = document.cookie.split("=")[1];
-	mode == "dark" ? theme_toggle.firstChild.innerText = "dark_mode" : theme_toggle.firstChild.innerText = "light_mode"
-	mode == "dark" ? html_theme.setAttribute("data-theme","light") : html_theme.setAttribute("data-theme","dark");
-	mode == "dark" ? document.cookie = "theme=light" : document.cookie = "theme=dark";
+
+function change_theme() {
+    let theme_toggle = document.getElementById('theme-toggle');
+    let html_theme = document.getElementsByTagName('html')[0];
+    let currentMode = html_theme.getAttribute("data-theme");
+    let newMode = (currentMode === "dark") ? "light" : "dark";
+    html_theme.setAttribute("data-theme", newMode);
+    document.cookie = `theme=${newMode}; path=/`;
+    theme_toggle.querySelector('img').src = (newMode === "dark") ? "images/light.png" : "images/moon.png";
+    document.querySelectorAll('.logo').forEach(img => {
+        let src = img.src;
+        if (newMode === "dark") {
+            img.src = src.replace("_dark.png", ".png");
+        } else {
+            if (!src.includes("_dark.png")) {
+                img.src = src.replace(".png", "_dark.png");
+            }
+        }
+    });
 }
 
 function load_theme(){

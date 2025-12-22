@@ -146,6 +146,7 @@ function create_garbage(parentNode){
 		update_localstorage();
 		console.log(`Note Removed: ${id}`);
 	})
+	load_theme();
 }
 
 function create_x(parentNode) {
@@ -163,6 +164,7 @@ function create_x(parentNode) {
 		update_localstorage();
 		console.log(`removed list: ${delete_list_id}`);
 	})
+	load_theme();
 }
 
 function create_textbox({parentNode,old_text,rec_id} ={}){
@@ -177,6 +179,7 @@ function create_textbox({parentNode,old_text,rec_id} ={}){
 		current_notes[rec_id].content = text_box.value;
 		update_localstorage();
 	})
+	load_theme();
 }
 
 
@@ -211,13 +214,18 @@ function create_new_nav_option(uuid=null){
 	console.log(`New List Created: ${new_note_uuid}`);
 }
 
-function change_theme(){
-	let theme_toggle = document.getElementById('theme-toggle');
-	let html_theme = document.getElementsByTagName('html')[0];
-	let mode = document.cookie.split("=")[1];
-	mode == "dark" ? theme_toggle.firstChild.innerText = "dark_mode" : theme_toggle.firstChild.innerText = "light_mode"
-	mode == "dark" ? html_theme.setAttribute("data-theme","light") : html_theme.setAttribute("data-theme","dark");
-	mode == "dark" ? document.cookie = "theme=light" : document.cookie = "theme=dark";
+function change_theme() {
+    let theme_toggle = document.getElementById('theme-toggle');
+    let html_theme = document.getElementsByTagName('html')[0];
+    let currentMode = html_theme.getAttribute("data-theme");
+    let newMode = (currentMode === "dark") ? "light" : "dark";
+    html_theme.setAttribute("data-theme", newMode);
+    document.cookie = `theme=${newMode}; path=/`;
+    let toggleImg = theme_toggle.querySelector('img');
+    if (toggleImg) {
+        toggleImg.src = (newMode === "dark") ? "images/light.png" : "images/moon.png";
+    }
+    update_all_logos(newMode);
 }
 function load_theme(){
 	let mode = document.cookie.split("=")[1];
@@ -227,6 +235,22 @@ function load_theme(){
 	}
 	let html_theme = document.getElementsByTagName('html')[0];
 	html_theme.setAttribute("data-theme",mode);
+	update_all_logos(mode)
+}
+function update_all_logos(mode) {
+    document.querySelectorAll('.logo').forEach(img => {
+        let src = img.src;
+        
+        if (src.includes("john_doe.jpg")) return;
+
+        if (mode === "dark") {
+            img.src = src.replace("_dark.png", ".png");
+		} else {
+            if (!src.includes("_dark.png")) {
+                img.src = src.replace(".png", "_dark.png");
+            }
+        }
+    });
 }
 function togglemobilemenu(){
 	const left_nav = document.getElementById("left-nav");

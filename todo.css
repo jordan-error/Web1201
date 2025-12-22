@@ -44,10 +44,10 @@ html[data-theme="light"] {
     --li_a_hover: #fffafe;
     --title_hover: rgb(230, 225, 215);
     --title_focus: rgb(230, 225, 215);
-    --notes-border: ;
+    --notes-border: 1px solid rgba(255,255,255,0.04);
     --notes-background: rgb(255, 255, 255);
     --notes-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    --notes-hover: rgb(248, 248, 248);
+    --notes-hover: rgb(248, 248, 248, 0.44);
     --plus_more: rgba(105, 140, 160, 0.15);
     --selected: var(--list-hover);
     --right-nav: rgb(255, 250, 245);
