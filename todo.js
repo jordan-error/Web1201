@@ -132,12 +132,12 @@ function create_span({parentNode,id=null,old_text=null,old_header=null}={}){
 
 function create_garbage(parentNode){
 	let div = document.createElement('div');
-	let span = document.createElement("span");
-	span.classList.add("material-symbols-outlined");
-	span.classList.add("garbage");
-	span.innerText = "delete_forever";
+	let img = document.createElement("img");
+	img.src = "images/delete_forever.png";
+	img.classList.add("logo");
+	img.classList.add("garbage");
 	parentNode.appendChild(div);
-	div.appendChild(span);
+	div.appendChild(img);
 	div.addEventListener("click",()=>{
 		id = parentNode.getAttribute('rec_id');
 		parentNode.remove();
@@ -149,12 +149,12 @@ function create_garbage(parentNode){
 }
 
 function create_x(parentNode) {
-	let span = document.createElement("span");
-	span.classList.add("material-symbols-outlined");
-	span.classList.add("setting");
-	span.innerText = "close_small";
-	parentNode.appendChild(span);
-	span.addEventListener("click",(event)=>{
+	let img = document.createElement("img");
+	img.src = "images/close_small.png";
+	img.classList.add("logo");
+	img.classList.add("setting");
+	parentNode.appendChild(img);
+	img.addEventListener("click",(event)=>{
 		event.preventDefault();
 		let delete_list_id = parentNode.getAttribute("list");
 		delete list_map[delete_list_id];

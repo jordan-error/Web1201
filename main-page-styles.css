@@ -26,7 +26,7 @@ a{
 .right-column{
     position:fixed;
     right: 25px;
-    top: -37px;
+    top: -39px;
     background-color: rgb(34, 40, 48);
     border-radius: 0px 0px 7px 7px;
     height: max-content;
@@ -230,4 +230,9 @@ font-weight: bold;
     border-radius: 7px;
     margin: 20px 0px;
     padding: 10px 0px;
+}
+
+.logo{
+    height: 35px;
+    padding: 3px 0px;
 }
