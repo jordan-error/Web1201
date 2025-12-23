@@ -145,10 +145,19 @@ textarea {
     transition: margin-top 0.5s;
 }
 
+.right a {
+    height: 12vh;
+}
+
 .right:hover {
         margin-top: 20px;
         transition: margin-top 0.5s;
-    }
+}
+
+.left a:hover, .right a:hover {
+    background-color: white;
+    border-radius: 20px;
+}
 
 /* Updated .right a to use flexbox for internal centering */
 .right a, .smallright a, .smallclose a {
