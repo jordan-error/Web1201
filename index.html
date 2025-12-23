@@ -31,11 +31,11 @@
                             <label class="vague"  for="password">Password</label>
                             <input minlength=8 autocomplete="off" type="password" id="password" name="password" required><img src="images/visibility.png" class="eye logo"></img></input>
                             <p id="error" class="error">incorrect username or password.</p>
-                            <a href="#" onclick="alert('CREDENTIALS ARE \nadmin:password')" class="link forgot">Forgot password?</a>
+                            <a href="javascript:alert('CREDENTIALS ARE \nadmin:password')"  class="link forgot">Forgot password?</a>
                         </div>
                         <button id="login-button" type="submit" class="login-button">Sign In</button><br>
                     </form>
-                    <p class="vague register">Don't have an account? <a id="register-button" onclick="openRegister()" class="link" href="#">Register now</a></p>
+                    <p class="vague register">Don't have an account? <a id="register-button" class="link" href="javascript:openRegister()">Register now</a></p>
                 </div>
             </div>
         </div>

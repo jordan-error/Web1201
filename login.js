@@ -79,9 +79,14 @@ function openRegister(){
 }
 
 document.querySelectorAll(".eye").forEach(reveal=>{reveal.addEventListener("click",()=>{
+	let mode = document.cookie.split("=")[1];
 	if(reveal.previousSibling.value){
-		console.log(reveal.src);
-		reveal.src === `${window.location}images/visibility.png` ? reveal.src = `${window.location}images/visibility_off.png` : reveal.src = `${window.location}images/visibility.png`;
+		if(reveal.src === `${window.location}images/visibility.png` || reveal.src === `${window.location}images/visibility_dark.png`){
+			mode == "dark" ? reveal.src = `${window.location}images/visibility_off.png` : reveal.src = `${window.location}images/visibility_off_dark.png`;
+		}
+		else{
+			mode == "dark" ? reveal.src = `${window.location}images/visibility.png` : reveal.src = `${window.location}images/visibility_dark.png`;
+		}
 		reveal.previousSibling.type === "text" ? reveal.previousSibling.type = "password": reveal.previousSibling.type = "text";
 		}
 	})
