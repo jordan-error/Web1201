@@ -145,6 +145,12 @@ textarea {
     transition: margin-top 0.5s;
 }
 
+@media (pointer:coarse) {
+    .right {
+    margin-top: 20px;
+}
+}
+
 .right a {
     height: 12vh;
 }
@@ -155,7 +161,7 @@ textarea {
 }
 
 .left a:hover, .right a:hover {
-    background-color: white;
+    background-color: rgb(255, 255, 255, 0.3);
     border-radius: 20px;
 }
 
@@ -584,13 +590,12 @@ body.dark-mode #mem_button{
     }
 
     .header {
-        font-size: 2vw;;
+        font-size: 2vw;
     }
 
     .desc1, .details {
         font-size: 1.5vw;
     }
-
 }
 
 /*Media Screen < 1000px */
