@@ -141,7 +141,7 @@ textarea {
     margin-right: 32px;
     border-radius: 20px;
     border: 1px solid rgb(34, 40, 48);
-    margin-top: -100px;
+    margin-top: -108px;
     transition: margin-top 0.5s;
 }
 
@@ -255,6 +255,11 @@ textarea {
     padding: 32px;
     gap: 30px;
     max-height: 80vh;
+}
+
+.description_cont {
+    line-height: 0.6;
+    font-size: 1.3vw;;
 }
 
 #right_side {
@@ -589,6 +594,11 @@ body.dark-mode #mem_button{
         line-height: 1.2;
     }
 
+    .description_cont {
+        line-height: 0.6;
+        font-size: 1.6vw;
+    }   
+
     .header {
         font-size: 2vw;
     }
@@ -615,7 +625,7 @@ body.dark-mode #mem_button{
     .right.mobile-open {
         display: flex; /* Show the container */
         position: absolute; /* Take it out of the nav flow */
-        top: 120px; /* Position it just below the header bar (which is 10vh tall) */
+        top: 160px; /* Position it just below the header bar (which is 10vh tall) */
         width: 100%; /* Full width */
         height: auto; /* Let content define height */
         flex-direction: column; /* Stack links vertically */
@@ -673,6 +683,11 @@ body.dark-mode #mem_button{
         font-size: 1.9vw;
         line-height: 1.2;
     }
+
+    .description_cont {
+        line-height: 0.6;
+        font-size: 1.9vw;
+    }   
 
     .header {
         font-size: 2.5vw;;
@@ -732,6 +747,11 @@ body.dark-mode #mem_button{
         font-size: 2.8vw; /* Example adjustment for legibility on small screens */
     }
 
+    .description_cont {
+        line-height: 0.6;
+        font-size: 2.8vw;
+    }   
+
     .header {
         font-size: 3.5vw; /* Example adjustment for legibility on small screens */
     }
@@ -768,6 +788,11 @@ body.dark-mode #mem_button{
     .description, .details {
         font-size: 3.6vw; /* Example adjustment for legibility on small screens */
     }
+
+    .description_cont {
+        line-height: 0.6;
+        font-size: 3.6vw;
+    }   
 
     .header {
         font-size: 4.5vw; /* Example adjustment for legibility on small screens */
