@@ -203,9 +203,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (document.body.classList.contains('light-mode')) {
             if (themeText) themeText.innerText = "Dark Mode";
-            if (themeIcon) themeIcon.src = "../images/moon.png";
+            if (themeIcon) themeIcon.src = "/images/moon.png";
         } else {
             if (themeText) themeText.innerText = "Light Mode";
-            if (themeIcon) themeIcon.src = "../images/sun.png";
+            if (themeIcon) themeIcon.src = "/images/sun.png";
         }
     }

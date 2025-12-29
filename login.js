@@ -79,17 +79,20 @@ function openRegister(){
 }
 
 document.querySelectorAll(".eye").forEach(reveal=>{reveal.addEventListener("click",()=>{
-	let mode = document.cookie.split("=")[1];
-	if(reveal.previousSibling.value){
-		if(reveal.src === `${window.location}images/visibility.png` || reveal.src === `${window.location}images/visibility_dark.png`){
-			mode == "dark" ? reveal.src = `${window.location}images/visibility_off.png` : reveal.src = `${window.location}images/visibility_off_dark.png`;
-		}
-		else{
-			mode == "dark" ? reveal.src = `${window.location}images/visibility.png` : reveal.src = `${window.location}images/visibility_dark.png`;
-		}
-		reveal.previousSibling.type === "text" ? reveal.previousSibling.type = "password": reveal.previousSibling.type = "text";
-		}
-	})
+	const inputField = reveal.previousSibling;
+        const currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
+        const isDarkMode = currentTheme === "dark";
+
+        if (inputField.value) {
+            if (inputField.type === "password") {
+                inputField.type = "text";
+                reveal.src = isDarkMode ? "images/visibility_off.png" : "images/visibility_off_dark.png";
+            } else {
+                inputField.type = "password";
+                reveal.src = isDarkMode ? "images/visibility.png" : "images/visibility_dark.png";
+            }
+        }
+    });
 })
 
 register_username.addEventListener("input",()=>{
